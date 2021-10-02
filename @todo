@@ -1,0 +1,55 @@
+////////////////////////
+
+        faire
+
+////////////////////////
+
+>> completer le index.html
+
+>> faire la page wiki
+    - index.html                    ---> fait
+    - wiki_rules.html               ---> abandonné, redondant avec index.html
+    - characters                    ---> fait
+        - index.html
+        - wiki_rules.html
+        - friends
+            - chr1.html
+            - chr2.html
+        - foes 
+            - chr1.html
+            - chr2.html
+    - items
+        - index.html                --->
+        - weapons
+            - item1.html
+            - item2.html
+        - food 
+            - chr1.html 
+            - chr2.html
+
+>> mettre des images
+
+////////////////////////
+
+        fait
+
+////////////////////////
+
+>> template de code
+
+>> css consistant
+    - polices d'écriture
+    - pallette de couleurs
+
+
+//// fixé ////
+
+>> drop down n'est pas centré en Y sur le header
+        ---> padding-top n'avait pas de bottom de taille équivalente
+
+////////////////////////
+
+        fixer
+
+////////////////////////
+
