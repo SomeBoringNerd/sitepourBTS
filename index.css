@@ -144,7 +144,7 @@
 			balises html custom.
 	
 	la raison de leur existance est que
-	je les utilise tellemenbt que c'est
+	je les utilises tellement que c'est
 	plus simple de les utiliser en bali
 	ses que de les utiliser comme class
 
@@ -153,7 +153,7 @@
 megaTitle{
 	outline: solid;
 	font-family: Minangkabau;
-	color:white;
+	color:rgb(0, 217, 255);
 	font-size:128px;
 }
 /* titre de la partie de la page */
@@ -194,6 +194,11 @@ html {
 	background-color:black;
 }
 
+footer{
+	background-color: #525252;
+	z-index: 5;
+}
+
 p {
 	font-family: VCR_OSD_Mono;
 	color:white;
@@ -209,9 +214,13 @@ h1, h2, h3, h4, h5, h6{
 a {
 	color:lime;
 }
-
+/*
+	dans l'idée d'offrir un retour visuel a l'utilisateur, un lien cliquable rendra le texte en magenta.
+	la changement de couleur de fond va possiblement dégager
+*/
 a:hover{
 	color: magenta;
+	background-color: rgb(46, 46, 46);
 }
 
 button{
@@ -226,7 +235,9 @@ button{
 	ici, la couleur du texte, du fond du bouton, et de la bordure sont modifié.
 
 	le curseur est également modifié pour mettre le pointeur correct car ce n'est pas déjà le cas
-	pour une raison qui m'échappe
+	pour une raison qui m'échappe.
+
+	afin de donner a l'utilisateur un retour visuel qu'il s'agit d'un bouton, 
 */
 
 button:hover{

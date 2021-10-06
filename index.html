@@ -1,101 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JustAFeeling, RPG Game</title>
-
-    <link rel="stylesheet" href="index.css">
-    <style type="text/css">
-      select {clear:both;}
-    </style>
-  </head>
+    <head>
+        <title>JustAFeeling, RPG Game</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        
+        <link rel="stylesheet" href="index.css">
+        
+        <style type="text/css">
+            select {
+                clear:both;
+            }
+        </style>
+    </head>
     <body>
-    <script>
-        // NOTE : enlever "close();" casse le script sur IE d'une façon ou d'une autre.
-        // je deteste ce navigateur
-        
-        // check pour le userargent 
-        detectIEregexp = (navigator.userAgent.indexOf('MSIE') != -1) ? /MSIE (\d+\.\d+);/ : /Trident.*rv[ :]*(\d+\.\d+)/ ;
-        
-        // print le resultat
-        console.log(detectIEregexp.test(navigator.userAgent) ? "l'utisateur utilise internet explorer" : "l'utilisateur n'utilise pas internet explorer");
+        <script>
+            // NOTE : enlever "close();" casse le script sur IE d'une façon ou d'une autre.
+            // je deteste ce navigateur
+            
+            // check pour le userargent 
+            detectIEregexp = (navigator.userAgent.indexOf('MSIE') != -1) ? /MSIE (\d+\.\d+);/ : /Trident.*rv[ :]*(\d+\.\d+)/ ;
+            
+            // print le resultat
+            console.log(detectIEregexp.test(navigator.userAgent) ? "l'utisateur utilise internet explorer" : "l'utilisateur n'utilise pas internet explorer");
 
-        // si on est sur internet explorer
-        if (detectIEregexp.test(navigator.userAgent)){ 
-            alert(navigator.appName + " n'est pas supporté. Le site ne marchera donc pas. merci d'utiliser un navigateur comme Firefox");
-            close();
-        }
+            // si on est sur internet explorer
+            if (detectIEregexp.test(navigator.userAgent)){ 
+                alert(navigator.appName + " n'est pas supporté. Le site ne marchera donc pas. merci d'utiliser un navigateur comme Firefox");
+                close();
+            }
 
-        // code volé sans honte ici :
-        // https://beamtic.com/change-iframe-src-javascript
-        // après j'ai changé pas mal de truc donc ça passe
-        // c'est pas 100% du vol
+            // code volé sans honte ici :
+            // https://beamtic.com/change-iframe-src-javascript
+            // après j'ai changé pas mal de truc donc ça passe
+            // c'est pas 100% du vol
 
-        function newSrc(name){        
-            document.getElementById("iframe_modifiable").src = name;
-            let drop1 = document.getElementById("drop1");
-            let drop2 = document.getElementById("drop2");
-        }
+            function newSrc(name){        
+                document.getElementById("iframe_modifiable").src = name;
+            }
 
 
-    </script>
-    <div id="topDuSite">
-        <center>
-            <table border="1">
-                <td><top>
-                    <div class="dropdown">
-                    <span>
-                        <pb id="black">_______</pb>
-                        <a href="javascript:void(0)" onclick="newSrc('pages/fake_index.html');">
-                            <pb>Menu principal</pb>
-                        </a>
-                    <pb id="black">______</pb>
-                                                                                                                                        <a href="javascript:void(0)" onclick="newSrc('templates/template_wiki.html');"><pb id="black">_</pb></a>
-                    </span>
-                    <div class="dropdown-content" id="drop1">
-                        <button onClick="newSrc('pages/fake_index.html');"><pr>Page principale</pr></button><br>
-                        <button onClick="newSrc('pages/Contributeur.html');"><pr>Contributeurs</pr></button><br>
-                        <button onClick="newSrc('pages/FAQ.html');"><pr>Foire aux questions</pr></button><br>
-                        <button onClick="newSrc('pages/mention_legale.html');"><pr>Mentions légales</pr></button><br>
-                    </div>
-                    </div>
-                </top></td>
-                <td><top>
-                    <div class="dropdown">
-                        <pb id="black">____________</pb>
-                        <a href="javascript:void(0)" onclick="newSrc('pages/fake_index.html');">
-                            <pb>Wiki</pb>
-                        </a>
-                        <pb id="black">____________</pb>
-                        <div class="dropdown-content" id="drop2">
-
-                            <button onClick="newSrc('wiki/index.html');"><pr>Page principale</pr></button><br>
-                            <button onClick="newSrc('wiki/characters/index.html');"><pr>Personnages disponibles</pr></button><br>
-                            <button onClick="newSrc('wiki/items/index.html');"><pr>Les Objets disponibles</pr></button><br>
-                            <button onClick="newSrc('wiki/places/index.html');"><pr>Les Endroits</pr></button><br>
+        </script>
+        <div id="topDuSite">
+            <center>
+                <table border="1">
+                    <td><top>
+                        <div class="dropdown">
+                        <span>
+                            <pb id="black">_______</pb>
+                            <a href="javascript:void(0)" onclick="newSrc('pages/fake_index.html');">
+                                <pb>Menu principal</pb>
+                            </a>
+                        <pb id="black">______</pb>
+                                                                                                                                            <a href="javascript:void(0)" onclick="newSrc('templates/template_wiki.html');"><pb id="black">_</pb></a>
+                        </span>
+                        <div class="dropdown-content" id="drop1">
+                            <button onClick="newSrc('pages/fake_index.html');"><pr>Page principale</pr></button><br>
+                            <button onClick="newSrc('pages/Contributeur.html');"><pr>Contributeurs</pr></button><br>
+                            <button onClick="newSrc('pages/FAQ.html');"><pr>Foire aux questions</pr></button><br>
+                            <button onClick="newSrc('pages/mention_legale.html');"><pr>Mentions légales</pr></button><br>
                         </div>
-                    </div>
-                </top></td>
-            </table>
-        </center>
-    </div>
-    <br>
-    <br><br><br>
+                        </div>
+                    </top></td>
+                    <td><top>
+                        <div class="dropdown">
+                            <pb id="black">____________</pb>
+                            <a href="javascript:void(0)" onclick="newSrc('pages/fake_index.html');">
+                                <pb>Wiki</pb>
+                            </a>
+                            <pb id="black">____________</pb>
+                            <div class="dropdown-content" id="drop2">
 
-    <iframe src="pages/fake_index.html" style="
-        position:fixed; 
-        top:0;
-        left:0; 
-        bottom:0; 
-        right:0;
-        width:100%;
-        height:100%;
-        border:none;
-        margin:0;
-        padding:0;
-        overflow:hidden;
-        z-index:1;"
-        id="iframe_modifiable">
-    </iframe>
-  </body>
+                                <button onClick="newSrc('wiki/index.html');"><pr>Page principale</pr></button><br>
+                                <button onClick="newSrc('wiki/characters/index.html');"><pr>Personnages disponibles</pr></button><br>
+                                <button onClick="newSrc('wiki/items/index.html');"><pr>Les Objets disponibles</pr></button><br>
+                                <button onClick="newSrc('wiki/places/index.html');"><pr>Les Endroits</pr></button><br>
+                            </div>
+                        </div>
+                    </top></td>
+                </table>
+            </center>
+        </div>
+        <br>
+        <br><br><br>
+
+        <iframe src="pages/fake_index.html" style="
+            position:fixed; 
+            top:0;
+            left:0; 
+            bottom:0; 
+            right:0;
+            width:100%;
+            height:100%;
+            border:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            z-index:1;"
+            id="iframe_modifiable">
+        </iframe>
+    </body>
+  
 
 </html>
