@@ -52,15 +52,19 @@
 #topDuSite
 {
 	background-color: rgba(128, 128, 128, 0.69);
+
+	align-content: center;
+
 	/* width est a 98% de la taille X de la fenêtre */
-	width : 99vw;
+	width : 1892px;
 	/* width est a 5% de la taille Y de la fenêtre */
-	height : 5vh;
+	height : 3vh;
 	padding-top:0.7vw;
 	padding-bottom:0.7vw;
 	/* fixée */
 	z-index:512;
 	position:absolute;
+	
 }
 
 #personnage
@@ -86,7 +90,9 @@
 	padding-right: 50px;
 	text-align: justify;
 
-	/*  NE PAS UTILISER ÇA POUR AUTRE CHOSE QUE DEBUG !!!!! 
+	height: 690px;
+
+	/*  NE PAS UTILISER ÇA POUR AUTRE CHOSE QUE DEBUG !!!!! */
 	border: ridge #ccc;
   	border-width: 6px;
 	/**/
@@ -99,7 +105,7 @@
 	padding-right: 50px;
 	text-align: justify;
 
-	/*  NE PAS UTILISER ÇA POUR AUTRE CHOSE QUE DEBUG !!!!! 
+	/*  NE PAS UTILISER ÇA POUR AUTRE CHOSE QUE DEBUG !!!!! */
 	border: ridge #ccc;
   	border-width: 6px;
 	/**/
