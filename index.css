@@ -103,7 +103,7 @@
 	padding-top: 50px;
 	padding-left: 50px;
 	padding-right: 50px;
-	text-align: justify;
+	text-align: center;
 
 	/*  NE PAS UTILISER ÇA POUR AUTRE CHOSE QUE DEBUG !!!!! */
 	border: ridge #ccc;
