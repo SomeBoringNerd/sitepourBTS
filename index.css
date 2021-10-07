@@ -72,6 +72,9 @@
 	
 	float: right;
 
+	padding-left: 10px;
+	padding-right: 10px;
+
 	border: ridge #ccc;
   	border-width: 6px;
 	z-index:128;
