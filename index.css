@@ -5,10 +5,10 @@
 //////////////////////////////////////////*/
 
 @font-face {
-	/*	par Elvina Amelia 
-	https://www.dafont.com/fr/minangkabau-2.font */
-	font-family: Minangkabau;
-	src: url(rescources/font/Minangkabau.ttf);
+	/*	par Ablaze 
+	https://www.dafont.com/fr/leicester.font */
+	font-family: Leicester;
+	src: url(rescources/font/Leicester_text.TTF);
 }
 @font-face {
 	/*	par Riciery Leal 
@@ -43,6 +43,7 @@
 
 /*
 	cheat sheet :
+	(c'est dur a dire wesh)
 
 	#classe : id="classe"
 	.classe : class="classe"
@@ -100,7 +101,7 @@
 
 #text_zone_2{
 
-	padding-top: 50px;
+	padding-top: 15px;
 	padding-left: 50px;
 	padding-right: 50px;
 	text-align: center;
@@ -127,6 +128,14 @@
 
 #li_extra_padding{
 	padding-left: 50px;
+}
+
+.test{
+	z-index: -5;
+}
+
+.barre{
+	text-decoration: line-through;
 }
 
 .dropdown {
@@ -161,16 +170,16 @@
 /*Titre de la page */
 megaTitle{
 	outline: solid;
-	font-family: Minangkabau;
+	font-family: Captureit;
 	color:rgb(0, 217, 255);
 	font-size:128px;
 }
 /* titre de la partie de la page */
 lesserTitle {
 	text-align: center;
-	font-family: Captureit;
+	font-family: Leicester;
 	color:red;
-	font-size:64px;
+	font-size:48px;
 }
 /* comme p mais plus petit */
 smallerParagraph{
