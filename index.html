@@ -14,9 +14,14 @@
     </head>
     <body>
         <script>
-            // NOTE : enlever "close();" casse le script sur IE d'une façon ou d'une autre.
-            // je deteste ce navigateur
-            
+
+
+            /*
+
+                ce script est utilisé pour faire marcher l'entièreté du site correctement
+                l'anti internet explorer est juste histoire de le rendre fool-proof.
+
+            */            
             // check pour le userargent 
             detectIEregexp = (navigator.userAgent.indexOf('MSIE') != -1) ? /MSIE (\d+\.\d+);/ : /Trident.*rv[ :]*(\d+\.\d+)/ ;
             
@@ -38,23 +43,24 @@
                 document.getElementById("iframe_modifiable").src = name;
             }
             
-            // le seul copié collé est le "POST / GET" wannabe pour js
-            // que j'ai eu ici :
+            // inspiré de ce que j'ai lu ici :
             // https://stackoverflow.com/a/17502197
+            // le code ici est plutôt différent dû a l'adaptation au contexte spécifique
+            // dans lequel celui-ci s'execute.
+
             window.onload = function()
             {
-                var defaultURL = 'file:///home/corentyn/Documents/GitHub/sitepourBTS/index.html';
                 var url = document.location.href;
 
-                let tmp; // l'enlever créer une erreur
-
+                // pour debug je print l'url actuelle du site
                 console.log(url.toString());
-                if(url != defaultURL){
-                    params = url.split('?')[1].split('&'),
-                    data = {}, tmp;
-                    changerDePage(params[0]);
+
+                // check
+                if(url.includes('index.html?')){
+                    POST = url.split('?')[1].split('&');
+                    changerDePage(POST[0]);
                 }else{
-                    changerDePage('pages/fake_index.html')
+                    location.href='index.html?pages/fake_index.html';
                 }
             }
 
