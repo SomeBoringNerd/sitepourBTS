@@ -53,11 +53,11 @@
 #topDuSite
 {
 	background-color: rgba(128, 128, 128, 0.69);
-
+	
 	align-content: center;
 
 	/* width est a 98% de la taille X de la fenêtre */
-	width : 1892px;
+	width : 1935px;
 	/* width est a 5% de la taille Y de la fenêtre */
 	height : 3vh;
 	padding-top:0.7vw;
@@ -118,7 +118,7 @@
 
 #green{
 	color:rgb(21, 255, 0);
-	font-size: 48px;
+	font-size: 24px;
 }
 
 #broder{
@@ -198,6 +198,10 @@ pb {
 	font-family: Captureit;
 	color:rgb(0, 217, 255);
 	font-size:24px;
+}
+
+green_text{
+	color: rgb(255, 0, 191);
 }
 
 

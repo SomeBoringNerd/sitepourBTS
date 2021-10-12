@@ -14,14 +14,9 @@
     </head>
     <body>
         <script>
-
-
-            /*
-
-                ce script est utilisé pour faire marcher l'entièreté du site correctement
-                l'anti internet explorer est juste histoire de le rendre fool-proof.
-
-            */            
+            // ce script est utilisé pour faire marcher l'entièreté du site correctement
+            // l'anti internet explorer est juste histoire de le rendre fool-proof.
+                                    
             // check pour le userargent 
             detectIEregexp = (navigator.userAgent.indexOf('MSIE') != -1) ? /MSIE (\d+\.\d+);/ : /Trident.*rv[ :]*(\d+\.\d+)/ ;
             
@@ -55,9 +50,22 @@
                 // pour debug je print l'url actuelle du site
                 console.log(url.toString());
 
-                // check
-                if(url.includes('index.html?')){
+                // check pour vérifier si on doit rediriger vers l'index ou une autre page
+                if(url.includes('index.html?') && !url.endsWith('index.html?')){
+
+                    // on récupère tout ce qu'il y'a après un "?" dans l'url.
+                    // ça pourrait causer des problèmes si plusieurs sont présents, mais
+                    // normalement ça devrait aller.
                     POST = url.split('?')[1].split('&');
+
+                    // abruti.
+                    if(!POST[0].endsWith('.html')){
+                        POST[0] += '.html';
+                    }
+
+                    // une fois fait on redirige vers la bonne page en utilisant 
+                    // la méthode disponible plus haut car le iframe ne marche
+                    // pas pareil.
                     changerDePage(POST[0]);
                 }else{
                     location.href='index.html?pages/fake_index.html';
@@ -96,9 +104,9 @@
                     <div class="dropdown-content" id="drop2">
 
                         <button onClick="location.href='index.html?wiki/index.html';"><pr>Page principale</pr></button><br>
-                        <button onClick="location.href='index.html?wiki/index.html';"><pr>Personnages disponibles</pr></button><br>
+                        <button onClick="location.href='index.html?wiki/index.html#MAIN'; location.reload()"><pr>Personnages disponibles</pr></button><br>
                         <button onClick="location.href='index.html?wiki/index.html';"><pr>Les Objets disponibles</pr></button><br>
-                        <button onClick="location.href='index.html?wiki/index.html';"><pr>Les Endroits</pr></button><br>
+                        <button onClick="location.href='index.html?wiki/index.html#ZONE'; location.reload()"><pr>Les Endroits</pr></button><br>
                     </div>
                 </div>
             </top>
