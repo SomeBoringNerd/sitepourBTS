@@ -1,18 +1,28 @@
 <html>
     <head>
         <title>undefined -- error 404</title>
+                    <!--Je vais être réélle, on en a pas vraiment besoin. 
+                        le seul problème c'est les polices d'écriture-->
         <link rel="stylesheet" href="http://localhost/index.css">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        
     </head>
     <body>
+        <br><br>
+        <img src="" id="image_contener" style="position: absolute;">
         <center>
-            <br><br><br><br><br><br><br><br><br>
-            <h1>
-                Désolé Link, mais ta page web est dans une autre cellule.<br>
-                celle-ci peut ne pas encore avoir été créée, le lien peut avoir<br>
-                expiré, ou l'url est simplement mauvaise.
-            </h1><br><br>
-            <h1><a href="http://localhost" target="_parent">Clique ici pour revenir a la page principale</a></h1>
+            <marquee direction="down" width="1300" height="750" behavior="alternate" style="border:solid" scrollamount="1" truespeed="3" scrolldelay="3">
+                <marquee behavior="alternate">
+                    <h1 style="size:12px">
+                        Désolé Link, mais ta page web est dans un autre chateau.<br>
+                        celle-ci peut ne pas encore avoir été créée, le lien peut avoir<br>
+                        expiré, ou l'url est simplement mauvaise.
+                    </h1><br>
+                        <!-- oui, il faut manuellement changer ce lien a chaque fois que l'on veut heberger le site ailleurs -->
+                    <h1><a href="http://localhost" target="_parent">Clique ici pour revenir a la page principale</a></h1>
+                </marquee>
+            </marquee>
         </center>
+        
     </body>
 </html>

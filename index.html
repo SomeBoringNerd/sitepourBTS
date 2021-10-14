@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!--
+
+        PROBLÈMES CONNUS :
+            -> les redirections utilisant une ancre ont un comportement aléatoire
+
+            -> l'image de la page 404 a des issues a charger une image aléatoire
+
+-->
 <html>
     <head>
         <title>JustAFeeling, RPG Game</title>
@@ -37,20 +45,32 @@
             function changerDePage(name){        
                 document.getElementById("iframe_modifiable").src = name;
             }
+
+            // fonction pour générer de l'aléatoire
+            function RandomInt(max){
+                return 
+            }
             
             // inspiré de ce que j'ai lu ici :
             // https://stackoverflow.com/a/17502197
-            // le code ici est plutôt différent dû a l'adaptation au contexte spécifique
+            // le code ici est plutôt différent dû
+            // a l'adaptation au contexte spécifique
             // dans lequel celui-ci s'execute.
 
+            // s'execute lors du chargement de la page
             window.onload = function()
             {
                 var url = document.location.href;
 
                 // pour debug je print l'url actuelle du site
+                // exemple : http://localhost/index.html?pages/fake_index.html
                 console.log(url.toString());
 
-                // check pour vérifier si on doit rediriger vers l'index ou une autre page
+                // super simple : le check vérifie qu'une requete
+                // POST existe dans l'url.
+                // la verification pour la fin de l'url
+                // sert a rendre le concept fool-proof
+                // car sinon ça charge le fichier "" qui ne peut exister
                 if(url.includes('index.html?') && !url.endsWith('index.html?')){
 
                     // on récupère tout ce qu'il y'a après un "?" dans l'url.
@@ -58,15 +78,19 @@
                     // normalement ça devrait aller.
                     POST = url.split('?')[1].split('&');
 
-                    // abruti.
-                    if(!POST[0].endsWith('.html')){
-                        POST[0] += '.html';
-                    }
-
                     // une fois fait on redirige vers la bonne page en utilisant 
                     // la méthode disponible plus haut car le iframe ne marche
                     // pas pareil.
                     changerDePage(POST[0]);
+
+                    if(url.includes('404.html')){
+                        let IMG_URL = 'http://localhost/rescources/memes/' + Math.floor(Math.random() * 10).toString() + '.png'
+                        document.getElementById('iframe_modifiable').contentWindow.document.getElementById('image_contener').src = IMG_URL;
+
+                        setTimeout(function(){
+                            //location.href='https://youtu.be/dQw4w9WgXcQ?autoplay=1';
+                        }, 10000);
+                    }
                 }else{
                     location.href='index.html?pages/fake_index.html';
                 }
@@ -84,7 +108,6 @@
                         <pb>Menu principal</pb>
                     </a>
                 <pb id="black">______</pb>
-                                                                                                                                    <a href="javascript:void(0)" onclick="newSrc('templates/template_wiki.html');"><pb id="black">_</pb></a>
                 </span>
                 <div class="dropdown-content" id="drop1">
                     <button onClick="location.href='index.html?pages/fake_index.html'"><pr>Page principale</pr></button><br>
@@ -104,9 +127,9 @@
                     <div class="dropdown-content" id="drop2">
 
                         <button onClick="location.href='index.html?wiki/index.html';"><pr>Page principale</pr></button><br>
-                        <button onClick="location.href='index.html?wiki/index.html#MAIN'; location.reload()"><pr>Personnages disponibles</pr></button><br>
+                        <button onClick="location.href='index.html?wiki/index.html#MAIN';"><pr>Personnages disponibles</pr></button><br>
                         <button onClick="location.href='index.html?wiki/index.html';"><pr>Les Objets disponibles</pr></button><br>
-                        <button onClick="location.href='index.html?wiki/index.html#ZONE'; location.reload()"><pr>Les Endroits</pr></button><br>
+                        <button onClick="location.href='index.html?wiki/index.html#ZONE';"><pr>Les Endroits</pr></button><br>
                     </div>
                 </div>
             </top>
