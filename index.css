@@ -35,6 +35,13 @@
 	src: url(rescources/font/Captureit.ttf);
 }
 
+@font-face {
+	/*	par Luce Avérous
+	https://www.dafont.com/fr/trashhand.font? */
+	font-family: trashhand;
+	src: url(rescources/font/alamain1.ttf);
+}
+
 /*//////////////////////////////////////////
 
 			classes id / class
@@ -83,7 +90,7 @@
 	border: ridge #ccc;
   	border-width: 6px;
 	z-index:128;
-	position:absolute;
+	position:relative;
 }
 
 #text_zone{
@@ -91,12 +98,10 @@
 	padding-right: 50px;
 	text-align: justify;
 
-	height: 690px;
+	height: 690px;	/* ahah funny number mais serieux c'est pile la bonne taille */
 
-	/*  NE PAS UTILISER ÇA POUR AUTRE CHOSE QUE DEBUG !!!!! */
 	border: ridge #ccc;
   	border-width: 6px;
-	/**/
 }
 
 #text_zone_2{
@@ -106,10 +111,8 @@
 	padding-right: 50px;
 	text-align: center;
 
-	/*  NE PAS UTILISER ÇA POUR AUTRE CHOSE QUE DEBUG !!!!! */
 	border: ridge #ccc;
   	border-width: 6px;
-	/**/
 }
 
 #black{
@@ -121,6 +124,20 @@
 	font-size: 24px;
 }
 
+#end_my_sufferings{
+	position: absolute;
+	padding-left: 30vw;
+}
+
+#contact_border{
+	outline: 8px ridge rgb(39, 39, 39);
+	border-radius: 2rem;
+	width: 75vw;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: rgba(59, 59, 59, 0.616);
+}
+
 #broder{
 	border: ridge #ccc;
   	border-width: 6px;
@@ -130,9 +147,16 @@
 	padding-left: 50px;
 }
 
-.test{
-	z-index: -5;
+.msg{
+	resize: none;
+	background-color: #525252;
+	font-size: 20px;
+	font-family: trashhand;
+	color:#ccc;
+	border: ridge #ccc;
+  	border-width: 6px;
 }
+
 
 .barre{
 	text-decoration: line-through;

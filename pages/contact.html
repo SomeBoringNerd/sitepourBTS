@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>Contact.wtf</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="../index.css">
+	</head>
+	<script>
+		function send_mail()
+		{
+			var name = document.getElementById('name');
+			var message = document.getElementById('msg');
+
+			let body = "J'aimerai vous contacter"
+
+			window.location.href = "mailto:pro.corentynsauvage@gmail.com?subject=[" + name.value + "] >> " + body + "&body=" + message.value;
+		}
+	</script>
+	<body>
+		
+		<center>
+			<div id="topDuSite">
+				<top>
+					<div class="dropdown">
+					<span>
+						<pb id="black">_______</pb>
+						<a href="javascript:void(0)" onclick="location.href='../index.html?pages/fake_index.html'">
+							<pb>Menu principal</pb>
+						</a>
+					<pb id="black">______</pb>
+					</span>
+					<div class="dropdown-content" id="drop1">
+						<button onClick="location.href='../index.html?pages/fake_index.html'"><pr>Page principale</pr></button><br>
+						<button onClick="location.href='../index.html?pages/Contributeur.html'"><pr>Contributeurs</pr></button><br>
+						<button onClick="location.href='../index.html?pages/FAQ.html'"><pr>Foire aux questions</pr></button><br>
+					</div>
+					</div>
+				</top>
+				<top>
+					<div class="dropdown">
+						<pb id="black">____________</pb>
+						<a href="javascript:void(0)" onclick="location.href='../index.html?wiki/index.html';">
+							<pb>Wiki</pb>
+						</a>
+						<pb id="black">____________</pb>
+						<div class="dropdown-content" id="drop2">
+	
+							<button onClick="location.href='../index.html?wiki/index.html';"><pr>Page principale</pr></button><br>
+							<button onClick="location.href='../index.html?wiki/index.html#MAIN';"><pr>Personnages disponibles</pr></button><br>
+							<button onClick="location.href='../index.html?wiki/index.html';"><pr>Les Objets disponibles</pr></button><br>
+							<button onClick="location.href='../index.html?wiki/index.html#ZONE';"><pr>Les Endroits</pr></button><br>
+						</div>
+					</div>
+				</top>
+				<top>
+					<div class="dropdown">
+						<pb id="black">____________</pb>
+						<a href="javascript:void(0)" onclick="location.href='../index.html?wiki/index.html';">
+							<pb>Meta</pb>
+						</a>
+						<pb id="black">____________</pb>
+						<div class="dropdown-content" id="drop2">
+	
+							<button onClick="location.href='../index.html?pages/propos_site.html';"><pr>A propos du site</pr></button><br>
+							<button onClick="location.href='https://github.com/Corentynn/sitepourBTS'"><pr>Code source (github)</pr></button><br>
+							<button onClick="location.href='contact.html'"><pr>contacter le gérant</pr></button><br>
+							<button onClick="location.href='../index.html?pages/mention_legale.html'"><pr>Mentions légales</pr></button><br>
+						</div>
+					</div>
+				</top>
+			</div><br><br><br><br><br>
+			<megaTitle>Page de contact</megaTitle><br><br>
+			<lesserTitle>vous pouvez venir me contacter ici</lesserTitle>
+			<p>______________________________________________________________________________</p>
+			<p>Note : si vous utilisez une boite mail dans le navigateur, <a href="javascript:void(0)" onclick="alert('mon adresse mail est \'pro.corentynsauvage@gmail.com\', faites en bon usage :-)');" title="ceci est un lien cliquable">cliquez ici</a> pour obtenir mon adresse mail</p><br>
+			</center>
+			<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" title="putain mais tuez moi vous voyez bien que j'ai un problème">
+			<center>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div id="contact_border">
+                <form>
+					<div>
+						<label for="name"><p>Nom :</p></label>
+						<input type="text" id="name" name="user_name" class="msg">
+					</div>
+					<div>
+						<label for="msg"><p>Message :</p></label>
+						<textarea id="msg" name="user_message" rows="7" cols="50" class="msg"></textarea>
+					</div><br><br>
+					<div class="button">
+						<button onclick="send_mail();" title="cliquer sur ce bouton va ouvrir votre boite mail si vous en avez une d'installée"><pr>Envoyer le message</pr></button>
+					</div>
+				</form>
+            </div>
+		</center>
+	</body>
+	
+</html>
