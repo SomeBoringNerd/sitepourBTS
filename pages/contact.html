@@ -10,9 +10,18 @@
 			var name = document.getElementById('name');
 			var message = document.getElementById('msg');
 
-			let body = "J'aimerai vous contacter"
+			let body = "J'aimerai vous contacter";
 
-			window.location.href = "mailto:pro.corentynsauvage@gmail.com?subject=[" + name.value + "] >> " + body + "&body=" + message.value;
+			let name_properly_formated = name.value.replace("/\s+g", "")
+			let message_properly_formated = message.value.replace("/\s+g", "")
+			if(name_properly_formated === "" || message_properly_formated == "")
+			{
+				alert("merci de ne pas laisser la case \"nom\" ou \"message\" vide ou avec uniquement des espaces")
+			}
+			else{
+				window.location.href = "mailto:pro.corentynsauvage@gmail.com?subject=[" + name.value + "] >> " + body + "&body=" + message.value;
+			}
+			
 		}
 	</script>
 	<body>
@@ -73,7 +82,7 @@
 			<p>______________________________________________________________________________</p>
 			<p>Note : si vous utilisez une boite mail dans le navigateur, <a href="javascript:void(0)" onclick="alert('mon adresse mail est \'pro.corentynsauvage@gmail.com\', faites en bon usage :-)');" title="ceci est un lien cliquable">cliquez ici</a> pour obtenir mon adresse mail</p><br>
 			</center>
-			<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" title="putain mais tuez moi vous voyez bien que j'ai un problème">
+			<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" title="tuez moi j'ai perdu 3h de ma vie a placer ce truc au bon endroit">
 			<center>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<div id="contact_border">

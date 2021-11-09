@@ -25,7 +25,7 @@
             // ce script est utilisé pour faire marcher l'entièreté du site correctement
             // l'anti internet explorer est juste histoire de le rendre fool-proof.
                                     
-            // check pour le userargent 
+            // check pour le userargent                                     eww regex scaryy
             detectIEregexp = (navigator.userAgent.indexOf('MSIE') != -1) ? /MSIE (\d+\.\d+);/ : /Trident.*rv[ :]*(\d+\.\d+)/ ;
             
             // print le resultat
@@ -34,30 +34,11 @@
             // si on est sur internet explorer
             if (detectIEregexp.test(navigator.userAgent)){ 
                 alert(navigator.appName + " n'est pas supporté. Le site ne marchera donc pas. merci d'utiliser un navigateur comme Firefox");
-                close();
-            }
-
-            // code volé sans honte ici :
-            // https://beamtic.com/change-iframe-src-javascript
-            // après j'ai changé pas mal de truc donc ça passe
-            // c'est pas 100% du vol
-
-            function changerDePage(name){        
-                document.getElementById("iframe_modifiable").src = name;
-            }
-
-            // fonction pour générer de l'aléatoire
-            function RandomInt(max){
-                return 
             }
             
-            // inspiré de ce que j'ai lu ici :
+            // transferer / conserver des infos d'une page a l'autre
+            // en PHP c'est ezzz mais en html / js faut un peu plus d'ingéniosité
             // https://stackoverflow.com/a/17502197
-            // le code ici est plutôt différent dû
-            // a l'adaptation au contexte spécifique
-            // dans lequel celui-ci s'execute.
-
-            // s'execute lors du chargement de la page
             window.onload = function()
             {
                 var url = document.location.href;
@@ -66,29 +47,29 @@
                 // exemple : http://localhost/index.html?pages/fake_index.html
                 console.log(url.toString());
 
-                // super simple : le check vérifie qu'une requete
+                /* super simple : le check vérifie qu'une requete
                 // POST existe dans l'url.
                 // la verification pour la fin de l'url
                 // sert a rendre le concept fool-proof
-                // car sinon ça charge le fichier "" qui ne peut exister
+                // car sinon ça charge le fichier "" qui ne peut exister */
+
                 if(url.includes('index.html?') && !url.endsWith('index.html?')){
 
                     // on récupère tout ce qu'il y'a après un "?" dans l'url.
-                    // ça pourrait causer des problèmes si plusieurs sont présents, mais
-                    // normalement ça devrait aller.
+                    // ça pourrait causer des problèmes si plusieurs sont présents
+                    // mais vu que je fais en sorte pour que ça n'arrive pas
+                    // seul un attardé sans cervelle devrai pouvoir le faire volontairement
+
                     POST = url.split('?')[1].split('&');
-
-                    // une fois fait on redirige vers la bonne page en utilisant 
-                    // la méthode disponible plus haut car le iframe ne marche
-                    // pas pareil.
-                    changerDePage(POST[0]);
-
-                    if(url.includes('404.html')){
-                        let IMG_URL = 'http://localhost/rescources/memes/' + Math.floor(Math.random() * 10).toString() + '.png'
-                        document.getElementById('iframe_modifiable').contentWindow.document.getElementById('image_contener').src = IMG_URL;
-
-                        setTimeout(function(){
-                            //location.href='https://youtu.be/dQw4w9WgXcQ?autoplay=1';
+                    document.getElementById("iframe_modifiable").src = POST[0];
+                    
+                    // petite blague pas importante 
+                    if(url.includes('404.html'))
+                    {
+                        setTimeout(function()
+                        {
+                            // >:c
+                            location.href='https://youtu.be/dQw4w9WgXcQ?autoplay=1';
                         }, 10000);
                     }
                 }else{
@@ -142,7 +123,7 @@
                     <div class="dropdown-content" id="drop2">
 
                         <button onClick="location.href='index.html?pages/propos_site.html';"><pr>A propos du site</pr></button><br>
-                        <button onClick="location.href='https://github.com/Corentynn/sitepourBTS'"><pr>Code source (github)</pr></button><br>
+                        <button onClick="location.href='https://github.com/SomeBoringNerd/sitepourBTS'"><pr>Code source (github)</pr></button><br>
                         <button onClick="location.href='pages/contact.html'"><pr>contacter le gérant</pr></button><br>
                         <button onClick="location.href='index.html?pages/mention_legale.html'"><pr>Mentions légales</pr></button><br>
                     </div>
