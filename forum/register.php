@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>Créer un compte</title>
@@ -109,34 +109,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </style>
     </head>
     <body>
+    <?php include("../entete.php");?><br><br><br><br>
         <center>
             <megaTitle>Créer un compte</megaTitle>
-            <div class="wrapper" id="msg">
-                <p>Remplissez ce formulaire pour créer un compte.</p>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <div class="form-group">
-                        <label><p>nom d'utilisateur</p></label>
-                        <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                        <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                    </div>    
-                    <div class="form-group">
-                        <label><p>mot de passe</p></label>
-                        <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                        <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <label><p>confirmez le mot de passe</p></label>
-                        <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-                        <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <button id="button_register" type="submit" class="btn btn-primary" value="Submit"><pr>Valider l'inscription</pr></button>
-                        <button id="button_register" type="reset" class="btn btn-secondary ml-2" value="Reset"><pr>réinitialiser</pr></button>
-                    </div>
-                    <p>vous avez déjà un compte? <a href="login.php">connectez vous ici</a>.</p>
-                </form>
-            </div>    
+            <p>Remplissez ce formulaire pour créer un compte.</p>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label><p>nom d'utilisateur</p></label>
+                    <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                </div>    
+                <div class="form-group">
+                    <label><p>mot de passe</p></label>
+                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                </div>
+                <div class="form-group">
+                    <label><p>confirmez le mot de passe</p></label>
+                    <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button id="button_register" type="submit" class="btn btn-primary" value="Submit"><pr>Valider</pr></button>
+                    <button id="button_register" type="reset" class="btn btn-secondary ml-2" value="Reset"><pr>réinitialiser</pr></button>
+                </div>
+                <p>vous avez déjà un compte? <a href="login.php">connectez vous ici</a>.</p>
+            </form>
         <center>
     </body>
 </html>

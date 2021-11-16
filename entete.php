@@ -1,5 +1,14 @@
 <?php
     $NOM_DU_SITE = "localhost";
+
+    session_start();
+    
+        $USERNAME = "pas connecté";
+
+    // Check if the user is already logged in, if yes then redirect him to welcome page
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+        $USERNAME = $_SESSION["username"];
+    }
 ?>
 
 
@@ -53,13 +62,32 @@
             </div>
         </top>
         <top>
-        <div class="dropdown">
+            <div class="dropdown">
                 <pb id="black">____________</pb>
                 <?php echo "<a href=\"javascript:void(0)\" onclick=\"location.href='http://$NOM_DU_SITE/forum'\">"; ?>
-                <pb>Forum (beta)</pb>
-                </a>
+                <?php echo "<pb>Mon compte ($USERNAME)</pb></a>";?>
                 <pb id="black">____________</pb>
+                <div class="dropdown-content" id="drop4">
+                    <?php
+                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                            echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/index.php';\"><pr>Forum (beta)</pr></button><br>";
+                        }
+                    ?>
+                    <button onClick="location.href='https://github.com/SomeBoringNerd/sitepourBTS'"><pr>Code source (github)</pr></button><br>
+                    
+                    <?php 
+                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                            echo"<button onClick=\"location.href='http://$NOM_DU_SITE/pages/contact.php'\"><pr>contacter le gérant</pr></button><br>";
+                            echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/logout.php'\"><pr>Déconnexion</pr></button><br>";
+                        } else{
+                            echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/register.php'\"><pr>créer un compte</pr></button><br>";
+                            echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/login.php'\"><pr>se connecter</pr></button><br>";
+                        }
+                        
+                    ?>
+                </div>
             </div>
         </top>
     </div>
+     
 </center>

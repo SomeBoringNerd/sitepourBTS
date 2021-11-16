@@ -1,3 +1,10 @@
+<?php
+	if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
+		header("location: ../forum/login.php");
+		exit;
+	}
+?>
+
 <html>
 	<head>
 		<title>Contact.wtf</title>
