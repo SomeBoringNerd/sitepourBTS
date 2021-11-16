@@ -6,13 +6,13 @@
 	</head>
 	
 	<body>
-		<span id="haut"></span>
+    <?php include("../../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>
 			<megaTitle>Site-19</megaTitle><br><br>
 			<lesserTitle>"Science pour le Dieu de la Science!"</lesserTitle>
-            <p>- <a href="../../index.html?wiki/characters/PS_JackBright.html" target="_parent">Dr.Jack Bright</a>, directeur du site 19</p>
+            <p>- <a href="wiki/characters/PS_JackBright.html" target="_parent">Dr.Jack Bright</a>, directeur du site 19</p>
 			
 		</center>
 		<div id="text_zone_2">
@@ -20,7 +20,7 @@
 																								<!-- note : créer la page-->
 			<p>
                 Le site 19 est un endroit qui sert a contenir des créatures anormales et dangeureuses.
-                le joueur sera mené a faire quelques missions pour le <a href="../../index.html?wiki/characters/PS_JackBright.html" target="_parent">Dr.Jack Bright</a>, lui même une anomalie,
+                le joueur sera mené a faire quelques missions pour le <a href="wiki/characters/PS_JackBright.html" target="_parent">Dr.Jack Bright</a>, lui même une anomalie,
                 afin de continuer.
             </p>
 
@@ -60,7 +60,7 @@
 		</div>
         <div id="text_zone_2">
             <lesserTitle>Liste d'anomalies contenues au site 19</lesserTitle>
-            <p><a href="../../index.html?pages/404.html">NOM DE L'ANOMALIE || ALIAS DE L'ANOMALIE || CLASSIFICATION</a></p>
+            <p><a href="pages/404.html">NOM DE L'ANOMALIE || ALIAS DE L'ANOMALIE || CLASSIFICATION</a></p>
         </div>
 		
 	</body>
@@ -68,6 +68,6 @@
 
 <!--
 
-    <p><a href="../../index.html?pages/404.html">NOM DE L'ANOMALIE || ALIAS DE L'ANOMALIE || CLASSIFICATION</a></p>
+    <p><a href="pages/404.html">NOM DE L'ANOMALIE || ALIAS DE L'ANOMALIE || CLASSIFICATION</a></p>
 
 -->

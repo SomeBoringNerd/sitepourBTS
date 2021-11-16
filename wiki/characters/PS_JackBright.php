@@ -5,13 +5,14 @@
 		<link rel="stylesheet" href="../../index.css">
 
 		<meta content="JustAFeeling shared page" property="og:title" />
-		<meta content="Page du Dr.Bright, votre scientifique fou favori" property="og:description" />
-		<meta content="https://corentynn.github.io/" property="og:url" />
-		<meta content="https://corentynn.github.io/travaux_scolaires/BTS/site/rescources/img/SCP-963-HOST.png" property="og:image" />
+		<meta content="Le docteur Jack Bright est l'un des esprits les plus brillant de ce monde, venez en découvrir plus a son sujet ici" property="og:description" />
+		<meta content="http://localhost/wiki/characters/PS_JackBright.php" property="og:url" />
+		<meta content="http://localhost/rescources/img/SCP-963-HOST.png" property="og:thumbnail"/>
 		<meta content="#43B581" data-react-helmet="true" name="theme-color" />
 	</head>
 	
 	<body>
+	<?php include("../../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>
@@ -29,8 +30,8 @@
 				</a>
 
 				<p>alias :<br>"putain, pas lui!"</p>
-				<p>zone  :<br><a href="../../index.html?wiki/places/site-19.html" target="_parent">Site-19</a></p>
-				<p>faction :<br><a href="../../index.html?wiki/characters/F_scp_fondation.html">SCP-Fondation</a></p>
+				<p>zone  :<br><a href="wiki/places/site-19.html" target="_parent">Site-19</a></p>
+				<p>faction :<br><a href="wiki/characters/F_scp_fondation.html">SCP-Fondation</a></p>
 				<p>statut :<br>Personnage secondaire /<br>Directeur de site /<br>anomalie / bookmaker / savant fou /<p class="barre" title="NON IL NE L'EST PAS !">fait de bacon</p></p>
 
 			</div>
@@ -42,7 +43,7 @@
 				ou encore "Putain, encore lui !", 
 				est l'un des esprits les plus brillants de la Fondation SCP.
 				<br><br>
-				Il a reçu <a href="../../index.html?wiki/items/IS_SCP-963.html" target="_parent">SCP-963</a> pour faire des recherches dessus,
+				Il a reçu <a href="wiki/items/IS_SCP-963.html" target="_parent">SCP-963</a> pour faire des recherches dessus,
 				Il est mort. Il est revenu,.
 				Et depuis il a joué un role majeur dans la recherche et le confinement d'anomalies.
 

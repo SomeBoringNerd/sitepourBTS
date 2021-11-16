@@ -3,10 +3,15 @@
 		<title>template.html</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="../../index.css">
-	</head>
+		
+		<meta content="JustAFeeling shared page" property="og:title" />
+		<meta content="Sauelsuesor est la gardienne de l'équilibre, de la lumière, et la soeur du soleil, venez en découvrir plus a son sujet ici" property="og:description" />
+		<meta content="http://localhost/wiki/characters/PF_Sauelsuesor.php" property="og:url" />
+		<meta content="http://localhost/rescources/img/Sauelsuesor_face.jpg" property="og:thumbnail"/>
+		<meta content="#43B581" data-react-helmet="true" name="theme-color" />
 	
 	<body>
-		<span id="haut"></span>
+	<?php include("../../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>
@@ -45,7 +50,7 @@
 				>> Le symbole de l'étain dans la région abdominale inférieure.<br><br>
 
 				En plus de ça, il s'agit de la seule déesse qui a put fuir
-				<a href="../../index.html?wiki/characters/B_bob.html"> < BOB ></a>
+				<a href="B_bob.php"> < BOB ></a>
 				quand celui-ci est entré au Domaine des Dieux. Par conséquent, elle est sa dernière cible.<br>
 				<br>
 				Elle dispose d'une puissance
@@ -89,7 +94,7 @@
 					</p>
 				</il>
 				<il>
-					<p id="green"><a href="../../index.html?wiki/event/WHEN_DAY_BREAK.html">< DAY BREAK ></a></p>
+					<p id="green"><a href="wiki/event/WHEN_DAY_BREAK.html">< DAY BREAK ></a></p>
 					<p id="li_extra_padding"> L'activation de cette capacité résulte automatiquement en Game Over.<br>
 						<br>
 						Lors de l'activation de cette capacité, le symbole situé là où le coeur de <i style="color: rgb(195, 0, 255);">La Vigile</i> devrait être
@@ -101,7 +106,7 @@
 						ils ne doivent plus être considérés comme tel.
 						<br><br>
 						Plus d'informations peuvent être trouvées sur la page de <br>
-						<a href="../../index.html?wiki/event/WHEN_DAY_BREAK.html">< L'évenemment de Classe XK d'extinction de masse "WHEN DAY BREAK" ></a>
+						<a href="../event/WHEN_DAY_BREAK.html">< L'évenemment de Classe XK d'extinction de masse "WHEN DAY BREAK" ></a>
 					</p>
 				</il>
 			</ol>

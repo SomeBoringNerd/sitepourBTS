@@ -1,17 +1,17 @@
 <html>
 	<head>
-		<title>template.html</title>
+		<title>template.php</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" href="../index.css">
+		<link rel="stylesheet" href="../../index.css">
 	</head>
 	
 	<body>
-		<span id="haut"></span>
+	<?php include("../../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>
 			<megaTitle>SCP-682</megaTitle><br><br>
-			<lesserTitle>Le lézard difficile a tuer </lesserTitle>
+			<lesserTitle>aka Le lézard difficile a tuer </lesserTitle>
 			<p>______________________________________________________________________________________________________</p><br>
 		
 
@@ -22,8 +22,8 @@
 				<img src="http://fondationscp.wdfiles.com/local--files/scp-682/monster8.jpg" height="200" width="200" id="broder">
 
 				<p>alias :<br>Le reptile<br>difficile a tuer</p>
-				<p>zone  :<br><a href="../wiki/places/site-19.html">Site-19</a></p>
-				<p>faction :<br><a href="../wiki/characters/chaos_insurgency.html">L'insurrection<br>du Chaos</a></p>
+				<p>zone  :<br><a href="../places/site-19.php" target="_parent">Site-19</a></p>
+				<p>faction :<br>sans faction</p>
 				<p>statut :<br>boss de zone</p>
 
 			</div>
@@ -88,7 +88,7 @@
 			
 			<p>Quand la créature se mettra sur le dos (CàD quand elle sera si affaiblie qu'elle devra dormir),
 				ce sera le moment de l'achever. Les attaques magiques les plus efficaces sont :
-				<ol>
+				<ol>					
 					<il><p id="green">Hell froze over :</p>
 						<p id="li_extra_padding">particulièrement puissant quand les stats de feu et glace sont au maximum, ce qui est possible considérant que
 							c'est l'une des dernières zones du jeu et qu'il y'a deux nombreux ennemis présents pour faire monter ses niveaux

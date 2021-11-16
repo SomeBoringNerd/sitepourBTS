@@ -1,17 +1,24 @@
 <html>
     <head>
         <title>undefined -- error 404</title>
-                    <!--Je vais être réélle, on en a pas vraiment besoin. 
-                        le seul problème c'est les polices d'écriture-->
+                    <!--Je vais être honnete, on en a pas vraiment besoin. 
+                        le seul problème c'est les polices d'écriture
+                        mais ça ne pose pas vraiment problème
+                    
+                        il faut remplacer l'url au moment de publier sur
+                        github sinon ça marche pas-->
         <link rel="stylesheet" href="http://localhost/index.css">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         
     </head>
     <body>
+        <?php include("../entete.php"); ?>
         <br><br>
         <img src="" id="image_contener" style="position: absolute;">
         <center>
-            <marquee direction="down" width="1300" height="750" behavior="alternate" style="border:solid" scrollamount="1" truespeed="3" scrolldelay="3">
+            <marquee direction="down" width="1300" 
+                    height="750" behavior="alternate" style="border:solid" 
+                    scrollamount="1" truespeed="3" scrolldelay="3">
                 <marquee behavior="alternate">
                     <h1 style="size:12px">
                         Désolé Link, mais ta page web est dans un autre chateau.<br>
@@ -20,8 +27,9 @@
                         il est fortement probable que la page en question ne dispose pas d'assez de contenu<br>
                         pour être contacté. Cet incident a automatiquement été loggé a des fins de debugage.
                     </h1><br>
-                        <!-- oui, il faut manuellement changer ce lien a chaque fois que l'on veut heberger le site ailleurs -->
-                    <h1><a href="http://localhost/index.html" target="_parent">Clique ici pour revenir a la page principale</a></h1>
+                        <!-- oui, il faut manuellement changer ce lien a chaque fois 
+                            que je passe de mon nginx local a Github Pages. putain. -->
+                    <h1><a href="http://localhost/" target="_parent">Clique ici pour revenir a la page principale</a></h1>
                 </marquee>
             </marquee>
         </center>

@@ -6,6 +6,7 @@
 	</head>
 	
 	<body>
+	<?php include("../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>

@@ -63,9 +63,8 @@
 	
 	align-content: center;
 
-	/* width est a 98% de la taille X de la fenêtre */
 	width : 1888px;
-	/* width est a 5% de la taille Y de la fenêtre */
+
 	height : 3vh;
 	padding-top:0.7vw;
 	padding-bottom:0.7vw;
@@ -74,6 +73,7 @@
 	position:absolute;
 	
 }
+
 
 #personnage
 {
@@ -171,7 +171,7 @@
 	display: none;
 	position: absolute;
 	background-color: #414141;
-	min-width: 140px;
+	width: 360px;
 	outline: solid;
 	padding: 10px 10px;
 	z-index: 64;
@@ -274,16 +274,18 @@ button{
 	color: black;
 	border: 2px solid #0000ff;
 	padding: 20px 100px;
+	width: 350px;
 }
 
 /*
 	l'utilité de :hover permet de changer le css d'un élément quand celui-ci a le curseur de souris sur lui.
 	ici, la couleur du texte, du fond du bouton, et de la bordure sont modifié.
 
-	le curseur est également modifié pour mettre le pointeur correct car ce n'est pas déjà le cas
-	pour une raison qui m'échappe.
+	le curseur est également modifié pour mettre le pointeur correct car pour une raison inconnue
+	les boutons en html ne changent pas le curseur en pointer par défaut,
+	c'est vraiment attardé mais bon, au moins c'est simple a corriger
 
-	afin de donner a l'utilisateur un retour visuel qu'il s'agit d'un bouton, 
+	afin de donner a l'utilisateur un retour visuel qu'il s'agit d'un bouton
 */
 
 button:hover{

@@ -1,12 +1,18 @@
 <html>
 	<head>
-		<title>template.html</title>
+		<title>template.php</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="../../index.css">
+
+		<meta content="JustAFeeling shared page" property="og:title" />
+		<meta content="BOB est un antagoniste extremement fort et intelligent, venez en découvrir plus a son sujet ici" property="og:description" />
+		<meta content="http://localhost/wiki/characters/B_BOB.php" property="og:url" />
+		<meta content="http://localhost/rescources/img/illustrations/bob_face.png" property="og:thumbnail"/>
+		<meta content="#43B581" data-react-helmet="true" name="theme-color" />
 	</head>
 	
 	<body>
-		<span id="haut"></span>
+	<?php include("../../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>
@@ -19,8 +25,8 @@
 				<img src="../../rescources/img/illustrations/bob_face.png" height="200" width="200" id="broder">
 
 				<p>alias :<br>Le dévoreur<br>de dieux</p>
-				<p>zone  :<br><a href="../../index.html?wiki/places/END_GodDomain.html">Domaine des dieux</a></p>
-				<p>faction :<br><a href="../../index.html?wiki/characters/F_chaos_insurgency.html">L'insurrection<br>du Chaos</a></p>
+				<p>zone  :<br><a href="../places/END_GodDomain.php">Domaine des dieux</a></p>
+				<p>faction :<br><a href="F_chaos_insurgency.php">L'insurrection<br>du Chaos</a></p>
 				<p>statut :<br>boss de fin</p>
 
 			</div>

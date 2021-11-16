@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>template.html</title>
+		<title>template.php</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="../index.css">
         <link rel="stylesheet" href="wiki-specific.css">
@@ -8,13 +8,14 @@
 	</head>
 
 	<body>
+    <?php include("../entete.php"); ?>
 		<br><br><br><br><br>
 		<center>
 			<megaTitle>Wiki du jeu</megaTitle><br><br>
 			<p>______________________________________________________________________________</p><br>
             <div id="title">
                 <p>
-                    <a href="../index.html?wiki/index.html#RULE">lisez les règles du wiki ici</a><br><br>
+                    <a href="index.php#RULE">lisez les règles du wiki ici</a><br><br>
                     afin d'aider les petits nouveaux dans ce jeu, un wiki est disponible, possèdant 
                     un nombre d'informations suffisant pour vous permettre de jouer dans les meilleures conditions
                 </p>
@@ -22,27 +23,27 @@
             <p>______________________________________________________________________________</p><br>
 			
 			<lesserTitle id="MAIN">Personnages principaux</lesserTitle>
-			<p><a href="../index.html?wiki/characters/M_mc.html" target="_parent">Personnage principal || protagoniste</a></p>
-            <p><a href="../index.html?wiki/characters/B_bob.html" target="_parent">Bob || antagoniste</a></p>
-            <p><a href="../index.html?wiki/characters/PF_Sauelsuesor.html" target="_parent"><i style="color:rgb(0, 217, 255);">Sauelsuesor</i> || personnage secondaire</a></p>
+			<p><a href="characters/M_mc.php" target="_parent">Personnage principal || protagoniste</a></p>
+            <p><a href="characters/B_bob.php" target="_parent">Bob || antagoniste</a></p>
+            <p><a href="characters/PF_Sauelsuesor.php" target="_parent"><i style="color:rgb(0, 217, 255);">Sauelsuesor</i> || personnage secondaire</a></p>
 
             <lesserTitle id="SECO">Personnages Secondaires</lesserTitle>
-			<p><a href="../index.html?wiki/characters/PS_JackBright.html" target="_parent">Dr.Jack Bright || Directeur du site 19</a></p>
+			<p><a href="characters/PS_JackBright.php" target="_parent">Dr.Jack Bright || Directeur du site 19</a></p>
 
             <lesserTitle id="BOSS">Boss de zone</lesserTitle>
-			<p><a href="../index.html?wiki/characters/B_SCP-682.html" target="_parent">SCP-682 || Boss de zone</a></p>
-            <p><a href="../index.html?wiki/characters/B_bob.html" target="_parent">Bob || antagoniste</a></p>
+			<p><a href="characters/B_SCP-682.php" target="_parent">SCP-682 || Boss de zone</a></p>
+            <p><a href="characters/B_bob.php" target="_parent">Bob || antagoniste</a></p>
 
             <lesserTitle id="FACT">Faction</lesserTitle>
-			<p><a href="../index.html?wiki/characters/F_chaos_insurgency.html" target="_parent">L'Insurrection du Chaos || Les méchants</a></p>
+			<p><a href="characters/F_chaos_insurgency.php" target="_parent">L'Insurrection du Chaos || Les méchants</a></p>
 
             <lesserTitle id="ZONE">Zones du jeu</lesserTitle>
-			<p><a href="../index.html?wiki/places/END_GodDomain.html" target="_parent">Domaine des dieux</a></p>
-            <p><a href="../index.html?wiki/places/site-19.html" target="_parent">Site 19</a></p>
-            <p><a href="../index.html?pages/404.html" target="_parent">La bibliothèque des Wanderers</a></p>
+			<p><a href="places/END_GodDomain.php" target="_parent">Domaine des dieux</a></p>
+            <p><a href="places/site-19.php" target="_parent">Site 19</a></p>
+            <p><a href="../pages/404.php" target="_parent">La bibliothèque des Wanderers</a></p>
 
             <lesserTitle id="ITEM">Objets</lesserTitle>
-			<p><a href="../index.html?wiki/items/IS_SCP-963.html" target="_parent">SCP-693 || L'Immortalité</a></p>
+			<p><a href="items/IS_SCP-963.php" target="_parent">SCP-693 || L'Immortalité</a></p>
 
             <p>______________________________________________________________________________</p><br>
             <lesserTitle id="RULE">Lisez les règles avant de contribuer</lesserTitle>

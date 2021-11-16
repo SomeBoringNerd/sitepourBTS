@@ -1,3 +1,5 @@
+<?php?>
+
 <html>
 	<head>
 		<title>template.html</title>
@@ -6,11 +8,12 @@
 	</head>
 	
 	<body>
+	<?php include("../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>
-			<megaTitle>A propos du site</megaTitle><br><br>
-			<lesserTitle>akka : annecdotes, funfacts et autre</lesserTitle>
+			<megaTitle>Forum.php</megaTitle><br><br>
+			<lesserTitle>En cours de construction</lesserTitle>
 			<p>______________________________________________________________________________</p><br>
 		</center>
 	</body>

@@ -6,7 +6,7 @@
 	</head>
 	
 	<body>
-		<span id="haut"></span>
+	<?php include("../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>

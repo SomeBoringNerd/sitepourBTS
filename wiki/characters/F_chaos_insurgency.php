@@ -3,10 +3,16 @@
 		<title>template.html</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="../../index.css">
+		
+		<meta content="JustAFeeling shared page" property="og:title" />
+		<meta content="L'insurrection du Chaos, une faction très violente mais si interessante, venez en découvrir leurs sombres dessins ici" property="og:description" />
+		<meta content="http://localhost/wiki/characters/PF_Sauelsuesor.php" property="og:url" />
+		<meta content="http://localhost/rescources/img/illustrations/CHAOS_INSURGENCY.png" property="og:thumbnail"/>
+		<meta content="#43B581" data-react-helmet="true" name="theme-color" />
 	</head>
 	
 	<body>
-		<span id="haut"></span>
+	<?php include("../../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>

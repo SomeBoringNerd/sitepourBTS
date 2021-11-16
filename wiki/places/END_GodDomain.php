@@ -6,6 +6,7 @@
 	</head>
 	
 	<body>
+	<?php include("../../entete.php"); ?>
 		<br>
 		<br><br><br>
 		<center>
@@ -18,7 +19,7 @@
                 <p>
                     Le Domaine des Dieux est l'endroit où les Dieux vivaient, avant
                     ce jour tragique où BOB, en totale folie meurtrière, débarquat de l'une des nombreuses
-                    sortie de la <a href="../../index.html?pages/404.html" target="_parent">Librairie des Wanderers</a>
+                    sortie de la <a href="pages/404.html" target="_parent">Librairie des Wanderers</a>
                 </p>
 			</div>
 		</center>
