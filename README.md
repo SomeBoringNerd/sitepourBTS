@@ -82,6 +82,7 @@ le mot de passe par défaut est vide.
 a la suite, écrivez ces commandes en remplaçant USERNAME par le nom d'utilisateur du compte admin :
 
 ```
+
 create user USERNAME@'localhost' identified by 'MOT DE PASSE';
 grant all privileges on *.* to USERNAME@'localhost';
 flush privileges;
@@ -102,3 +103,7 @@ FLUSH PRIVILEGES;
 ```
 
 mettez les informations requises dans `forum/config.php` et voilà, vous pouvez utiliser le site comme prévu
+
+***
+
+Afin 

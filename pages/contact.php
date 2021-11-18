@@ -1,7 +1,39 @@
 <?php
+	session_start();
+
+	// check si une session existe
 	if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
 		header("location: ../forum/login.php");
 		exit;
+	}
+	// on récup le nom d'utilisateur et les settings de connexion de la db
+	$USERNAME = $_SESSION["username"];
+	require_once("../forum/config.php");
+	
+	// dans ce cas, une requete POST EXISTE
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		// on récupère le message
+		$MESSAGE = $_POST["user_message"];
+        
+		// quelques variables
+        $param_date = "" + date_timestamp_get(date_create());
+        $param_id = $_SESSION["id"];
+        $user_status = $_SESSION["user_status"];
+		$false = false;
+
+		// requete MySQL pour ajouter une entrée dans la base de donnée de contact
+        $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT) VALUES ('$USERNAME', '$MESSAGE')";
+
+		// si ça marche
+        if ($link->query($sql) === TRUE) {
+			echo "<script>alert('votre message a bien été envoyé')</script>";
+        } 
+		else { //sinon on print une alerte et la raison de l'erreur
+            echo "<script>alert('une erreur s'est produite : $link->error');</script>";
+        }
+		// on ferme la connexion avec la base de donnée
+        $link->close();
 	}
 ?>
 
@@ -11,26 +43,6 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="../index.css">
 	</head>
-	<script>
-		function send_mail()
-		{
-			var name = document.getElementById('name');
-			var message = document.getElementById('msg');
-
-			let body = "J'aimerai vous contacter";
-
-			let name_properly_formated = name.value.replace("/\s+g", "")
-			let message_properly_formated = message.value.replace("/\s+g", "")
-			if(name_properly_formated === "" || message_properly_formated == "")
-			{
-				alert("merci de ne pas laisser la case \"nom\" ou \"message\" vide ou avec uniquement des espaces")
-			}
-			else{
-				window.location.href = "mailto:pro.corentynsauvage@gmail.com?subject=[" + name.value + "] >> " + body + "&body=" + message.value;
-			}
-			
-		}
-	</script>
 	<body>
 	<?php include("../entete.php"); ?>
 		<center>
@@ -41,9 +53,6 @@
 			<lesserTitle>vous pouvez venir me contacter ici</lesserTitle>
 			
 			<p>______________________________________________________________________________</p>
-			<p>Note : si vous utilisez une boite mail dans le navigateur, 
-			<a href="javascript:void(0)" onclick="alert('mon adresse mail est \'pro.corentynsauvage@gmail.com\', faites en bon usage :-)');" 
-			title="ceci est un lien cliquable">cliquez ici</a> pour obtenir mon adresse mail</p><br>
 			
 		</center>
 			<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" 
@@ -52,18 +61,18 @@
 			<center>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<div id="contact_border">
-                <form>
+                <form action="contact.php" method="post">
 					<div>
-						<label for="name"><p style="font-size: 40;">Nom :</p></label>
-						<input type="text" id="name" name="user_name" class="msg">
+						<?php echo"<p>connecté en temps que $USERNAME </p>" ?>
 					</div>
 					<div>
 						<label for="msg"><p style="font-size: 40;">Message :</p></label>
-						<textarea id="msg" name="user_message" rows="7" cols="50" class="msg"></textarea>
-					</div><br><br>
+						<textarea id="msg" name="user_message" rows="7" cols="50" class="msg" value="user_message"></textarea>
+					</div><br>
 					<div class="button">
-						<button onclick="send_mail();" title="cliquer sur ce bouton va ouvrir votre boite mail si vous en avez une d'installée">
-							<pr>Envoyer le message</pr></button>
+					<p>Envoyer le message</p>
+					<button id="button_register" type="submit" class="btn btn-primary" value="Submit"><pr>envoyer le message</pr></button>
+							
 					</div>
 				</form>
             </div>
