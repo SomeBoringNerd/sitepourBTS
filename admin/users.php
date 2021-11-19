@@ -1,16 +1,18 @@
 <?php
     session_start();
     require_once("config.php");
+
+    
     if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
 		header("location: ../account/login.php");
 		exit;
-	}else if($_SESSION["user_status"]  !== 1)
+	}else if($_SESSION["user_status"] !== 1)
     {
-        header("location: ../admin/");
-        exit;
+        header("location: ../admin");
+		exit;
     }
     else{
-        $sql = "SELECT * FROM contact_messages";
+        $sql = "SELECT * FROM users";
         $result = $link->query($sql);
 
         // marche pas encore
@@ -18,14 +20,14 @@
         echo "<script>console.log(\"test\");</script>";
         if (isset($_POST["delete"])) {
             
-            $ID_DU_MESSAGE_A_SUPPRIMER = $_POST["MESSAGE_ID"];
-            echo "<script>console.log(\"test 2 : $ID_DU_MESSAGE_A_SUPPRIMER\");</script>";
+            $ID_USER = $_POST["USER_ID"];
+            echo "<script>console.log(\"test 2 : $ID_USER\");</script>";
 
-            $sql2 = "DELETE FROM contact_messages WHERE MESSAGE_ID = $ID_DU_MESSAGE_A_SUPPRIMER";
+            $sql2 = "DELETE FROM users WHERE id = $ID_USER";
             
             if ($link->query($sql2) === TRUE)
             {
-                header("location: messages.php");
+                header("location: users.php");
             }else{
                 echo "<script>alert('une erreur s'est produite : $link->error');</script>";
             }
@@ -34,61 +36,63 @@
     }
 ?>
 
-
 <html>
     <head>
+        <title>gestion des utilisateurs</title>
         <link rel="stylesheet" href="../index.css">
-        <title>Messages</title>
-        <center>
-        <?php
-            include("../entete.php");
-            echo "<br><br><br><br>";
-            echo "<center><megaTitle>Messages reçus<megaTitle></center><br>";
+    </head>
+    <?php include("../entete.php"); 
+
+    echo "<br><br><br><br>";
+            echo "<center><megaTitle>Gérer les utilisateurs<megaTitle></center><br>";
             // print l'entièreté des messages enregistrés dans la DB
             if ($result->num_rows > 0) {
                 // output data of each row
                 echo "<table border=\"1\">";
                 echo "<tr>
-                            <td><center><p>Envoyé par : <br></center></p></td>
-                            <td><center><p>contenu du message : <br></center></p></td>
-                            <td><center><p>date d'envoi du message: <br></center></p></td>
+                            <td><center><p>Nom d'utilisateur: <br></center></p></td>
+                            <td><center><p>Date de création du compte: <br></center></p></td>
+                            <td><center><p>Dernière fois vu en ligne: <br></center></p></td>
                             <td><center><p>options supplémentaires <br></center></p></td>
                         </tr>";
                 while($row = $result->fetch_assoc()) {
-                    $ID = $row["MESSAGE_ID"];
+                    $ID = $row["id"];
                     echo "<script>console.log($ID);</script>";
                     echo "<tr>
                             <td>
                                 <center>
                                     <p>"
-                                        . $row["MESSAGE_AUTHOR"]. 
+                                        . $row["username"]. 
                                     "</p>
                                 </center>
                             </td>
                         <td>
                             <center>
-                                <p>\"" . 
-                                    $row["MESSAGE_CONTENT"]. 
-                                "\"</p>
+                                <p>" . 
+                                    $row["created_at"]. 
+                                "</p>
                             </center>
                         </td>
                         <td>
                             <center>
-                                <p>" . 
-                                    $row["MESSAGE_CREATION_DATE"] . 
-                                "</p>
+                                <p>".
+                                    $row["LAST_ONLINE"]
+                                ."</p>
                             </center>
                         </td>
-                            <td>
-                                <form action='' method='POST'>
-                                    <center>
-                                        <input type=\"hidden\" name=\"MESSAGE_ID\" value=\"$ID\">
-                                        
+                            <td>";
+                            if($_SESSION["id"] !== $ID)
+                            {
+                                echo"<form action='' method='POST'>
+                                        <input type=\"hidden\" name=\"USER_ID\" value=\"$ID\">
+                                        <center>   
                                         <button type='submit' name='delete'>
-                                            <pr>supprimer</pr>
+                                            <pr>Supprimer le compte</pr>
                                         </button>
-                                    </center>
-                                </form>
+                                        </center>
+                                    </form>";
+                            }
+                            echo "
                             </td>
                         </tr>";
                 }
@@ -98,5 +102,4 @@
             }
         ?>
         </center>
-    </head>
 </html>

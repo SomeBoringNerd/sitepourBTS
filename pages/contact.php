@@ -3,12 +3,12 @@
 
 	// check si une session existe
 	if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
-		header("location: ../forum/login.php");
+		header("location: ../account/login.php");
 		exit;
 	}
 	// on récup le nom d'utilisateur et les settings de connexion de la db
 	$USERNAME = $_SESSION["username"];
-	require_once("../forum/config.php");
+	require_once("../admin/config.php");
 	
 	// dans ce cas, une requete POST EXISTE
 	if($_SERVER["REQUEST_METHOD"] == "POST")

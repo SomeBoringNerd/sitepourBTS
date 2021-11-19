@@ -4,12 +4,12 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: ../index.php");
     exit;
 }
  
 // Include config file
-require_once "config.php";
+require_once "../admin/config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
-                            
+                                                        
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["user_status"] = $user_status;
                             
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: ../index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "<p>mot de passe incorrect</p>";

@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         $param_username = $username;
         $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-        $USER_STATUS = false;
+        $USER_STATUS = 0;
 
         $sql = "INSERT INTO users (username, user_password, IS_USER_ADMIN) VALUES ('$param_username', '$param_password', '$USER_STATUS')";
 

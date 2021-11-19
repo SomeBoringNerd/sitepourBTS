@@ -10,11 +10,13 @@
     // si une session existe
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         // infos de connexion a la base de donnée users
-        require("forum/config.php");
+        require("admin/config.php");
 
         // quelques variables
         $USERNAME = $_SESSION["username"];
-        $param_date = "" + date_timestamp_get(date_create());
+        
+
+        $param_date = date("Y-m-d h:i:s", $_SERVER["REQUEST_TIME"]);
         $param_id = $_SESSION["id"];
         $user_status = $_SESSION["user_status"];
         
@@ -82,15 +84,15 @@
                             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                                 if($user_status === 1){
                                     echo"<button onClick=\"location.href='http://$NOM_DU_SITE/admin/messages.php'\"><pr>acceder aux messages</pr></button><br>";
-                                    echo"<button onClick=\"location.href='http://$NOM_DU_SITE/pages/contact.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
+                                    echo"<button onClick=\"location.href='http://$NOM_DU_SITE/admin/users.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
                                     echo"<button onClick=\"location.href='http://$NOM_DU_SITE/phpmyadmin'\"><pr>PhPMyAdmin</pr></button><br>";
                                 }else{
                                     echo"<button onClick=\"location.href='http://$NOM_DU_SITE/pages/contact.php'\"><pr>contacter le gérant</pr></button><br>";
                                 }
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/logout.php'\"><pr>Déconnexion</pr></button><br>";
+                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/logout.php'\"><pr>Déconnexion</pr></button><br>";
                             } else{
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/register.php'\"><pr>créer un compte</pr></button><br>";
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/login.php'\"><pr>se connecter</pr></button><br>";
+                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/register.php'\"><pr>créer un compte</pr></button><br>";
+                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/login.php'\"><pr>se connecter</pr></button><br>";
                             }
                         ?>
                     </div>
