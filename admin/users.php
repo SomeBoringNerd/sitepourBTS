@@ -61,9 +61,9 @@
                     echo "<tr>
                             <td>
                                 <center>
-                                    <p>"
+                                    <a href=\"../account/account.php?id=$ID\"><p>"
                                         . $row["username"]. 
-                                    "</p>
+                                    "</p></a>
                                 </center>
                             </td>
                         <td>

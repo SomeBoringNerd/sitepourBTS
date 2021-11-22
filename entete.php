@@ -82,6 +82,8 @@
                         
                         <?php 
                             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                                $USER_ID = $_SESSION["id"];
+                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
                                 if($user_status === 1){
                                     echo"<button onClick=\"location.href='http://$NOM_DU_SITE/admin/messages.php'\"><pr>acceder aux messages</pr></button><br>";
                                     echo"<button onClick=\"location.href='http://$NOM_DU_SITE/admin/users.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
