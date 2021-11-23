@@ -62,15 +62,34 @@
 	border: ridge #ccc;
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
+	height: 256px;
+	width: 256px;
+}
+
+#POST_HISTORY
+{
+	position: relative;
+	border: ridge #ccc;
+	border-width: 6px;
+	background-color: rgba(128, 128, 128, 0.25);
+	height: 720px;
+	width: 512px;
+	bottom: 512px;
+	left: 720px;
 }
 
 #border_user
 {
+	position: relative;
+	height: 75px;
+	left: 360px;
+	bottom: 256px;
+	width: 256;
 	border: ridge #ccc;
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
+	text-align: center;
 }
-
 
 #topDuSite
 {
@@ -78,7 +97,7 @@
 	
 	align-content: center;
 
-	width : 90vw;
+	width : 98.8vw;
 
 	height : 30px;
 	padding-top:0.7vw;
@@ -89,6 +108,10 @@
 	
 }
 
+#slightly_smaller_p
+{
+	font-size: 20px;
+}
 
 #personnage
 {
@@ -130,6 +153,15 @@
   	border-width: 6px;
 }
 
+#text_zone_3{
+
+	padding-top: 15px;
+	padding-left: 15px;
+	width: 98vw;
+	border: ridge #ccc;
+  	border-width: 6px;
+}
+
 #black{
 	color: rgba(128, 128, 128, 0)
 }
@@ -162,6 +194,39 @@
 	padding-left: 50px;
 }
 
+#forum_account_p
+{
+	font-family: VCR_OSD_Mono;
+	color:white;
+	font-size:24px;
+	padding-left: 25px;
+}
+
+#forum_text_container{
+	border: ridge #ccc;
+	font-family: VCR_OSD_Mono;
+  	border-width: 6px;
+	color: white;
+	width: 98vw;
+	resize: none;
+	height: 250px;
+	font-size: 24px;
+	background-color: rgba(59, 59, 59, 0.616);
+}
+
+#forum_title_container
+{
+	font-family: VCR_OSD_Mono;
+	border: none;
+	border-width: 0px;
+	color: white;
+	width: 35vw;
+	height: 24px;
+	resize: none;
+	font-size: 24px;
+	background-color: rgba(0, 0, 0, 0.616);
+}
+
 .button_register{
 	background-color: white;
 	color: black;
@@ -179,7 +244,6 @@
 	border: ridge #ccc;
   	border-width: 6px;
 }
-
 
 .barre{
 	text-decoration: line-through;

@@ -56,14 +56,17 @@
                         </tr>";
                 while($row = $result->fetch_assoc()) {
                     $ID = $row["MESSAGE_ID"];
+                    $USERNAME_TO_GRAB = $row["MESSAGE_AUTHOR"];
+                    
+                    $USER_ID = $row["MESSAGE_AUTHOR_ID"];
                     echo "<script>console.log($ID);</script>";
                     echo "<tr>
                             <td>
-                                <center>
-                                    <p>"
-                                        . $row["MESSAGE_AUTHOR"]. 
-                                    "</p>
-                                </center>
+                            <center>
+                                <p><a href=\"../account/account.php?id=$USER_ID\">"
+                            . $row["MESSAGE_AUTHOR"]. 
+                                "</p></a>
+                            </center>
                             </td>
                         <td>
                             <center>

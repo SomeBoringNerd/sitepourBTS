@@ -23,7 +23,7 @@
 		$false = false;
 
 		// requete MySQL pour ajouter une entrée dans la base de donnée de contact
-        $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT) VALUES ('$USERNAME', '$MESSAGE')";
+        $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT, MESSAGE_AUTHOR_ID) VALUES ('$USERNAME', '$MESSAGE', '$param_id')";
 
 		// si ça marche
         if ($link->query($sql) === TRUE) {
