@@ -156,8 +156,8 @@
 #text_zone_3{
 
 	padding-top: 15px;
-	padding-left: 15px;
-	width: 98vw;
+	padding-left: 1vw;
+	width: 95.1vw;
 	border: ridge #ccc;
   	border-width: 6px;
 }
@@ -194,6 +194,12 @@
 	padding-left: 50px;
 }
 
+#forum_delete_button{
+	left: 71.5vw;
+	top: 185px;
+	position: absolute;
+}
+
 #forum_account_p
 {
 	font-family: VCR_OSD_Mono;
@@ -207,7 +213,7 @@
 	font-family: VCR_OSD_Mono;
   	border-width: 6px;
 	color: white;
-	width: 98vw;
+	width: 97vw;
 	resize: none;
 	height: 250px;
 	font-size: 24px;

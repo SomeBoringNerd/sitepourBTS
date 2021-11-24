@@ -112,20 +112,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         ?>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label><p>nom d'utilisateur</p></label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group">
-                <label><p>mot de passe</p></label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <br>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary" value="Login"><pr>valider</pr></button>
-            </div>
+            <label><p>nom d'utilisateur</p></label>
+            <input type="text" name="username" value="<?php echo $username; ?>">
+            <label><p>mot de passe</p></label>
+            <input type="password" name="password">
+            <button type="submit" value="Login"><pr>valider</pr></button>
             <p>Pas de comptes ?<a href="register.php">Créez en un!</a>.</p>
         </form>
     </center>

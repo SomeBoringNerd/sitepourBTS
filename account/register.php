@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../admin/config.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -9,61 +9,67 @@ $TEST = $_SERVER["PHP_SELF"];
 echo "<script>console.log('$TEST');</script>";
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $CAN_ACCOUNT_BE_CREATED = true;
  
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
+        $CAN_ACCOUNT_BE_CREATED = false;
     } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
-        $username_err = "Username can only contain letters, numbers, and underscores.";
-    } elseif(strlen(trim($_POST["password"])) > 16){
-        echo "<script>alert(\"votre nom d'utilisateur doit faire au maximum 16 charactères\");</script>";
+        echo "<script>alert(\"Username can only contain letters, numbers, and underscores.\");</script>";
+        $CAN_ACCOUNT_BE_CREATED = false;
+    } elseif(strlen(trim($_POST["password"])) > 16 OR strlen(trim($_POST["password"])) < 4){
+        echo "<script>alert(\"votre nom d'utilisateur doit faire entre 4 et 16 charactères\");</script>";
+        $CAN_ACCOUNT_BE_CREATED = false;
     }
     else{
-        // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE username = ?";
-        
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
-            // Set parameters
-            $param_username = trim($_POST["username"]);
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                /* store result */
-                mysqli_stmt_store_result($stmt);
-                
-                if(mysqli_stmt_num_rows($stmt) == 1){
-                    $username_err = "This username is already taken.";
-                } else{
-                    $username = trim($_POST["username"]);
-                }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
 
-            // Close statement
-            mysqli_stmt_close($stmt);
+        $username_trimmed = trim($_POST["username"]);
+
+        // Prepare a select statement
+        $sql = "SELECT id FROM users WHERE username = $username_trimmed";
+
+        if ($link->query($sql) === TRUE)
+        {
+            $result = $link->query($sql);
+
+            if ($result->num_rows === 0)
+            {
+                $username = trim($_POST["username"]);
+            }
+            else
+            {
+                echo "<script>alert(\"Ce nom d'utilisateur est déjà pris\");</script>";
+                $CAN_ACCOUNT_BE_CREATED = false;
+            }
         }
     }
     
     // Validate password
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter a password.";     
-    } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
-    } else{
+        echo "<script>alert(\"Veuillez entrer un mot de passe\");</script>";
+        $CAN_ACCOUNT_BE_CREATED = false;
+    } elseif(strlen(trim($_POST["password"])) < 8)
+    {
+        echo "<script>alert(\"Votre mot de passe doit faire au moins 8 charactères\");</script>";
+        $CAN_ACCOUNT_BE_CREATED = false;
+    }else
+    {
         $password = trim($_POST["password"]);
     }
     
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Please confirm password.";     
-    } else{
+        echo "<script>alert(\"Please confirm password\");</script>";
+        $CAN_ACCOUNT_BE_CREATED = false;
+    }else
+    {
         $confirm_password = trim($_POST["confirm_password"]);
-        if(empty($password_err) && ($password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
+        if(empty($password_err) && ($password != $confirm_password))
+        {
+            echo "<script>alert(\"Password did not match\");</script>";
+            $CAN_ACCOUNT_BE_CREATED = false;
         }
     }
     
@@ -74,13 +80,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
         $USER_STATUS = 0;
 
-        $sql = "INSERT INTO users (username, user_password, IS_USER_ADMIN) VALUES ('$param_username', '$param_password', '$USER_STATUS')";
+        $sql = "INSERT INTO users (username, user_password, IS_USER_ADMIN) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS')";
+        if($CAN_ACCOUNT_BE_CREATED === true){
+            if (mysqli_query($link, $sql)) {
+                $sql = "SELECT id FROM users WHERE username = $username_trimmed";
 
-        if (mysqli_query($link, $sql)) {
-            header("location: index.php");
-            exit;
-        } else {
-            echo "<p>Error: " . $sql . "<br>" . mysqli_error($link) . "</p>";
+                if ($link->query($sql) === TRUE)
+                {
+                    $result = $link->query($sql);
+
+                    if ($result->num_rows > 0)
+                    {
+                        while($row = $result->fetch_assoc()) {
+                            session_start();
+                                                            
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $row["id"];
+                            $_SESSION["username"] = $username_trimmed;                            
+                            $_SESSION["user_status"] = $row["user_status"];
+                        }
+                    }
+                }
+                header("location: ../login.php");
+                exit;
+            }
         }
     }
     
@@ -105,28 +128,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <center>
             <megaTitle>Créer un compte</megaTitle>
             <p>Remplissez ce formulaire pour créer un compte.</p>
-            <form action="register.php" method="post">
-                <div class="form-group">
+
+                <form action="register.php" method="post">
                     <label><p>nom d'utilisateur</p></label>
-                    <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                </div>    
-                <div class="form-group">
+                    <input type="text" name="username"value="<?php echo $username; ?>">
+
                     <label><p>mot de passe</p></label>
-                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                </div>
-                <div class="form-group">
+                    <input type="password" name="password" value="<?php echo $password; ?>">
+
                     <label><p>confirmez le mot de passe</p></label>
-                    <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-                </div>
-                <br>
-                <div class="form-group">
-                    <button id="button_register" type="submit" class="btn btn-primary" value="Submit"><pr>Valider</pr></button>
-                    <button id="button_register" type="reset" class="btn btn-secondary ml-2" value="Reset"><pr>réinitialiser</pr></button>
-                </div>
-                <p>vous avez déjà un compte? <a href="login.php">connectez vous ici</a>.</p>
+                    <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>">
+                    <br><br>
+                    <button id="button_register" type="submit" value="Submit"><pr>Valider</pr></button>
+                    <button id="button_register" type="reset" value="Reset"><pr>réinitialiser</pr></button>
+                    <p>vous avez déjà un compte? <a href="login.php">connectez vous ici</a>.</p>
             </form>
         <center>
     </body>

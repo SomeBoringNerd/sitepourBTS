@@ -53,7 +53,7 @@
                     <textarea class="msg" name="title" rows="1" cols="25" value="title"></textarea>
                 </div>
                 <div>
-                    <label for="image_url"><p style="font-size: 32;">image (facultatif) :</p></label>
+                    <label for="image_url"><p style="font-size: 32;">url d'image (facultatif) :</p></label>
                     <textarea class="msg" name="image_url" rows="1" cols="25" value="image_url"></textarea>
                 </div>
                 <div>

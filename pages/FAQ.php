@@ -20,8 +20,9 @@
             <p>Question :</p>
 			<smallerParagraph>Q : Comment obtenir une réponse a ma question ?</smallerParagraph><br>
             <p>réponse :</p>
-            <smallerParagraph>Contactez moi a contact@randommail.pro avec votre question, et je<br>
-                l'ajouterai dans les plus brefs delais si celle-ci n'est pas déjà répondue</smallerParagraph><br>
+            <smallerParagraph>Utilisez le 
+				<a href="contact.php">formulaire de contact</a> 
+				et je ferai de mon mieux pour répondre au plus vite</smallerParagraph><br>
 			
 		</center>
 	</body>

@@ -23,27 +23,12 @@
             <p>______________________________________________________________________________</p><br>
 			
 			<lesserTitle id="MAIN">Personnages principaux</lesserTitle>
-			<p><a href="characters/M_mc.php" target="_parent">Personnage principal || protagoniste</a></p>
-            <p><a href="characters/B_bob.php" target="_parent">Bob || antagoniste</a></p>
-            <p><a href="characters/PF_Sauelsuesor.php" target="_parent"><i style="color:rgb(0, 217, 255);">Sauelsuesor</i> || personnage secondaire</a></p>
 
             <lesserTitle id="SECO">Personnages Secondaires</lesserTitle>
-			<p><a href="characters/PS_JackBright.php" target="_parent">Dr.Jack Bright || Directeur du site 19</a></p>
-
-            <lesserTitle id="BOSS">Boss de zone</lesserTitle>
-			<p><a href="characters/B_SCP-682.php" target="_parent">SCP-682 || Boss de zone</a></p>
-            <p><a href="characters/B_bob.php" target="_parent">Bob || antagoniste</a></p>
-
-            <lesserTitle id="FACT">Faction</lesserTitle>
-			<p><a href="characters/F_chaos_insurgency.php" target="_parent">L'Insurrection du Chaos || Les méchants</a></p>
 
             <lesserTitle id="ZONE">Zones du jeu</lesserTitle>
-			<p><a href="places/END_GodDomain.php" target="_parent">Domaine des dieux</a></p>
-            <p><a href="places/site-19.php" target="_parent">Site 19</a></p>
-            <p><a href="../pages/404.php" target="_parent">La bibliothèque des Wanderers</a></p>
 
-            <lesserTitle id="ITEM">Objets</lesserTitle>
-			<p><a href="items/IS_SCP-963.php" target="_parent">SCP-693 || L'Immortalité</a></p>
+            <lesserTitle id="ITEM">Objets Importants</lesserTitle>
 
             <p>______________________________________________________________________________</p><br>
             <lesserTitle id="RULE">Lisez les règles avant de contribuer</lesserTitle>

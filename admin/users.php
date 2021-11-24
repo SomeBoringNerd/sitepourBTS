@@ -31,6 +31,8 @@
             }else{
                 echo "<script>alert('une erreur s'est produite : $link->error');</script>";
             }
+
+            
             
         }
     }
