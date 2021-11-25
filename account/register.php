@@ -98,11 +98,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $row["id"];
                             $_SESSION["username"] = $username_trimmed;                            
                             $_SESSION["user_status"] = $row["user_status"];
+
+                            $id = $row["id"];
+                            
                         }
                     }
                 }
-                header("location: ../login.php");
-                exit;
+
+                header("location: login.php");
             }
         }
     }
@@ -131,13 +134,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 <form action="register.php" method="post">
                     <label><p>nom d'utilisateur</p></label>
-                    <input type="text" name="username"value="<?php echo $username; ?>">
+                    <input type="text" name="username"value="<?php echo $username; ?>" required>
 
                     <label><p>mot de passe</p></label>
-                    <input type="password" name="password" value="<?php echo $password; ?>">
+                    <input type="password" name="password" value="<?php echo $password; ?>" required>
 
                     <label><p>confirmez le mot de passe</p></label>
-                    <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>">
+                    <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>" required>
                     <br><br>
                     <button id="button_register" type="submit" value="Submit"><pr>Valider</pr></button>
                     <button id="button_register" type="reset" value="Reset"><pr>réinitialiser</pr></button>

@@ -70,9 +70,9 @@
                             </td>
                         <td>
                             <center>
-                                <p>\"" . 
+                                <textarea readonly id=\"forum_title_container\">" . 
                                     $row["MESSAGE_CONTENT"]. 
-                                "\"</p>
+                                "</textarea>
                             </center>
                         </td>
                         <td>

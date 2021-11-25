@@ -93,8 +93,9 @@
 
 #topDuSite
 {
+	position: fixed;
 	background-color: rgba(128, 128, 128, 0.69);
-	
+	top: 6px;
 	align-content: center;
 
 	width : 98.8vw;
@@ -104,8 +105,6 @@
 	padding-bottom:0.7vw;
 	/* fixée */
 	z-index:512;
-	position:absolute;
-	
 }
 
 #slightly_smaller_p
@@ -257,14 +256,16 @@
 
 .dropdown {
 	position: relative;
+	padding-right: 7vw;
 	display: inline-block;
 }
 
 .dropdown-content {
 	display: none;
 	position: absolute;
+	
 	background-color: #414141;
-	width: 360px;
+	width: 320px;
 	outline: solid;
 	padding: 10px 10px;
 	z-index: 64;
@@ -307,8 +308,8 @@ smallerParagraph{
 
 pr{
 	font-family: VCR_OSD_Mono;
-	font-size:20px;
-	text-align: justify;
+	font-size:16px;
+	text-align: center;
 }
 
 pb {
@@ -367,7 +368,7 @@ button{
 	color: black;
 	border: 2px solid #0000ff;
 	padding: 20px 100px;
-	width: 350px;
+	width: 310px;
 }
 
 /*

@@ -1,4 +1,10 @@
 <?php
+
+	function mysql_utf8_sanitizer(string $str)
+	{
+		return preg_replace('/[\x{10000}-\x{10FFFF}]/u', "\xEF\xBF\xBD", $str);
+	}
+
 	session_start();
 
 	// check si une session existe
@@ -21,9 +27,13 @@
         $param_id = $_SESSION["id"];
         $user_status = $_SESSION["user_status"];
 		$false = false;
+		
+		$GOOD_MESSAGE = mysql_utf8_sanitizer($MESSAGE);
 
 		// requete MySQL pour ajouter une entrée dans la base de donnée de contact
         $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT, MESSAGE_AUTHOR_ID) VALUES ('$USERNAME', '$MESSAGE', '$param_id')";
+
+		
 
 		// si ça marche
         if ($link->query($sql) === TRUE) {
@@ -67,7 +77,7 @@
 					</div>
 					<div>
 						<label for="msg"><p style="font-size: 40;">Message :</p></label>
-						<textarea id="msg" name="user_message" rows="7" cols="50" class="msg" value="user_message"></textarea>
+						<textarea id="msg" name="user_message" rows="7" cols="50" class="msg" value="user_message" required></textarea>
 					</div><br>
 					<div class="button">
 					<p>Envoyer le message</p>

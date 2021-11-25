@@ -2,7 +2,6 @@
     session_start();
     require_once("config.php");
 
-    
     if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
 		header("location: ../account/login.php");
 		exit;
@@ -30,10 +29,7 @@
                 header("location: users.php");
             }else{
                 echo "<script>alert('une erreur s'est produite : $link->error');</script>";
-            }
-
-            
-            
+            }            
         }
     }
 ?>

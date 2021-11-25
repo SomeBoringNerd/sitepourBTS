@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, user_password, IS_USER_ADMIN FROM users WHERE username = ?";
+        $sql = "SELECT id, username, user_password, USER_STATUS FROM users WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -61,7 +61,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
+                            $_SESSION["username"] = $username;    
+                            // 1 : admin, 2 : moderator, 3 : wiki editor                        
                             $_SESSION["user_status"] = $user_status;
                             
                             // Redirect user to welcome page
@@ -116,8 +117,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="text" name="username" value="<?php echo $username; ?>">
             <label><p>mot de passe</p></label>
             <input type="password" name="password">
+            <br>
+            <br>
             <button type="submit" value="Login"><pr>valider</pr></button>
-            <p>Pas de comptes ?<a href="register.php">Créez en un!</a>.</p>
+            <p>Pas de compte ? <a href="register.php">Créez en un!</a>.</p>
         </form>
     </center>
 </body>

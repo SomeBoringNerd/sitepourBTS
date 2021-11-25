@@ -22,13 +22,13 @@
             </div>
             <p>______________________________________________________________________________</p><br>
 			
-			<lesserTitle id="MAIN">Personnages principaux</lesserTitle>
+			<lesserTitle id="MAIN">Personnages principaux</lesserTitle><br>
 
-            <lesserTitle id="SECO">Personnages Secondaires</lesserTitle>
+            <lesserTitle id="SECO">Personnages Secondaires</lesserTitle><br>
 
-            <lesserTitle id="ZONE">Zones du jeu</lesserTitle>
+            <lesserTitle id="ZONE">Zones du jeu</lesserTitle><br>
 
-            <lesserTitle id="ITEM">Objets Importants</lesserTitle>
+            <lesserTitle id="ITEM">Objets Importants</lesserTitle><br>
 
             <p>______________________________________________________________________________</p><br>
             <lesserTitle id="RULE">Lisez les règles avant de contribuer</lesserTitle>
