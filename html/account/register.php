@@ -80,32 +80,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
         $USER_STATUS = 0;
 
-        $sql = "INSERT INTO users (username, user_password, IS_USER_ADMIN) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS')";
-        if($CAN_ACCOUNT_BE_CREATED === true){
-            if (mysqli_query($link, $sql)) {
-                $sql = "SELECT id FROM users WHERE username = $username_trimmed";
-
-                if ($link->query($sql) === TRUE)
-                {
-                    $result = $link->query($sql);
-
-                    if ($result->num_rows > 0)
-                    {
-                        while($row = $result->fetch_assoc()) {
-                            session_start();
-                                                            
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $row["id"];
-                            $_SESSION["username"] = $username_trimmed;                            
-                            $_SESSION["user_status"] = $row["user_status"];
-
-                            $id = $row["id"];
-                            
-                        }
-                    }
-                }
-
+        $sql = "INSERT INTO users (username, user_password, USER_STATUS) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS')";
+        if($CAN_ACCOUNT_BE_CREATED === true)
+        {
+            if ($link->query($sql) === TRUE)
+            {
                 header("location: login.php");
+            }else{
+                echo "<script>alert('une erreur s'est produite : $link->error');</script>";
             }
         }
     }

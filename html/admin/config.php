@@ -9,5 +9,9 @@
     
     // Check connection
     if($link === false){
+        echo "<script>console.log('fuck');</script>";
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }else{
+        echo "<script>console.log('it worked yey');</script>";
     }
 ?>
