@@ -112,8 +112,7 @@ flush privileges;
 inserez votre identifiant + mot de passe dans /html/admin/config.php aux endroits où c'est demandé.
 
 il suffit maintenant d'importer la base de donnée présente dans /template/register_user_system.sql
-cette base de donnée contient un utilisateur par défaut et un profil administrateur, ainsi que les tables (vidées) nécéssaires au bon fonctionnement du site.
-leur mot de passe par défaut sont "motdepasse" pour les deux profils. Il est recommandé de supprimer ces comptes afin d'éviter une faille de sécurité
-(le compte admin n'est pas lié au phpmyadmin)
-
+cette base de donnée contient les tables (vidées) nécéssaires au bon fonctionnement du site.
+accedez a cette page pour ça :
+(remplassez localhost par l'ip / nom de domaine de votre serveur
 http://localhost/phpmyadmin/server_import.php
