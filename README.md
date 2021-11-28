@@ -88,22 +88,4 @@ grant all privileges on *.* to USERNAME@'localhost';
 flush privileges;
 ```
 
-a présent, la base de donnée est créée.
-
-ajoutez un autre utilisateur avec cette commande :
-
-```
-CREATE USER 'register_user_system'@'%' IDENTIFIED WITH caching_sha2_password BY '***';
-ALTER USER 'register_user_system'@'%' REQUIRE NONE;
-CREATE DATABASE IF NOT EXISTS `register_user_system`;
-GRANT ALL PRIVILEGES ON `register\_user\_system`.* TO 'register_user_system'@'%'; 
-
-ALTER USER 'register_user_system'@'localhost' IDENTIFIED BY 'MOT_DE_PASSE';
-FLUSH PRIVILEGES;
-```
-
-mettez les informations requises dans `forum/config.php` et voilà, vous pouvez utiliser le site comme prévu
-
-***
-
-Afin 
+il suffit maintenant d'importer la base de donnée présente dans /template/[A REMPLIR]
