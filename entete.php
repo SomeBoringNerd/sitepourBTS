@@ -1,9 +1,6 @@
 <?php
     session_start();
 
-    // variable pour simplifier le déploiment du site
-    $NOM_DU_SITE = "localhost";
-
     // nom d'utilisateur par défaut
     $USERNAME = "déconnecté";
 
@@ -39,29 +36,29 @@
             <top>
                 <div class="dropdown">
                     <span>
-                        <?php echo"<a href=\"javascript:void(0)\" onclick=\"location.href='http://$NOM_DU_SITE';\">";?>
+                        <?php echo"<a href=\"javascript:void(0)\" onclick=\"location.href='/index.php';\">";?>
                             <pb>Menu principal</pb>
                         </a>
                     </span>
                     <div class="dropdown-content" id="drop1" style="right: 0.5vw;">
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/'\"><pr>Page principale</pr></button><br>"; ?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/pages/Contributeur.php'\"><pr>liste des contributeurs</pr></button><br>"?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/pages/FAQ.php'\"><pr>Foire aux questions</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/index.php'\"><pr>Page principale</pr></button><br>"; ?>
+                        <?php echo"<button onClick=\"location.href='/pages/Contributeur.php'\"><pr>liste des contributeurs</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/pages/FAQ.php'\"><pr>Foire aux questions</pr></button><br>"?>
                     </div>
                 </div>
             </top>
             <pb id="black">_________</pb>
             <top>
                 <div class="dropdown">
-                    <?php echo"<a href=\"javascript:void(0)\" onclick=\"location.href='http://$NOM_DU_SITE/wiki/';\">";?>
+                    <?php echo"<a href=\"javascript:void(0)\" onclick=\"location.href='/wiki/';\">";?>
                         <pb>Wiki</pb>
                     </a>
                     <div class="dropdown-content" id="drop2" style="left: -11vw;">
 
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php';\"><pr>Page principale</pr></button><br>"?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php#MAIN';\"><pr>Personnages disponibles</pr></button><br>"?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php#ITEM';\"><pr>Les Objets disponibles</pr></button><br>"?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php';\"><pr>Page principale</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php#MAIN';\"><pr>Personnages disponibles</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php#ITEM';\"><pr>Les Objets disponibles</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
                     </div>
                 </div>
             </top>
@@ -69,15 +66,15 @@
             <top>
                 <div class="dropdown">
                     
-                    <?php echo"<a href=\"javascript:void(0)\" onclick=\"location.href='http://$NOM_DU_SITE/wiki/';\">";?>
+                    <?php echo"<a href=\"javascript:void(0)\" onclick=\"location.href='/wiki/';\">";?>
                         <pb>Blog</pb>
                     </a>
                     <div class="dropdown-content" id="drop2" style="left: -11vw;">
 
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php';\"><pr>Page principale</pr></button><br>"?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php#MAIN';\"><pr>Personnages disponibles</pr></button><br>"?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php#ITEM';\"><pr>Les Objets disponibles</pr></button><br>"?>
-                        <?php echo"<button onClick=\"location.href='http://$NOM_DU_SITE/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php';\"><pr>Page principale</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php#MAIN';\"><pr>Personnages disponibles</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php#ITEM';\"><pr>Les Objets disponibles</pr></button><br>"?>
+                        <?php echo"<button onClick=\"location.href='/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
                     </div>
                 </div>
             </top>
@@ -87,10 +84,10 @@
                     <?php
                     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                         $ID = $_SESSION["id"];
-                        echo "<a href=\"javascript:void(0)\" onclick=\"location.href='http://$NOM_DU_SITE/account/account.php?id=$ID'\">"; 
+                        echo "<a href=\"javascript:void(0)\" onclick=\"location.href='/account/account.php?id=$ID'\">"; 
                     }
                     else{
-                        echo "<a href=\"javascript:void(0)\" onclick=\"location.href='http://$NOM_DU_SITE/account/login.php'\">"; 
+                        echo "<a href=\"javascript:void(0)\" onclick=\"location.href='/account/login.php'\">"; 
                     }
                     
                     echo "<pb>$USERNAME</pb></a>";?>
@@ -98,7 +95,7 @@
                     <div class="dropdown-content" id="drop4" style="left: -8vw;">
                         <?php
                             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/forum/index.php';\"><pr>Forum (beta)</pr></button><br>";
+                                echo"<button onClick=\"location.href='/forum/index.php';\"><pr>Forum (beta)</pr></button><br>";
                             }
                         ?>
                         
@@ -106,21 +103,21 @@
                         <?php 
                             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                                 $USER_ID = $_SESSION["id"];
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
+                                echo"<button onClick=\"location.href='/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
                                 if($user_status === 1){
-                                    echo"<button onClick=\"location.href='http://$NOM_DU_SITE/admin/messages.php'\"><pr>acceder aux messages</pr></button><br>";
-                                    echo"<button onClick=\"location.href='http://$NOM_DU_SITE/admin/users.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
-                                    echo"<button onClick=\"location.href='http://$NOM_DU_SITE/phpmyadmin'\"><pr>PhPMyAdmin</pr></button><br>";
+                                    echo"<button onClick=\"location.href='/admin/messages.php'\"><pr>acceder aux messages</pr></button><br>";
+                                    echo"<button onClick=\"location.href='/admin/users.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
+                                    echo"<button onClick=\"location.href='/phpmyadmin'\"><pr>PhPMyAdmin</pr></button><br>";
                                 }else{
-                                    echo"<button onClick=\"location.href='http://$NOM_DU_SITE/pages/contact.php'\"><pr>contacter le gérant</pr></button><br>";
+                                    echo"<button onClick=\"location.href='/pages/contact.php'\"><pr>contacter le gérant</pr></button><br>";
                                     echo "<button onClick=\"location.href='https://github.com/SomeBoringNerd/sitepourBTS'\"><pr>Code source (github)</pr></button><br>";
                                 }
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/logout.php'\"><pr>Déconnexion</pr></button><br>";
+                                echo"<button onClick=\"location.href='/account/logout.php'\"><pr>Déconnexion</pr></button><br>";
                             } 
                             else{
                                 echo "<button onClick=\"location.href='https://github.com/SomeBoringNerd/sitepourBTS'\"><pr>Code source (github)</pr></button><br>";
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/register.php'\"><pr>créer un compte</pr></button><br>";
-                                echo"<button onClick=\"location.href='http://$NOM_DU_SITE/account/login.php'\"><pr>se connecter</pr></button><br>";
+                                echo"<button onClick=\"location.href='/account/register.php'\"><pr>créer un compte</pr></button><br>";
+                                echo"<button onClick=\"location.href='/account/login.php'\"><pr>se connecter</pr></button><br>";
                             }
                         ?>
                     </div>

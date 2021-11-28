@@ -1,13 +1,7 @@
 <html>
     <head>
         <title>undefined -- error 404</title>
-                    <!--Je vais être honnete, on en a pas vraiment besoin. 
-                        le seul problème c'est les polices d'écriture
-                        mais ça ne pose pas vraiment problème
-                    
-                        il faut remplacer l'url au moment de publier sur
-                        github sinon ça marche pas-->
-        <link rel="stylesheet" href="http://localhost/index.css">
+        <link rel="stylesheet" href="/index.css">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         
     </head>
@@ -27,9 +21,7 @@
                         il est fortement probable que la page en question ne dispose pas d'assez de contenu<br>
                         pour être contacté. Cet incident a automatiquement été loggé a des fins de debugage.
                     </h1><br>
-                        <!-- oui, il faut manuellement changer ce lien a chaque fois 
-                            que je passe de mon nginx local a Github Pages. putain. -->
-                    <h1><a href="http://localhost/" target="_parent">Clique ici pour revenir a la page principale</a></h1>
+                    <h1><a href="/index.php" target="_parent">Clique ici pour revenir a la page principale</a></h1>
                 </marquee>
             </marquee>
         </center>
