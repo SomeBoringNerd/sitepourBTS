@@ -112,7 +112,13 @@
 
 #topDuSite_Mobile
 {
-	position: fixed;
+	position: sticky;
+
+	height : 30px;
+	padding-top:0.7vw;
+	padding-bottom:0.7vw;
+	/* fixée */
+	z-index:512;
 }
 
 #slightly_smaller_p

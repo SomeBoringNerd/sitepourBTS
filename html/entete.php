@@ -36,6 +36,7 @@
 
     <div id="topDuSite_mobile">
         <img src="/rescources/tab.png" onclick="console.log('test')">
+        <br>
         <div id="personnage" name="topmobile_child">
             <p>Menu principal</p>
             <?php echo"<button onClick=\"location.href='/index.php'\"><pr>Page principale</pr></button><br>"; ?>
