@@ -35,7 +35,7 @@
 </head>
 
     <div id="topDuSite_mobile">
-        <button onclick=""><img src="/rescources/tab.png"></button>
+        <button onclick="" width=64px height=64px><img src="/rescources/tab.png"></button>
         <div id="personnage" name="topmobile_child">
 
         </div>
