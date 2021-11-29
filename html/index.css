@@ -353,6 +353,7 @@
 	position: relative;
 	padding-bottom: 56.25%;
 	padding-top: 30px;
+	align-self: center;
 	height: 0;
 	overflow: hidden;
 }
@@ -364,8 +365,8 @@
 	align-self: center;
 	top: 0;
 	left: 0;
-	width: 75%;
-	height: 75%;
+	width: 85%;
+	height: 85%;
 }
 
 /*//////////////////////////////////////////
