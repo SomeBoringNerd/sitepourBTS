@@ -35,7 +35,7 @@
 </head>
     <center>
         <div id="topDuSite">
-            <img src="/resources/tab.png">
+            <img src="/rescources/tab.png">
         </div>
         <div id="topDuSite">
             <top>
