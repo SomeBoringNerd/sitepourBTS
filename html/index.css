@@ -317,6 +317,9 @@
 	#topDuSite{
 		display: none;
 	}
+	#topDuSite_mobile{
+		display: block;
+	}
 }
 
 /* regular display */
@@ -324,6 +327,9 @@
 {
 	#topDuSite{
 		display: block;
+	}
+	#topDuSite_mobile{
+		display: none;
 	}
 }
 
