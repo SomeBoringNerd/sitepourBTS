@@ -108,6 +108,11 @@
 	z-index:512;
 }
 
+#topDuSite_Mobile
+{
+	position: fixed;
+}
+
 #slightly_smaller_p
 {
 	font-size: 20px;
@@ -274,7 +279,23 @@
 
 .dropdown:hover .dropdown-content {
 	display: block;
-}	
+}
+
+.video-container {
+	position: relative;
+}
+	
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	align-self: center;
+	top: 0;
+	left: 0;
+	width: 75%;
+	height: 75%;
+}
+	
 
 /*//////////////////////////////////////////
 

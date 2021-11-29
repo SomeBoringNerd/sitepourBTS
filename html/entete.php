@@ -35,6 +35,9 @@
 </head>
     <center>
         <div id="topDuSite">
+            <img src="/resources/tab.png">
+        </div>
+        <div id="topDuSite">
             <top>
                 <div class="dropdown">
                     <span>
