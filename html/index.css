@@ -126,6 +126,24 @@
 	font-size: 20px;
 }
 
+#mobile_menu
+{
+	background-color: rgba(128, 128, 128, 0.25);
+	
+	width : 325;
+	
+	float: left;
+
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border: ridge #ccc;
+  	border-width: 6px;
+	z-index:128;
+	position:relative;
+}
+
+
 #personnage
 {
 	background-color: rgba(128, 128, 128, 0.25);

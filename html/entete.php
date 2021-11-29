@@ -34,7 +34,7 @@
     <meta name="HandheldFriendly" content="true">
 </head>
 
-    <div id="topDuSite_mobile">
+    <div id="mobile_menu">
         <img src="/rescources/tab.png" onclick="toggle()" name="bouton_toggle_mobile">
         <br>
         <div id="personnage" name="topmobile_child">
@@ -60,13 +60,41 @@
             <?php echo"<button onClick=\"location.href='/wiki/index.php#MAIN';\"><pr>Personnages disponibles</pr></button><br>"?>
             <?php echo"<button onClick=\"location.href='/wiki/index.php#ITEM';\"><pr>Les Objets disponibles</pr></button><br>"?>
             <?php echo"<button onClick=\"location.href='/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
-
+            
+            <p>mon compte</p>
+            <?php
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                    echo"<button onClick=\"location.href='/forum/index.php';\"><pr>Forum (beta)</pr></button><br>";
+                }
+            ?>
+            
+            
+            <?php 
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                    $USER_ID = $_SESSION["id"];
+                    echo"<button onClick=\"location.href='/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
+                    if($user_status === 1){
+                        echo"<button onClick=\"location.href='/admin/messages.php'\"><pr>acceder aux messages</pr></button><br>";
+                        echo"<button onClick=\"location.href='/admin/users.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
+                        echo"<button onClick=\"location.href='/phpmyadmin'\"><pr>PhPMyAdmin</pr></button><br>";
+                    }else{
+                        echo"<button onClick=\"location.href='/pages/contact.php'\"><pr>contacter le gérant</pr></button><br>";
+                        echo "<button onClick=\"location.href='https://github.com/SomeBoringNerd/sitepourBTS'\"><pr>Code source (github)</pr></button><br>";
+                    }
+                    echo"<button onClick=\"location.href='/account/logout.php'\"><pr>Déconnexion</pr></button><br>";
+                } 
+                else{
+                    echo "<button onClick=\"location.href='https://github.com/SomeBoringNerd/sitepourBTS'\"><pr>Code source (github)</pr></button><br>";
+                    echo"<button onClick=\"location.href='/account/register.php'\"><pr>créer un compte</pr></button><br>";
+                    echo"<button onClick=\"location.href='/account/login.php'\"><pr>se connecter</pr></button><br>";
+                }
+            ?>
         </div>
     </div>
 
     <script>
         var togg1 = document.getElementById("bouton_toggle_mobile");
-        var d1 = document.getElementById("personnage");
+        var d1 = document.getElementById("mobile_menu");
 
         d1.style.display = "none";
 
