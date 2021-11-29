@@ -305,23 +305,7 @@
 
 .dropdown:hover .dropdown-content {
 	display: block;
-}
-
-.video-container {
-	position: relative;
-}
-	
-.video-container iframe,  
-.video-container object,  
-.video-container embed {
-	position: absolute;
-	align-self: center;
-	top: 0;
-	left: 0;
-	width: 75%;
-	height: 75%;
-}
-	
+}	
 
 /*//////////////////////////////////////////
 
@@ -335,7 +319,7 @@
 	#topDuSite{
 		display: none;
 	}
-	#topDuSite_mobile{
+	#topDuSite_Mobile{
 		display: block;
 	}
 }
@@ -346,7 +330,7 @@
 	#topDuSite{
 		display: block;
 	}
-	#topDuSite_mobile{
+	#topDuSite_Mobile{
 		display: none;
 	}
 }
