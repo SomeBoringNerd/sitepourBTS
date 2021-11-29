@@ -324,7 +324,10 @@
 	}
 
 	megaTitle{
-		size: 75px;
+		outline: solid;
+		font-family: Captureit;
+		color:rgb(115, 255, 0);
+		font-size:75px;
 	}
 }
 
@@ -336,6 +339,13 @@
 	}
 	#topDuSite_Mobile{
 		display: none;
+	}
+
+	megaTitle{
+		outline: solid;
+		font-family: Captureit;
+		color:rgb(0, 217, 255);
+		font-size:110px;
 	}
 }
 
