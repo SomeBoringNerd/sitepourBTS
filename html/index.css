@@ -302,18 +302,18 @@
 
 //////////////////////////////////////////*/
 
-/* Tablet Landscape */
+/* phone display */
 @media screen and (max-width: 1140px)
 {
-	#topDuSite #desktop{
+	#topDuSite{
 		display: none;
 	}
 }
 
-/* Tabled Portrait */
+/* regular display */
 @media screen and (min-width: 1140px) 
 {
-	#topDuSite #desktop{
+	#topDuSite{
 		display: block;
 	}
 }
