@@ -29,7 +29,7 @@
                 <br><br><br><br>
                 <html>
                     <head>
-                        <title>Page utilisateur de $USER_NAME</title>
+                        <title>Page utilisateur</title>
                         <link rel=\"stylesheet\" href=\"../index.css\">
                     </head>
                     <body>

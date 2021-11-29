@@ -327,7 +327,7 @@
 		outline: solid;
 		font-family: Captureit;
 		color:rgb(0, 217, 255);
-		font-size:70px;
+		font-size:70%;
 	}
 }
 
@@ -438,8 +438,8 @@ p {
 	font-size:24px;
 }
 
-/* modification minimale, juste de quoi rendre la page compatible avec le background noir*/
 h1, h2, h3, h4, h5, h6{
+	font-family: VCR_OSD_Mono;
 	color:white;
 }
 
@@ -450,6 +450,9 @@ a {
 /*
 	dans l'idée d'offrir un retour visuel a l'utilisateur, un lien cliquable rendra le texte en magenta.
 	la changement de couleur de fond va possiblement dégager
+
+	>>la
+	ptdr
 */
 a:hover{
 	color: magenta;
