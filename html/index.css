@@ -322,6 +322,10 @@
 	#topDuSite_Mobile{
 		display: block;
 	}
+
+	megaTitle{
+		size: 75px;
+	}
 }
 
 /* regular display */
