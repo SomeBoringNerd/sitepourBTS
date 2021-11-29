@@ -34,10 +34,10 @@
     <meta name="HandheldFriendly" content="true">
 </head>
 
-    <div id="mobile_menu">
+    <div id="topDuSite_Mobile">
         <img src="/rescources/tab.png" onclick="toggle()" name="bouton_toggle_mobile">
         <br>
-        <div id="personnage" name="topmobile_child">
+        <div id="mobile_menu" name="topmobile_child">
 
             <?php
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -64,13 +64,9 @@
             <p>mon compte</p>
             <?php
                 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                    
                     echo"<button onClick=\"location.href='/forum/index.php';\"><pr>Forum (beta)</pr></button><br>";
-                }
-            ?>
-            
-            
-            <?php 
-                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+
                     $USER_ID = $_SESSION["id"];
                     echo"<button onClick=\"location.href='/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
                     if($user_status === 1){
@@ -170,12 +166,6 @@
                         <?php
                             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                                 echo"<button onClick=\"location.href='/forum/index.php';\"><pr>Forum (beta)</pr></button><br>";
-                            }
-                        ?>
-                        
-                        
-                        <?php 
-                            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                                 $USER_ID = $_SESSION["id"];
                                 echo"<button onClick=\"location.href='/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
                                 if($user_status === 1){
