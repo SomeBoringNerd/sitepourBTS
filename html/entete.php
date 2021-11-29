@@ -35,7 +35,7 @@
 </head>
 
     <div id="topDuSite_mobile">
-        <img src="/rescources/tab.png" onclick="console.log('test')">
+        <img src="/rescources/tab.png" onclick="console.log('test')" name="bouton_toggle_mobile">
         <br>
         <div id="personnage" name="topmobile_child">
             <p>Menu principal</p>
@@ -45,6 +45,15 @@
         </div>
     </div>
 
+    <script>
+        var togg1 = document.getElementByName("bouton_toggle_mobile");
+        var d1 = document.getElementByName("topmobile_child");
+
+        togg1.addEventListener("click", () => {
+            d1.style.display = (getComputedStyle(d1).display != "none") ? d1.style.display = "none" : d1.style.display = "block";
+            console.log("d1 est actuellement a " + d1.style.display.toString());
+        })
+    </script>
 
     <center>
         
