@@ -46,8 +46,8 @@
     </div>
 
     <script>
-        var togg1 = document.getElementsByName("bouton_toggle_mobile");
-        var d1 = document.getElementsByName("topmobile_child");
+        var togg1 = document.getElementById("bouton_toggle_mobile");
+        var d1 = document.getElementById("personnage");
 
         d1.style.display = "none";
 
