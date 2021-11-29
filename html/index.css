@@ -360,12 +360,7 @@
 
 //////////////////////////////////////////*/
 /*Titre de la page */
-megaTitle{
-	outline: solid;
-	font-family: Captureit;
-	color:rgb(0, 217, 255);
-	font-size:110px;
-}
+
 /* titre de la partie de la page */
 lesserTitle {
 	text-align: center;
