@@ -38,10 +38,29 @@
         <img src="/rescources/tab.png" onclick="toggle()" name="bouton_toggle_mobile">
         <br>
         <div id="personnage" name="topmobile_child">
+
+            <?php
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                $ID = $_SESSION["id"];
+                echo "<a href=\"javascript:void(0)\" onclick=\"location.href='/account/account.php?id=$ID'\">"; 
+            }
+            else{
+                echo "<a href=\"javascript:void(0)\" onclick=\"location.href='/account/login.php'\">"; 
+            }
+            
+            echo "<p>$USERNAME</p></a>";?>
+
             <p>Menu principal</p>
             <?php echo"<button onClick=\"location.href='/index.php'\"><pr>Page principale</pr></button><br>"; ?>
             <?php echo"<button onClick=\"location.href='/pages/Contributeur.php'\"><pr>liste des contributeurs</pr></button><br>"?>
             <?php echo"<button onClick=\"location.href='/pages/FAQ.php'\"><pr>Foire aux questions</pr></button><br>"?>
+
+            <p>wiki</p>
+            <?php echo"<button onClick=\"location.href='/wiki/index.php';\"><pr>Page principale</pr></button><br>"?>
+            <?php echo"<button onClick=\"location.href='/wiki/index.php#MAIN';\"><pr>Personnages disponibles</pr></button><br>"?>
+            <?php echo"<button onClick=\"location.href='/wiki/index.php#ITEM';\"><pr>Les Objets disponibles</pr></button><br>"?>
+            <?php echo"<button onClick=\"location.href='/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
+
         </div>
     </div>
 
