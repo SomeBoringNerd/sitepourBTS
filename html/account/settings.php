@@ -31,6 +31,8 @@
         <center>
             <megaTitle>Paramètres du compte</megaTitle>
             <?php 
+                require("/admin/confing.php");
+
                 $USER_ID_TO_LOAD = $_SESSION["id"];
                 $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
 
