@@ -8,16 +8,14 @@
     
 ?>
 
-
-
 <html>
     <head>
         <title>modifier mon profil</title>
-        <link rel="stylesheet" href="/index.css">
+        <link rel="stylesheet" href="../index.css">
     </head>
 
     <body>
-        <?php include("/entete.php");?>
+        <?php include("/entete.php"); ?>
         <br><br><br><br>
 
 
