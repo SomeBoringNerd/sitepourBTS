@@ -9,12 +9,7 @@
 
     }else
     {
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
-            if($_POST["ID"] == $_SESSION["id"])
-            {
-
-            }
-        }
+        
     }
 ?>
  
@@ -39,7 +34,7 @@
                 $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
 
                 echo $USER_ID_TO_LOAD . "<br>";
-                echo $_SESSION["id"];
+                echo $_SESSION["id"] . "<br>";
 
                 $result = $link->query($sql);
         
