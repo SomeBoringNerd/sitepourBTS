@@ -31,11 +31,12 @@
         <center>
             <megaTitle>Paramètres du compte</megaTitle>
             <?php 
-                require("/admin/confing.php");
+                require("/admin/config.php");
 
                 $USER_ID_TO_LOAD = $_SESSION["id"];
                 $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
-
+                echo $USER_ID_TO_LOAD . "<br>";
+                echo $_SESSION["id"];
                 $result = $link->query($sql);
         
                 if ($result->num_rows > 0) 
