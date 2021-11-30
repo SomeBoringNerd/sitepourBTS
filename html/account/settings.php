@@ -26,10 +26,12 @@
     <link rel="stylesheet" href="../index.css">
 </head>
     <body>
-        <?php include("../entete.php");
+        <?php 
+        
+        include("../entete.php");
         echo "<br><br><br><br>
-        <center>
-            <megaTitle>Paramètres du compte</megaTitle>";
+                <center>
+                    <megaTitle>Paramètres du compte</megaTitle>";
 
                 require("/admin/config.php");
 
@@ -46,17 +48,13 @@
                     {
                         $USER_NAME = $row["username"];
                         $LAST_ONLINE = $row["LAST_ONLINE"];
-                        include("../entete.php");
-                        echo "
-
-                        <form action=\"settings.php\" method=\"post\">
+                        echo "<form action=\"settings.php\" method=\"post\">
                             <p>pseudo :</p>
                             <textarea value=\"user_message\">$USER_NAME</textarea>
 
                             <p>pseudo :</p>
                             <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
-                        </form>
-                            ";
+                        </form>";
                     }
                 }
                 else{
