@@ -7,9 +7,6 @@
         header("location: ../index.php");
         exit;
 
-    }else
-    {
-        
     }
 ?>
  
