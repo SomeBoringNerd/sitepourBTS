@@ -33,7 +33,7 @@
                 <center>
                     <megaTitle>Paramètres du compte</megaTitle>";
 
-                require("/admin/config.php");
+                require_once "../admin/config.php";
 
                 $USER_ID_TO_LOAD = $_SESSION["id"];
                 $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
