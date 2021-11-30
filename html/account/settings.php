@@ -26,11 +26,11 @@
     <link rel="stylesheet" href="../index.css">
 </head>
     <body>
-        <?php include("../entete.php");?>
-        <br><br><br><br>
+        <?php include("../entete.php");
+        echo "<br><br><br><br>
         <center>
-            <megaTitle>Paramètres du compte</megaTitle>
-            <?php 
+            <megaTitle>Paramètres du compte</megaTitle>";
+
                 require("/admin/config.php");
 
                 $USER_ID_TO_LOAD = $_SESSION["id"];
