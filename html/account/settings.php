@@ -20,41 +20,41 @@
     <body>
         <?php 
         
-        include("../entete.php");
-        echo "<br><br><br><br>
+            include("../entete.php");
+            echo "<br><br><br><br>
                 <center>
-                    <megaTitle>Paramètres du compte</megaTitle>";
+                <megaTitle>Paramètres du compte</megaTitle>";
 
-                require_once "../admin/config.php";
+            require_once "../admin/config.php";
 
-                $USER_ID_TO_LOAD = $_SESSION["id"];
-                $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
-                echo $sql;
-                echo $USER_ID_TO_LOAD . "<br>";
-                echo $_SESSION["id"] . "<br>";
+            $USER_ID_TO_LOAD = $_SESSION["id"];
+            $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
+            echo $sql;
+            echo $USER_ID_TO_LOAD . "<br>";
+            echo $_SESSION["id"] . "<br>";
 
-                $result = $link->query($sql);
-        
-                if ($result->num_rows > 0) 
-                {// logiquement, le résultat devrait retourner une seule valeur 
-                // donc utiliser une boucle est valide même si c'est une mauvaise idée
-                    while($row = $result->fetch_assoc()) 
-                    {
-                        $USER_NAME = $row["username"];
-                        $LAST_ONLINE = $row["LAST_ONLINE"];
-                        echo "<form action=\"settings.php\" method=\"post\">
-                            <p>pseudo :</p>
-                            <textarea value=\"user_message\">$USER_NAME</textarea>
+            $result = $link->query($sql);
+    
+            if ($result->num_rows > 0) 
+            {// logiquement, le résultat devrait retourner une seule valeur 
+             // donc utiliser une boucle est valide même si c'est une mauvaise idée
+                while($row = $result->fetch_assoc()) 
+                {
+                    $USER_NAME = $row["username"];
+                    $LAST_ONLINE = $row["LAST_ONLINE"];
+                    echo "<form action=\"settings.php\" method=\"post\">
+                        <p>pseudo :</p>
+                        <textarea value=\"user_message\">$USER_NAME</textarea>
 
-                            <p>pseudo :</p>
-                            <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
-                        </form>";
-                    }
+                        <p>pseudo :</p>
+                        <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
+                    </form>";
                 }
-                else{
-                    echo $link->error;
-                }
-            ?>
+            }
+            else{
+                echo $link->error;
+            }
+        ?>
         </center>
     </body>
 </html>
