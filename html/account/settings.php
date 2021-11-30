@@ -37,8 +37,10 @@
 
                 $USER_ID_TO_LOAD = $_SESSION["id"];
                 $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
+
                 echo $USER_ID_TO_LOAD . "<br>";
                 echo $_SESSION["id"];
+
                 $result = $link->query($sql);
         
                 if ($result->num_rows > 0) 
@@ -58,7 +60,7 @@
                     }
                 }
                 else{
-                    echo "<p>une erreur s'est produite : $link->error</p>";
+                    echo $link->error;
                 }
             ?>
         </center>
