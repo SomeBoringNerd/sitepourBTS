@@ -99,14 +99,12 @@
 
 #topDuSite
 {
-	/* just pour tester */
-	display: none;
 	position: fixed;
 	background-color: rgba(128, 128, 128, 0.69);
 	top: 6px;
 	align-content: center;
 
-	width : 98.8vw;
+	width : 98vw;
 
 	height : 30px;
 	padding-top:0.7vw;
@@ -117,7 +115,7 @@
 
 #topDuSite_Mobile
 {
-	position: sticky;
+	position: fixed;
 
 	height : 30px;
 	padding-top:0.7vw;
