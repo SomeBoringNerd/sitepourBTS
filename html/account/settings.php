@@ -40,7 +40,7 @@
                             </div>
                             <div>
                                 <label for=\"msg\"><p style=\"font-size: 40;\">Pseudo :</p></label>
-                                <textarea id=\"msg\" name=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\" value=\"user_message\" required></textarea>
+                                <textarea id=\"msg\" name=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\" value=\"user_message\" required>$USERNAME</textarea>
                             </div><br>
                             <div>
                                 <label for=\"msg\"><p style=\"font-size: 40;\">Bio :</p></label>
