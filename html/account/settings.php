@@ -35,7 +35,7 @@
                             <img src=\"../rescources/ProfilePic/$USER_NAME.png\" height=\"256\" width=\"256\" id=\"img_settings\">
                         </div>
                         <center>
-                        <form action=\"contact.php\" method=\"post\">
+                        <form action=\"settings.php\" method=\"post\">
                             <div>
                                 <p>connecté en temps que $USERNAME </p>
                             </div>
@@ -76,7 +76,7 @@
                     $CAN_ACCOUNT_BE_CREATED = false;
                 }
                 
-                if($CAN_ACCOUNT_BE_CREATED){
+                if($CAN_ACCOUNT_BE_CREATED === true){
                     //@TODO : permettre de changer le mot de passe
                     if(isset($_POST['PASSWORD'])){
 
@@ -95,10 +95,7 @@
         }
         else{
             header("location: login.php");
-        }    
-        
-        
-        
+        } 
     }
 ?>
 
