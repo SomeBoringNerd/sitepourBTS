@@ -30,26 +30,16 @@
 
         echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
         echo $_SESSION["id"] . "<br></p>";
-
-        echo "test";
-
-        $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
-        
-        echo "test 2";
-        
-        mysql_close(); 
-        while($resultat = mysql_fetch_assoc($requete)) 
-        {
-            $USER_NAME = $resultat['username'];
-            $LAST_ONLINE = $resultat['LAST_ONLINE'];
-            echo "<form action=\"settings.php\" method=\"post\">
-                <p>pseudo :</p>
-                <textarea value=\"user_message\">$USER_NAME</textarea>
-
-                <p>pseudo :</p>
-                <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
-            </form>";
+        echo "test<br>";
+        $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
+        echo "test<br>";
+        $answer = $mysqli->query($sql);
+        echo "test<br>";
+        while ($row = $answer->fetch_assoc()) {
+            echo "<p> id = " . $row['id'] . "<p><br>";
+            echo "<p> username = " . $row['username'] . "<p>";
         }
+        echo "test<br>";
     }
         ?>
         </center>
