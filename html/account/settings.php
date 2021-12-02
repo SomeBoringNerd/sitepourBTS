@@ -29,14 +29,14 @@
         $USER_ID_TO_LOAD = $_SESSION["id"];
 
         // code MySQL pour update la dernière date de connexion au site
-        $sql = "UPDATE users SET LAST_ONLINE='$param_date' WHERE id=$param_id";
+        $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
         
         
         if ($link->query($sql) === TRUE) {
             echo "<p>réussi</p>";
         } 
         else{
-            echo "<p>erreur</p>";
+            echo "<p>erreur $link->error</p>";
         }
     }
         ?>
