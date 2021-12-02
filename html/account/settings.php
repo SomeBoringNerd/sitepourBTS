@@ -36,12 +36,13 @@
         
         echo "<p>$sql<br>";
         
-        if ($link->query($sql) === TRUE) {
-            echo "réussi</p>";
-        } 
-        else{
-            echo "erreur $link->error</p>";
+        // Perform a query, check for error
+        if (!mysqli_query($con, $sql))
+        {
+        echo("Error description: " . mysqli_error($con));
         }
+
+        mysqli_close($con);
     }
         ?>
         </center>
