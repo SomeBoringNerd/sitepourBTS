@@ -26,14 +26,15 @@
             <center>
             <megaTitle>Paramètres du compte</megaTitle>";
 
-        
-
         $USER_ID_TO_LOAD = $_SESSION["id"];
 
         echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
         echo $_SESSION["id"] . "<br></p>";
 
         $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD" OR die("la requete a échouée"));
+        
+        echo $requete;
+        
         mysql_close(); 
         while($resultat = mysql_fetch_assoc($requete)) 
         {
