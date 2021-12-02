@@ -41,24 +41,17 @@
 
             $result = $link->query($sql);
     
-            if ($result->num_rows > 0) 
+            while($resultat = mysql_fetch_object($requete)) 
             {
-                while($resultat = mysql_fetch_object($requete)) 
-                {
-                    $USER_NAME = $resultat->username;
-                    $LAST_ONLINE = $resultat->LAST_ONLINE;
-                    echo "<form action=\"settings.php\" method=\"post\">
-                        <p>pseudo :</p>
-                        <textarea value=\"user_message\">$USER_NAME</textarea>
+                $USER_NAME = $resultat->username;
+                $LAST_ONLINE = $resultat->LAST_ONLINE;
+                echo "<form action=\"settings.php\" method=\"post\">
+                    <p>pseudo :</p>
+                    <textarea value=\"user_message\">$USER_NAME</textarea>
 
-                        <p>pseudo :</p>
-                        <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
-                    </form>";
-                }
-            }
-            else{
-                echo "error <br>";
-                echo $link->error . "</p>";
+                    <p>pseudo :</p>
+                    <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
+                </form>";
             }
         ?>
         </center>
