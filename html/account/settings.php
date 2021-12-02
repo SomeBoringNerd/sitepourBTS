@@ -31,12 +31,13 @@
         // code MySQL pour update la dernière date de connexion au site
         $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
         
+        echo "<p>$sql<br>";
         
         if ($link->query($sql) === TRUE) {
-            echo "<p>réussi</p>";
+            echo "réussi</p>";
         } 
         else{
-            echo "<p>erreur $link->error</p>";
+            echo "erreur $link->error</p>";
         }
     }
         ?>
