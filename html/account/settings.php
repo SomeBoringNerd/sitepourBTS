@@ -33,13 +33,17 @@
                         <div id=\"border_pic\" name=\"Nom d'utilisateur\">
                             <img src=\"../rescources/ProfilePic/$USER_NAME.png\" height=\"256\" width=\"256\">
                         </div>
-                        
+                        <center>
                         <form action=\"contact.php\" method=\"post\">
                             <div>
                                 <p>connecté en temps que $USERNAME </p>
                             </div>
                             <div>
-                                <label for=\"msg\"><p style=\"font-size: 40;\">Message :</p></label>
+                                <label for=\"msg\"><p style=\"font-size: 40;\">Pseudo :</p></label>
+                                <textarea id=\"msg\" name=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\" value=\"user_message\" required></textarea>
+                            </div><br>
+                            <div>
+                                <label for=\"msg\"><p style=\"font-size: 40;\">Bio :</p></label>
                                 <textarea id=\"msg\" name=\"user_message\" rows=\"7\" cols=\"50\" class=\"msg\" value=\"user_message\" required></textarea>
                             </div><br>
                             <div class=\"button\">
@@ -48,7 +52,7 @@
                                     
                             </div>
                         </form>
-
+                        </center>
                     ";
             }
         }
