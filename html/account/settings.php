@@ -89,6 +89,8 @@
                         $_SESSION['username'] = $USERNAME;
 
                         header("location: settings.php");
+                    }else{
+                        echo $link->error;
                     }
                 }
             }   
