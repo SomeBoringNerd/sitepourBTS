@@ -34,17 +34,19 @@
             echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
             echo $_SESSION["id"] . "<br>";
 
-            $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
+            $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
+
+
             echo $sql . "<br>";
 
             $result = $link->query($sql);
     
             if ($result->num_rows > 0) 
             {
-                while($row = $result->fetch_assoc()) 
+                while($resultat = mysql_fetch_object($requete)) 
                 {
-                    $USER_NAME = $row["username"];
-                    $LAST_ONLINE = $row["LAST_ONLINE"];
+                    $USER_NAME = $resultat->username;
+                    $LAST_ONLINE = $resultat->LAST_ONLINE;
                     echo "<form action=\"settings.php\" method=\"post\">
                         <p>pseudo :</p>
                         <textarea value=\"user_message\">$USER_NAME</textarea>
