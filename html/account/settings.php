@@ -8,17 +8,16 @@
         exit;
 
     }
-?>
+echo "
  
 <!DOCTYPE html>
-<html lang="fr">
+<html lang=\"fr\">
 <head>
-    <meta charset="UTF-8">
+    <meta charset=\"UTF-8\">
     <title>Login</title>
-    <link rel="stylesheet" href="../index.css">
+    <link rel=\"stylesheet\" href=\"../index.css\">
 </head>
-    <body>
-        <?php 
+    <body>";
         
             include("../entete.php");
             echo "<br><br><br><br>
@@ -26,13 +25,11 @@
                 <megaTitle>Paramètres du compte</megaTitle>";
 
             require_once "../admin/config.php";
-            
-
 
             $USER_ID_TO_LOAD = $_SESSION["id"];
 
             echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
-            echo $_SESSION["id"] . "<br>";
+            echo $_SESSION["id"] . "<br></p>";
 
             $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
     
