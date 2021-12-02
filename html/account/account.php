@@ -23,6 +23,7 @@
             while($row = $result->fetch_assoc()) 
             {
                 $USER_NAME = $row["username"];
+                $USER_ID = $row["id"];
                 $LAST_ONLINE = $row["LAST_ONLINE"];
                 include("../entete.php");
                 echo "
@@ -38,7 +39,7 @@
                         </center>
                         <br>
                         <div id=\"border_pic\" name=\"Nom d'utilisateur\">
-                            <img src=\"../rescources/ProfilePic/$USER_NAME.png\" height=\"256\" width=\"256\">
+                            <img src=\"../rescources/ProfilePic/$USER_ID.png\" height=\"256\" width=\"256\">
                         </div>
                         <p id=\"border_user\">pseudo :<br><br> $USER_NAME</p>
                         <p id=\"border_user\" id=\"slightly_smaller_p\">vu(e) en ligne : $LAST_ONLINE</p>

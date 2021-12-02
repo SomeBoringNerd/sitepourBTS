@@ -16,6 +16,7 @@
             while($row = $result->fetch_assoc()) 
             {
                 $USER_NAME = $row["username"];
+                $USER_ID = $row["id"];
                 $USER_BIO = $row["USER_BIO"];
 
                 include("../entete.php");
@@ -32,7 +33,7 @@
                         </center>
                         <br>
                         <div id=\"border_pic\" name=\"Nom d'utilisateur\">
-                            <img src=\"../rescources/ProfilePic/$USER_NAME.png\" height=\"256\" width=\"256\" id=\"img_settings\">
+                            <img src=\"../rescources/ProfilePic/$USER_ID.png\" height=\"256\" width=\"256\" id=\"img_settings\">
                         </div>
                         <center>
                         <form action=\"settings.php\" method=\"post\">
