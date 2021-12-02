@@ -26,11 +26,15 @@
                 <megaTitle>Paramètres du compte</megaTitle>";
 
             require_once "../admin/config.php";
+            
+
 
             $USER_ID_TO_LOAD = $_SESSION["id"];
             echo $sql;
             echo $USER_ID_TO_LOAD . "<br>";
             echo $_SESSION["id"] . "<br>";
+
+            $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
 
             $result = $link->query($sql);
     
