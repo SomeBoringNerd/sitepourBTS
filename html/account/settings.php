@@ -33,8 +33,6 @@
 
         $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD" OR die("la requete a échouée"));
         
-        echo $requete;
-
         echo "test";
         
         mysql_close(); 
