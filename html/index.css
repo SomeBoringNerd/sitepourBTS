@@ -1,3 +1,8 @@
+/* 
+	@TODO : reformater, séparer tout ce bordel en plusieurs .css
+*/
+
+
 /*//////////////////////////////////////////
 
 			polices d'écriture
@@ -76,7 +81,7 @@
 	height: 720px;
 	width: 512px;
 	bottom: 512px;
-	left: 70vw;
+	left: 55vw;
 }
 
 #border_user

@@ -26,6 +26,13 @@
                 $USER_ID = $row["id"];
                 $LAST_ONLINE = $row["LAST_ONLINE"];
                 include("../entete.php");
+                
+                $filename = "/rescources/ProfilePic/$USER_ID.png";
+
+                if (!file_exists($filename)) {
+                    $filename = "/rescources/ProfilePic/MISSING.png";
+                }
+
                 echo "
                 <br><br><br><br>
                 <html>
