@@ -30,11 +30,12 @@
 
 
             $USER_ID_TO_LOAD = $_SESSION["id"];
-            echo $sql;
+            
             echo $USER_ID_TO_LOAD . "<br>";
             echo $_SESSION["id"] . "<br>";
 
             $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
+            echo $sql;
 
             $result = $link->query($sql);
     
