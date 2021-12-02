@@ -31,7 +31,7 @@
         echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
         echo $_SESSION["id"] . "<br></p>";
 
-        $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD" OR die("la requete a échouée"));
+        $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
         
         echo "test";
         
