@@ -28,8 +28,7 @@
 
         $USER_ID_TO_LOAD = $_SESSION["id"];
 
-        echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
-        echo $_SESSION["id"] . "<br>";
+        echo  "<br><p>";
         echo "test 1/3<br>";
         $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
         echo "requete a faire : <br>$sql<br>";
