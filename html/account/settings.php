@@ -28,7 +28,6 @@
             require_once "../admin/config.php";
 
             $USER_ID_TO_LOAD = $_SESSION["id"];
-            $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
             echo $sql;
             echo $USER_ID_TO_LOAD . "<br>";
             echo $_SESSION["id"] . "<br>";
@@ -52,6 +51,7 @@
                 }
             }
             else{
+                echo "error \n";
                 echo $link->error;
             }
         ?>
