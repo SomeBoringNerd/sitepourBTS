@@ -7,44 +7,47 @@
         header("location: ../index.php");
         exit;
 
-    }
-echo "
- 
-<!DOCTYPE html>
-<html lang=\"fr\">
-<head>
-    <meta charset=\"UTF-8\">
-    <title>Login</title>
-    <link rel=\"stylesheet\" href=\"../index.css\">
-</head>
-    <body>";
-        
-            include("../entete.php");
-            echo "<br><br><br><br>
-                <center>
-                <megaTitle>Paramètres du compte</megaTitle>";
-
-            require_once "../admin/config.php";
-
-            $USER_ID_TO_LOAD = $_SESSION["id"];
-
-            echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
-            echo $_SESSION["id"] . "<br></p>";
-
-            $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
+    }else{
+        require "../admin/config.php";
     
-            while($resultat = mysql_fetch_object($requete)) 
-            {
-                $USER_NAME = $resultat->username;
-                $LAST_ONLINE = $resultat->LAST_ONLINE;
-                echo "<form action=\"settings.php\" method=\"post\">
-                    <p>pseudo :</p>
-                    <textarea value=\"user_message\">$USER_NAME</textarea>
+        echo "
+        
+        <!DOCTYPE html>
+        <html lang=\"fr\">
+        <head>
+            <meta charset=\"UTF-8\">
+            <title>Login</title>
+            <link rel=\"stylesheet\" href=\"../index.css\">
+        </head>
+            <body>";
+        
+        include("../entete.php");
+        echo "<br><br><br><br>
+            <center>
+            <megaTitle>Paramètres du compte</megaTitle>";
 
-                    <p>pseudo :</p>
-                    <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
-                </form>";
-            }
+        
+
+        $USER_ID_TO_LOAD = $_SESSION["id"];
+
+        echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
+        echo $_SESSION["id"] . "<br></p>";
+
+        $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
+
+        while($resultat = mysql_fetch_object($requete)) 
+        {
+            $USER_NAME = $resultat->username;
+            $LAST_ONLINE = $resultat->LAST_ONLINE;
+            echo "<form action=\"settings.php\" method=\"post\">
+                <p>pseudo :</p>
+                <textarea value=\"user_message\">$USER_NAME</textarea>
+
+                <p>pseudo :</p>
+                <textarea value=\"user_message\" rows=\"1\" cols=\"16\" class=\"msg\">$USER_NAME</textarea>
+            </form>";
+        }
+    }
         ?>
         </center>
     </body>
