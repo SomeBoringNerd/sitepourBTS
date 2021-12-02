@@ -28,17 +28,16 @@
 
         $USER_ID_TO_LOAD = $_SESSION["id"];
 
-        echo  "<br><p>";
-        echo "test 1/3<br>";
-        $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
-        echo "requete a faire : <br>$sql<br>";
-        $answer = $mysqli->query($sql);
-        echo "test 2/3<br>";
-        while ($row = $answer->fetch_assoc()) {
-            echo "<p> id = " . $row['id'] . "<p><br>";
-            echo "<p> username = " . $row['username'] . "<p>";
+        // code MySQL pour update la dernière date de connexion au site
+        $sql = "UPDATE users SET LAST_ONLINE='$param_date' WHERE id=$param_id";
+        
+        
+        if ($link->query($sql) === TRUE) {
+            echo "<p>réussi</p>";
+        } 
+        else{
+            echo "<p>erreur</p>";
         }
-        echo "test 3/3<br></p>";
     }
         ?>
         </center>
