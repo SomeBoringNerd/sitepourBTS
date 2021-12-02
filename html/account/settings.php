@@ -34,7 +34,7 @@
         echo $_SESSION["id"] . "<br></p>";
 
         $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD" OR die("la requete a échouée"));
-
+        mysql_close(); 
         while($resultat = mysql_fetch_object($requete)) 
         {
             $USER_NAME = $resultat->username;
