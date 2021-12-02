@@ -8,8 +8,9 @@
         exit;
 
     }else{
+        echo "<script>console.log(\"chargement de config.php\")</script>";
         require "../admin/config.php";
-    
+        echo "<script>console.log(\"config.php a été chargé\")</script>";
         echo "
         
         <!DOCTYPE html>
