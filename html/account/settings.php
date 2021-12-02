@@ -31,9 +31,10 @@
         echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
         echo $_SESSION["id"] . "<br></p>";
 
+        echo "test";
         $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
         
-        echo "test";
+        
         
         mysql_close(); 
         while($resultat = mysql_fetch_assoc($requete)) 
