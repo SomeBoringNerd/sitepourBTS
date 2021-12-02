@@ -35,10 +35,10 @@
 
         $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD" OR die("la requete a échouée"));
         mysql_close(); 
-        while($resultat = mysql_fetch_object($requete)) 
+        while($resultat = mysql_fetch_assoc($requete)) 
         {
-            $USER_NAME = $resultat->username;
-            $LAST_ONLINE = $resultat->LAST_ONLINE;
+            $USER_NAME = $resultat['username'];
+            $LAST_ONLINE = $resultat['LAST_ONLINE'];
             echo "<form action=\"settings.php\" method=\"post\">
                 <p>pseudo :</p>
                 <textarea value=\"user_message\">$USER_NAME</textarea>
