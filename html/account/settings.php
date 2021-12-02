@@ -22,19 +22,33 @@
                 <br><br><br><br>
                 <html>
                     <head>
-                        <title>Page utilisateur</title>
+                        <title>Settings</title>
                         <link rel=\"stylesheet\" href=\"../index.css\">
                     </head>
                     <body>
                         <center>
-                            <megaTitle>page de $USER_NAME</megaTitle>
+                            <megaTitle>Paramètres</megaTitle>
                         </center>
                         <br>
                         <div id=\"border_pic\" name=\"Nom d'utilisateur\">
                             <img src=\"../rescources/ProfilePic/$USER_NAME.png\" height=\"256\" width=\"256\">
                         </div>
-                        <p id=\"border_user\">pseudo :<br><br> $USER_NAME</p>
-                        <p id=\"border_user\" id=\"slightly_smaller_p\">vu(e) en ligne : $LAST_ONLINE</p>
+                        
+                        <form action=\"contact.php\" method=\"post\">
+                            <div>
+                                <p>connecté en temps que $USERNAME </p>
+                            </div>
+                            <div>
+                                <label for=\"msg\"><p style=\"font-size: 40;\">Message :</p></label>
+                                <textarea id=\"msg\" name=\"user_message\" rows=\"7\" cols=\"50\" class=\"msg\" value=\"user_message\" required></textarea>
+                            </div><br>
+                            <div class=\"button\">
+                            <p>Envoyer le message</p>
+                            <button id=\"button_register\" type=\"submit\" value=\"Submit\"><pr>Mettre a jour le profil</pr></button>
+                                    
+                            </div>
+                        </form>
+
                     ";
             }
         }
