@@ -30,18 +30,17 @@
 
 
             $USER_ID_TO_LOAD = $_SESSION["id"];
-            
-            echo $USER_ID_TO_LOAD . "<br>";
+
+            echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
             echo $_SESSION["id"] . "<br>";
 
             $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
-            echo $sql;
+            echo $sql . "<br>";
 
             $result = $link->query($sql);
     
             if ($result->num_rows > 0) 
-            {// logiquement, le résultat devrait retourner une seule valeur 
-             // donc utiliser une boucle est valide même si c'est une mauvaise idée
+            {
                 while($row = $result->fetch_assoc()) 
                 {
                     $USER_NAME = $row["username"];
@@ -56,8 +55,8 @@
                 }
             }
             else{
-                echo "error \n";
-                echo $link->error;
+                echo "error <br>";
+                echo $link->error . "</p>";
             }
         ?>
         </center>
