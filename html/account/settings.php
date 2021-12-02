@@ -29,17 +29,17 @@
         $USER_ID_TO_LOAD = $_SESSION["id"];
 
         echo  "<br><p>" . $USER_ID_TO_LOAD . "<br>";
-        echo $_SESSION["id"] . "<br></p>";
-        echo "test<br>";
+        echo $_SESSION["id"] . "<br>";
+        echo "test 1/3<br>";
         $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
-        echo "test<br>";
+        echo "$sql<br>";
         $answer = $mysqli->query($sql);
-        echo "test<br>";
+        echo "test 2/3<br>";
         while ($row = $answer->fetch_assoc()) {
             echo "<p> id = " . $row['id'] . "<p><br>";
             echo "<p> username = " . $row['username'] . "<p>";
         }
-        echo "test<br>";
+        echo "test 3/3<br></p>";
     }
         ?>
         </center>
