@@ -32,7 +32,7 @@
         echo $_SESSION["id"] . "<br>";
         echo "test 1/3<br>";
         $sql = "SELECT * FROM users WHERE id = $USER_ID_TO_LOAD";
-        echo "$sql<br>";
+        echo "requete a faire : <br>$sql<br>";
         $answer = $mysqli->query($sql);
         echo "test 2/3<br>";
         while ($row = $answer->fetch_assoc()) {
