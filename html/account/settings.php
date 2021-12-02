@@ -1,6 +1,8 @@
 <?php
     // Initialize the session
     session_start();
+
+    require "../admin/config.php";
     
     // Check if the user is already logged in, if yes then redirect him to welcome page
     if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
@@ -9,7 +11,7 @@
 
     }else{
         echo "<script>console.log(\"chargement de config.php\")</script>";
-        require "../admin/config.php";
+        
         echo "<script>console.log(\"config.php a été chargé\")</script>";
         echo "
         
