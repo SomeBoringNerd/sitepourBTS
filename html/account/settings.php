@@ -31,7 +31,7 @@
                         </center>
                         <br>
                         <div id=\"border_pic\" name=\"Nom d'utilisateur\">
-                            <img src=\"../rescources/ProfilePic/$USER_NAME.png\" height=\"256\" width=\"256\">
+                            <img src=\"../rescources/ProfilePic/$USER_NAME.png\" height=\"256\" width=\"256\" id=\"img_settings\">
                         </div>
                         <center>
                         <form action=\"contact.php\" method=\"post\">
