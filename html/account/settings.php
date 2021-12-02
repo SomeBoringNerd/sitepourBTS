@@ -35,11 +35,6 @@
             echo $_SESSION["id"] . "<br>";
 
             $requete = mysql_query("SELECT * FROM users WHERE id = $USER_ID_TO_LOAD");
-
-
-            echo $sql . "<br>";
-
-            $result = $link->query($sql);
     
             while($resultat = mysql_fetch_object($requete)) 
             {
