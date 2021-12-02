@@ -24,6 +24,7 @@
             {
                 $USER_NAME = $row["username"];
                 $USER_ID = $row["id"];
+                $USER_BIO = $row["USER_BIO"];
                 $LAST_ONLINE = $row["LAST_ONLINE"];
                 include("../entete.php");
                 
@@ -50,6 +51,10 @@
                         </div>
                         <p id=\"border_user\">pseudo :<br><br> $USER_NAME</p>
                         <p id=\"border_user\" id=\"slightly_smaller_p\">vu(e) en ligne : $LAST_ONLINE</p>
+                        <div id=\"bio\">
+                            <textarea readonly>$USER_BIO</textarea>
+                        </div>
+                        
                     ";
             }
         }
@@ -92,6 +97,6 @@
                             ?>
                             
                         </div>
-
+                        
                     </body>
                 </html>

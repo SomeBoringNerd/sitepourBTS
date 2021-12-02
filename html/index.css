@@ -97,6 +97,17 @@
 	text-align: center;
 }
 
+#bio{
+	position: relative;
+	height: 256;
+	left:2vw;
+	width: 256;
+
+	border: ridge #ccc;
+	border-width: 6px;
+	background-color: rgba(128, 128, 128, 0.25);
+}
+
 #topDuSite
 {
 	position: fixed;
