@@ -22,8 +22,8 @@
 
         // pas de fallback, l'opération étant 
         // pas super importante, si elle échoue c'est pas grave
-        if ($link->query($sql) === TRUE) {
-        }
+        
+        $link->query($sql);
     }
 ?>
 <head>

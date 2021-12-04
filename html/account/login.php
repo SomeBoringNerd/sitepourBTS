@@ -17,6 +17,21 @@ $username_err = $password_err = $login_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    function random_str(
+        int $length = 64,
+        string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    ): string {
+        if ($length < 1) {
+            throw new \RangeException("Length must be a positive integer");
+        }
+        $pieces = [];
+        $max = mb_strlen($keyspace, '8bit') - 1;
+        for ($i = 0; $i < $length; ++$i) {
+            $pieces []= $keyspace[random_int(0, $max)];
+        }
+        return implode('', $pieces);
+    }
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
@@ -35,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, user_password, USER_STATUS FROM users WHERE username = ?";
+        $sql = "SELECT id, username, user_password, USER_STATUS, TOKEN FROM users WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -52,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $user_status);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $user_status, $token);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
@@ -64,19 +79,63 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;    
                             // 1 : admin, 2 : moderator, 3 : wiki editor                        
                             $_SESSION["user_status"] = $user_status;
-                            
+
+                            // premier cas : token dans le compte, token dans les cookies (on remplace si c'est pas le même)
+                            if(isset($token) && isset($_COOKIE['token']))
+                            {
+                                if($token != $_COOKIE['token'])
+                                {
+                                    $_COOKIE['token'] = $token;
+                                }
+                            }
+                            // si y'a un token ni dans le compte, ni dans les cookies, on le génère
+                            else if(!isset($token) && !isset($_COOKIE['token']))
+                            {
+                                $gen_token = random_str;
+                                $sql = "UPDATE users SET TOKEN=$gen_token WHERE id=$id";
+
+                                if ($link->query($sql) === TRUE) 
+                                {
+                                    echo "<script>console.log(\"Token généré : $gen_token\");</script>";
+                                    setcookie("token", $token, time() + (86400 * 14), "/");
+                                }
+                                else
+                                {
+                                    echo "<script>console.log(\"Une erreur s'est produite : $link->error || token : $gen_token\");</script>";
+                                }
+                            }
+                            // si un token existe dans le compte, mais pas dans les cookies
+                            else if(isset($token) && !isset($_COOKIE['token']))
+                            {
+                                $sql = "SELECT * FROM users WHERE id=$id";
+
+                                $result = $link->query($sql);
+
+                                if ($result->num_rows > 0) 
+                                {// logiquement, le résultat devrait retourner une seule valeur 
+                                // donc utiliser une boucle est valide même si c'est une mauvaise idée
+                                    while($row = $result->fetch_assoc()) 
+                                    {
+                                        setcookie("token", $row['token'], time() + (86400 * 14), "/", "troughthedark.ddns.net:50001/" ,false, true);
+                                    }
+                                }
+                            }
+
                             // Redirect user to welcome page
-                            header("location: ../index.php");
-                        } else{
+                            //header("location: ../index.php");
+                        } else
+                        {
                             // Password is not valid, display a generic error message
                             $login_err = "<p>mot de passe incorrect</p>";
                         }
                     }
-                } else{
+                } else
+                {
                     // Username doesn't exist, display a generic error message
                     $login_err = "<p>nom d'utilisateur incorrect</p>";
                 }
-            } else{
+            } else
+            {
                 echo "<p>Une erreur s'est produite, veuillez re-essayer plus tard</p>";
             }
 
