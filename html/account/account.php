@@ -39,7 +39,7 @@
                 <html>
                     <head>
                         <title>Page utilisateur</title>
-                        <link rel=\"stylesheet\" href=\"../index.css\">
+                        <link rel=\"stylesheet\" href=\"../index.css?rnd=132\">
                     </head>
                     <body>
                         <center>

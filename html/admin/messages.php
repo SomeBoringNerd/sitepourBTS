@@ -37,7 +37,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../index.css?rnd=132">
         <title>Messages</title>
         <center>
         <?php

@@ -37,7 +37,7 @@
 <html>
     <head>
         <title>gestion des utilisateurs</title>
-        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../index.css?rnd=132">
     </head>
     <?php include("../entete.php"); 
 

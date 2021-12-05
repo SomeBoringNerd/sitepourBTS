@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>undefined -- error 404</title>
-        <link rel="stylesheet" href="/index.css">
+        <link rel="stylesheet" href="/index.css?rnd=132">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         
     </head>

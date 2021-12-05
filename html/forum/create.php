@@ -39,7 +39,7 @@
 
     <head>
         <title>Créer un poste</title>
-        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../index.css?rnd=132">
     </head>
     <body>
         <?php include("../entete.php") ?><br><br><br><br>

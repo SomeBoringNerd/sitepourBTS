@@ -2,7 +2,7 @@
 	<head>
 		<title>Calculator-3000 PHP Edition</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="index.css?rnd=132">
 	</head>
     
 	<body>

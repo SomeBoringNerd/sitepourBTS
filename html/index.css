@@ -69,7 +69,7 @@
 	background-color: rgba(128, 128, 128, 0.25);
 	width: 256px;
 	position: relative;
-	left: 2vw;
+	left: 25vw;
 }
 
 #POST_HISTORY
@@ -80,7 +80,7 @@
 	background-color: rgba(128, 128, 128, 0.25);
 	height: 720px;
 	width: 512px;
-	bottom: 512px;
+	bottom: 780px;
 	left: 55vw;
 }
 
@@ -88,7 +88,7 @@
 {
 	position: relative;
 	height: 75px;
-	left: 360px;
+	left: 40vw;
 	bottom: 256px;
 	width: 256;
 	border: ridge #ccc;
@@ -100,12 +100,17 @@
 #bio{
 	position: relative;
 	height: 256;
-	left:2vw;
-	width: 256;
-
+	resize: none;	
+	left:25vw;
+	width: 480;
+  	bottom: 15vh;
 	border: ridge #ccc;
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
+
+	font-family: VCR_OSD_Mono;
+	color:white;
+	font-size:24px;
 }
 
 #topDuSite
@@ -326,11 +331,11 @@
 	display: block;
 }	
 
-/*//////////////////////////////////////////
+/* //////////////////////////////////////////
 
 			media bullshit
 
-//////////////////////////////////////////*/
+////////////////////////////////////////// */
 
 /* phone display */
 @media screen and (max-width: 1140px)
