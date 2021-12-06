@@ -69,7 +69,7 @@
 	background-color: rgba(128, 128, 128, 0.25);
 	width: 256px;
 	position: relative;
-	left: 25vw;
+	left: 15vw;
 }
 
 #POST_HISTORY
@@ -81,7 +81,7 @@
 	height: 720px;
 	width: 512px;
 	bottom: 780px;
-	left: 55vw;
+	left: 65vw;
 }
 
 #border_user
@@ -96,21 +96,27 @@
 	background-color: rgba(128, 128, 128, 0.25);
 	text-align: center;
 }
+#bio_text
+{
+	resize: none;	
+	font-family: VCR_OSD_Mono;
+	color:white;
+	font-size:24px;
+	width: 512;
+	height: 256;
+	background-color: rgba(128, 128, 128, 0.25);
+}
 
 #bio{
 	position: relative;
 	height: 256;
-	resize: none;	
-	left:25vw;
-	width: 480;
-  	bottom: 15vh;
+	
+	left:15vw;
+	width: 512;
+  	bottom: 25vh;
 	border: ridge #ccc;
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
-
-	font-family: VCR_OSD_Mono;
-	color:white;
-	font-size:24px;
 }
 
 #topDuSite
