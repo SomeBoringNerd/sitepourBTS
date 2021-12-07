@@ -107,7 +107,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // si y'a un token ni dans le compte, ni dans les cookies, on le génère
                             else if(!isset($token) && !isset($_COOKIE['token']))
                             {
-                                $gen_token = random_str();
+
+                                $rand_token = openssl_random_pseudo_bytes(128);
+                                
+                                $token = bin2hex($rand_token);
+
+                                $gen_token = $token;
                                 $sql = "UPDATE users SET TOKEN=$gen_token WHERE id=$id";
 
                                 if ($link->query($sql) === TRUE) 
