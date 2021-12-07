@@ -153,7 +153,7 @@
 
 #mobile_menu
 {
-	background-color: rgba(128, 128, 128, 0.25);
+	background-color: rgba(128, 128, 128);
 	
 	width : 325;
 	
@@ -346,11 +346,57 @@
 /* phone display */
 @media screen and (max-width: 1140px)
 {
+	#border_user
+	{
+		position: relative;
+		height: 75px;
+		left: 7vh;
+		bottom: 0;
+		width: 256;
+		border: ridge #ccc;
+		border-width: 6px;
+		background-color: rgba(128, 128, 128, 0.25);
+		text-align: center;
+	}
+	#bio_text
+	{
+		resize: none;	
+		font-family: VCR_OSD_Mono;
+		color:white;
+		font-size:24px;
+		width: 360;
+		height: 256;
+		background-color: rgba(128, 128, 128, 0.25);
+	}
 	#topDuSite{
 		display: none;
 	}
 	#topDuSite_Mobile{
 		display: block;
+	}
+	#POST_HISTORY
+	{
+			position: relative;
+			border: ridge #ccc;
+			border-width: 6px;
+			background-color: rgba(128, 128, 128, 0.25);
+			height: 720px;
+			width: 360px;
+			bottom: -60;
+			left: 2;
+	}
+	
+	#bio{
+	position: relative;
+	height: 256;
+	
+	left: 2;
+	
+	width: 360;
+	bottom: 0;
+	border: ridge #ccc;
+	border-width: 6px;
+	background-color: rgba(128, 128, 128, 0.25);
 	}
 
 	megaTitle{
@@ -364,6 +410,7 @@
 /* regular display */
 @media screen and (min-width: 1140px) 
 {
+	
 	#topDuSite{
 		display: block;
 	}

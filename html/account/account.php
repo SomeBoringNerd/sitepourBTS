@@ -68,7 +68,7 @@
 
                         <div id="POST_HISTORY">
                             <center><p>Historique des postes</p>
-                            <p>______________________________</p></center>
+                            <p>_________________________</p></center>
                             <?php
                                 require("../admin/config.php");
                                 if(isset($_GET["id"]))
