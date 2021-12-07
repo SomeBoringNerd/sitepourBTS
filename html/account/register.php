@@ -89,6 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location: login.php");
             }else{
                 echo "<script>alert('une erreur s'est produite');</script>";
+                echo "<p>" . $link->error . "</p>";
             }
         }
     }
