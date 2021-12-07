@@ -80,6 +80,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // 1 : admin, 2 : moderator, 3 : wiki editor                        
                             $_SESSION["user_status"] = $user_status;
 
+                            // ce code sert a fetch un token de connexion qui
+                            // pourrait exister dans la base de donnée.
+                            // habituellement, conserver une donnée quelconque 
+                            // dans les cookies est une mauvaise idée
+                            // car il est possible de le falsifier (aka "dont trust the client").
+                            // mais un identifiant unique de longueur 64 devrait être safe.
+
+                            // @TODO : permettre de login quelqu'un avec son token.
+                            //         une façon valide de faire ça serai de fetch
+                            //         le token depuis $_COOKIE puis de regarder
+                            //         quel row de la base de donnée contient ces 
+                            //         données, puis d'associer les valeurs requises
+                            //         dans le $_SESSION.
+                            //         cependant, il serai plus utile et simple de 
+                            //         mettre ça dans entete.php                                        
+
                             // premier cas : token dans le compte, token dans les cookies (on remplace si c'est pas le même)
                             if(isset($token) && isset($_COOKIE['token']))
                             {
@@ -91,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // si y'a un token ni dans le compte, ni dans les cookies, on le génère
                             else if(!isset($token) && !isset($_COOKIE['token']))
                             {
-                                $gen_token = random_str;
+                                $gen_token = random_str();
                                 $sql = "UPDATE users SET TOKEN=$gen_token WHERE id=$id";
 
                                 if ($link->query($sql) === TRUE) 
@@ -115,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 {// logiquement, le résultat devrait retourner une seule valeur 
                                 // donc utiliser une boucle est valide même si c'est une mauvaise idée
                                     while($row = $result->fetch_assoc()) 
-                                    {
+                                    {                      // timestamp actuelle + 14 jours pour expirer le cookie
                                         setcookie("token", $row['token'], time() + (86400 * 14), "/", "troughthedark.ddns.net:50001/" ,false, true);
                                     }
                                 }

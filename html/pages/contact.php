@@ -33,8 +33,6 @@
 		// requete MySQL pour ajouter une entrée dans la base de donnée de contact
         $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT, MESSAGE_AUTHOR_ID) VALUES ('$USERNAME', '$MESSAGE', '$param_id')";
 
-		
-
 		// si ça marche
         if ($link->query($sql) === TRUE) {
 			echo "<script>alert('votre message a bien été envoyé')</script>";
@@ -65,6 +63,7 @@
 			<p>______________________________________________________________________________</p>
 			
 		</center>
+			<!-- @TODO : fixer cette connasse d'image une bonne fois pour toute-->
 			<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" 
 			title="tuez moi j'ai perdu 3h de ma vie a placer ce truc au bon endroit">
 			
@@ -80,9 +79,8 @@
 						<textarea id="msg" name="user_message" rows="7" cols="50" class="msg" value="user_message" required></textarea>
 					</div><br>
 					<div class="button">
-					<p>Envoyer le message</p>
-					<button id="button_register" type="submit" class="btn btn-primary" value="Submit"><pr>envoyer le message</pr></button>
-							
+						<p>Envoyer le message</p>
+						<button id="button_register" type="submit" class="btn btn-primary" value="Submit"><pr>envoyer le message</pr></button>		
 					</div>
 				</form>
             </div>
