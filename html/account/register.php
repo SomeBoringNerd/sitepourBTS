@@ -80,7 +80,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
         $USER_STATUS = 0;
 
-        $sql = "INSERT INTO users (username, user_password, USER_STATUS) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS')";
+        $rand_token = openssl_random_pseudo_bytes(128);
+                                
+        $token = bin2hex($rand_token);
+
+        $gen_token = $token;
+
+        $sql = "INSERT INTO users (username, user_password, USER_STATUS, TOKEN) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS', '$token')";
         
         if($CAN_ACCOUNT_BE_CREATED === true)
         {
