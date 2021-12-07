@@ -169,7 +169,7 @@
 	padding-bottom: 10px;
 }
 
-#mobile_menu: #topDuSite_Mobile
+#toggle_menu:enabled #topDuSite_Mobile
 {
 	position: relative;
 }

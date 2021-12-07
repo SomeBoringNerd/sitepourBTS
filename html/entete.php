@@ -34,7 +34,7 @@
 
     <div id="topDuSite_Mobile">
         <div>
-            <input type="checkbox" name="my-checkbox">
+            <input type="checkbox" name="my-checkbox" type="hidden" id="toggle_menu">
             <img src="/rescources/tab.png" onclick="toggle()" name="bouton_toggle_mobile">
             </input>
         </div>
@@ -93,10 +93,12 @@
     <script>
         var togg1 = document.getElementById("bouton_toggle_mobile");
         var d1 = document.getElementById("mobile_menu");
+        var d2 = document.getElementById("toggle_menu");
 
         d1.style.display = "none";
 
         function toggle() {
+            d2.checked = d2.checked ? true : false;
             d1.style.display = (getComputedStyle(d1).display != "none") ? d1.style.display = "none" : d1.style.display = "block";
             console.log("d1 est actuellement a " + d1.style.display.toString());
         }
