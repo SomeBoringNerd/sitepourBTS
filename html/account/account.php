@@ -30,9 +30,11 @@
                 
                 $filename = "/rescources/ProfilePic/$USER_ID.png";
 
-                if (!file_exists($filename)) {
+                if (!realpath($filename)) {
                     $filename = "/rescources/ProfilePic/MISSING.png";
                 }
+
+                clearstatcache();
 
                 echo "
                 <br><br><br><br>
