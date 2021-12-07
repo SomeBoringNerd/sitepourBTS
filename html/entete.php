@@ -2,7 +2,7 @@
     session_start();
 
     // nom d'utilisateur par défaut
-    $USERNAME = "déconnecté";
+    $USERNAME = "connexion";
 
     // si une session existe
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
