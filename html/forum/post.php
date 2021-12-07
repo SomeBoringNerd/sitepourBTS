@@ -37,7 +37,7 @@
                     echo "<div id=\"text_zone_3\">";
                     echo "<textarea readonly id=\"forum_title_container\">" . $row["POST_TITLE"] . "</textarea>";
                     echo "<p>__________</p>";
-                    echo "<p> créé par " . $row["POST_AUTHOR"] . " le " . $row["POST_CREATION_DATE"] . "</p>";
+                    echo "<p style=\"width: 75vw\"> créé par " . $row["POST_AUTHOR"] . " le " . $row["POST_CREATION_DATE"] . "</p>";
                     echo "</div>";
                         // oui, utiliser <p> active une vulnérabilité. 
                         // oui, je pourrais chercher un moyen de contourner le problème

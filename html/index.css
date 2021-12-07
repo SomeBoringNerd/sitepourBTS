@@ -137,7 +137,7 @@
 
 #topDuSite_Mobile
 {
-	position: fixed;
+	position: relative;
 
 	height : 30px;
 	padding-top:0.7vw;
@@ -223,7 +223,7 @@
 
 	padding-top: 15px;
 	padding-left: 1vw;
-	width: 95.1vw;
+	width: 91vw;
 	border: ridge #ccc;
   	border-width: 6px;
 }
@@ -351,6 +351,26 @@
 /* phone display */
 @media screen and (max-width: 1140px)
 {
+	/*93.1vw;*/
+
+	#forum_text_container{
+		border: ridge #ccc;
+		font-family: VCR_OSD_Mono;
+		  border-width: 6px;
+		color: white;
+		width: 95vw;
+		resize: none;
+		height: 250px;
+		font-size: 24px;
+		background-color: rgba(59, 59, 59, 0.616);
+	}
+
+	#forum_delete_button{
+		left: 20vw;
+		top: 1vh;
+		position: absolute;
+	}
+
 	#border_user
 	{
 		position: relative;
@@ -518,6 +538,7 @@ p {
 	font-family: VCR_OSD_Mono;
 	color:white;
 	font-size:24px;
+	width: 75vw;
 }
 
 h1, h2, h3, h4, h5, h6{

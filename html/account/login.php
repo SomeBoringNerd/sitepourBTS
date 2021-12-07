@@ -85,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // habituellement, conserver une donnée quelconque 
                             // dans les cookies est une mauvaise idée
                             // car il est possible de le falsifier (aka "dont trust the client").
-                            // mais un identifiant unique de longueur 64 devrait être safe.
+                            // mais un identifiant unique de longueur 128 devrait être safe.
 
                             // @TODO : permettre de login quelqu'un avec son token.
                             //         une façon valide de faire ça serai de fetch
@@ -118,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 if ($link->query($sql) === TRUE) 
                                 {
                                     echo "<script>console.log(\"Token généré : $gen_token\");</script>";
-                                    setcookie("token", $token, time() + (86400 * 14), "/");
+                                    setcookie("token", $row['token'], time() + (86400 * 14), "/", "troughthedark.ddns.net:50001/" ,false, true);
                                 }
                                 else
                                 {

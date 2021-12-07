@@ -96,9 +96,9 @@
         var d2 = document.getElementById("toggle_menu");
 
         d1.style.display = "none";
+        d2.style.display = "none";
 
         function toggle() {
-            d2.checked = d2.checked ? true : false;
             d1.style.display = (getComputedStyle(d1).display != "none") ? d1.style.display = "none" : d1.style.display = "block";
             console.log("d1 est actuellement a " + d1.style.display.toString());
         }
