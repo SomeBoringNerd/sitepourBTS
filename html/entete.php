@@ -33,7 +33,11 @@
 </head>
 
     <div id="topDuSite_Mobile">
-        <img src="/rescources/tab.png" onclick="toggle()" name="bouton_toggle_mobile">
+        <div>
+            <input type="checkbox" name="my-checkbox">
+            <img src="/rescources/tab.png" onclick="toggle()" name="bouton_toggle_mobile">
+            </input>
+        </div>
         <br>
         <div id="mobile_menu" name="topmobile_child">
 
