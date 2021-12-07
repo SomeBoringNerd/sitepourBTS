@@ -169,6 +169,11 @@
 	padding-bottom: 10px;
 }
 
+#mobile_menu:active #topDuSite_Mobile
+{
+	position: relative;
+}
+
 #img_settings{
 	position: sticky;
 }
