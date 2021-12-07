@@ -81,13 +81,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $USER_STATUS = 0;
 
         $sql = "INSERT INTO users (username, user_password, USER_STATUS) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS')";
+        
         if($CAN_ACCOUNT_BE_CREATED === true)
         {
             if ($link->query($sql) === TRUE)
             {
                 header("location: login.php");
             }else{
-                echo "<script>alert('une erreur s'est produite : $link->error');</script>";
+                echo "<script>alert('une erreur s'est produite');</script>";
             }
         }
     }
