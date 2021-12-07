@@ -54,7 +54,7 @@
                         <p id=\"border_user\">pseudo :<br><br> $USER_NAME</p>
                         <p id=\"border_user\" id=\"slightly_smaller_p\">vu(e) en ligne : $LAST_ONLINE</p>
                         <div id=\"bio\">
-                            <textarea readonly>$USER_BIO</textarea>
+                            <textarea readonly id=\"bio_text\">$USER_BIO</textarea>
                         </div>
                         
                     ";
