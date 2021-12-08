@@ -95,19 +95,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             //         dans le $_SESSION.
                             //         cependant, il serai plus utile et simple de 
                             //         mettre ça dans entete.php                                        
-
+                            
                             // premier cas : token dans le compte, token dans les cookies (on remplace si c'est pas le même)
                             if(isset($token) && isset($_COOKIE['token']))
                             {
                                 if($token != $_COOKIE['token'])
                                 {
                                     $_COOKIE['token'] = $token;
+                                    echo "<script>console.log('cas 1');</script>";
                                 }
                             }
                             // si y'a un token ni dans le compte, ni dans les cookies, on le génère
                             else if(!isset($token) && !isset($_COOKIE['token']))
                             {
-
+                                echo "<script>console.log('cas 2');</script>";
                                 $rand_token = openssl_random_pseudo_bytes(128);
                                 
                                 $token = bin2hex($rand_token);
@@ -128,6 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // si un token existe dans le compte, mais pas dans les cookies
                             else if((isset($token) && $token != "" )&& !isset($_COOKIE['token']))
                             {
+                                echo "<script>console.log('cas 3');</script>";
                                 $sql = "SELECT * FROM users WHERE id=$id";
 
                                 $result = $link->query($sql);
@@ -141,7 +143,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     }
                                 }
                             }
-
+                            echo "<script>console.log('fini');</script>";
                             // Redirect user to welcome page
                             header("location: ../index.php");
                         } else
