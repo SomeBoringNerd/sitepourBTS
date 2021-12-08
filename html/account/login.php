@@ -152,7 +152,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 }
                             }
                             echo "<script>console.log('fini');</script>";
-                            echo "<script>console.log('".$_COOKIE["token"]."');</script>";
+                            $test = $_COOKIE["token"];
+                            echo "<script>console.log('$test');</script>";
                             // Redirect user to welcome page
                            // header("location: ../index.php");
                         } else
