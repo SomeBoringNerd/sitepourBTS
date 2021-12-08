@@ -69,7 +69,7 @@
 	background-color: rgba(128, 128, 128, 0.25);
 	width: 256px;
 	position: relative;
-	left: 15vw;
+	left: 7vw;
 }
 
 #POST_HISTORY
@@ -81,14 +81,14 @@
 	height: 720px;
 	width: 512px;
 	bottom: 780px;
-	left: 65vw;
+	left: 60vw;
 }
 
 #border_user
 {
 	position: relative;
 	height: 75px;
-	left: 40vw;
+	left: 33vw;
 	bottom: 256px;
 	width: 256;
 	border: ridge #ccc;
@@ -111,9 +111,9 @@
 	position: relative;
 	height: 256;
 	
-	left:15vw;
+	left:12vw;
 	width: 512;
-  	bottom: 25vh;
+  	bottom: 27vh;
 	border: ridge #ccc;
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
@@ -538,7 +538,7 @@ p {
 	font-family: VCR_OSD_Mono;
 	color:white;
 	font-size:24px;
-	width: 75vw;
+	/*! width: 75vw; */
 }
 
 h1, h2, h3, h4, h5, h6{

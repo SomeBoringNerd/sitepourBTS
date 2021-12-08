@@ -126,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 }
                             }
                             // si un token existe dans le compte, mais pas dans les cookies
-                            else if(isset($token) && !isset($_COOKIE['token']))
+                            else if((isset($token) && $token != "" )&& !isset($_COOKIE['token']))
                             {
                                 $sql = "SELECT * FROM users WHERE id=$id";
 

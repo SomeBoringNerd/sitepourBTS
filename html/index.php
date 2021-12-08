@@ -11,16 +11,16 @@
 		<br>
 		<br><br><br>
 		<center>
-			<megaTitle>Trough The Darkness</megaTitle><br><br>
+			<megaTitle>Through The Darkness</megaTitle><br><br>
 			<p>
-                Trough The Darkness est un jeu développé par moi, Corentyn (aka SomeBoringNerd sur internet).
+                Through The Darkness est un jeu développé par moi, Corentyn (aka SomeBoringNerd sur internet).
                 Il s'agit d'un jeu d'enquête dans une ville aillant vue un certain nombre de disparition.<br>
                 <br>
 				voici la vidéo la plus récente a ce sujet :
 				<br><br><br>
 				<div class="video-container">
 					<center>
-            	    <iframe width="854" height="480" src="https://www.youtube-nocookie.com/embed/mcHN_DSe81I?controls=0&modestbranding=1&rel=0" title="YouTube video player" frameborder="0" allow="encrypted-media; picture-in-picture"></iframe>
+            	    <iframe width="854" height="480" src="https://www.youtube-nocookie.com/embed/paDw6wVZukk?controls=0&modestbranding=1&rel=0" title="YouTube video player" frameborder="0" allow="encrypted-media; picture-in-picture"></iframe>
 					</center>
 				</div>
 			</p>
