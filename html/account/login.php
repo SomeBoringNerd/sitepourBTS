@@ -139,8 +139,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 // donc utiliser une boucle est valide même si c'est une mauvaise idée
                                     while($row = $result->fetch_assoc()) 
                                     {                      // timestamp actuelle + 14 jours pour expirer le cookie
-                                        setcookie("token", $row['token'], time() + (86400 * 14), "/", "troughthedark.ddns.net;SameSite=Strict" ,false, true);
-                                        echo "<script>console.log('test');</script>";
+                                        $final_token = $row['token'];
+                                        setcookie("token", $final_token , time() + (86400 * 14), "/", "troughthedark.ddns.net;SameSite=Strict" ,false, true);
+                                        echo "<script>console.log('test". $row['token']."');</script>";
+                                        echo "<script>console.log('test". $final_token ."');</script>";
                                     }
                                 }
                             }
