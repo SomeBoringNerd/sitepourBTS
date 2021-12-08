@@ -140,6 +140,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     while($row = $result->fetch_assoc()) 
                                     {                      // timestamp actuelle + 14 jours pour expirer le cookie
                                         setcookie("token", $row['token'], time() + (86400 * 14), "/", "troughthedark.ddns.net;SameSite=Strict" ,false, true);
+                                        echo "<script>console.log('test');</script>";
                                     }
                                 }
                             }
