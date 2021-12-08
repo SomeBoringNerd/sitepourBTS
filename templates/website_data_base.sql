@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 28 nov. 2021 à 14:08
+-- Généré le : mer. 08 déc. 2021 à 09:32
 -- Version du serveur :  8.0.27-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `register_user_system`
+-- Base de données : `website_data_base`
 --
 
 -- --------------------------------------------------------
@@ -35,6 +35,7 @@ CREATE TABLE `contact_messages` (
   `MESSAGE_CREATION_DATE` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `MESSAGE_AUTHOR_ID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 -- --------------------------------------------------------
 
@@ -79,8 +80,18 @@ CREATE TABLE `users` (
   `user_password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `LAST_ONLINE` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `USER_STATUS` int NOT NULL COMMENT '1 : admin, 2 : modo; 3 : wiki editor'
+  `USER_STATUS` int NOT NULL COMMENT '1 : admin, 2 : modo; 3 : wiki editor',
+  `USER_BIO` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `TOKEN` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+--
+-- Index pour les tables déchargées
+--
 
 --
 -- Index pour la table `contact_messages`

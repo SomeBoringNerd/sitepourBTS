@@ -111,7 +111,7 @@ flush privileges;
 
 inserez votre identifiant + mot de passe dans /html/admin/config.php aux endroits où c'est demandé.
 
-il suffit maintenant d'importer la base de donnée présente dans /template/register_user_system.sql
+il suffit maintenant d'importer la base de donnée présente dans /template/website_data_base.sql
 cette base de donnée contient les tables (vidées) nécéssaires au bon fonctionnement du site.
 accedez a cette page pour ça :
 (remplassez localhost par l'ip / nom de domaine de votre serveur
