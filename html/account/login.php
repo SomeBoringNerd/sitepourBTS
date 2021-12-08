@@ -145,7 +145,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             }
                             echo "<script>console.log('fini');</script>";
                             // Redirect user to welcome page
-                            header("location: ../index.php");
+                           // header("location: ../index.php");
                         } else
                         {
                             // Password is not valid, display a generic error message
