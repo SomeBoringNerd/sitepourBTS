@@ -81,19 +81,35 @@ else if(isset($token) && !isset($_COOKIE['token']))
 
 
 
+/*
+
+            ENTETE.PHP
+
+    sous menu "blog"
+*/
+?>
+
+<pb id="black">_________</pb>
+<top>
+    <div class="dropdown">
+        
+        <?php echo"<a href=\"javascript:void(0)\" onclick=\"location.href='/wiki/';\">";?>
+            <pb>Blog</pb>
+        </a>
+        <div class="dropdown-content" id="drop2" style="left: -11vw;">
+
+            <?php echo"<button onClick=\"location.href='/wiki/index.php';\"><pr>Page principale</pr></button><br>"?>
+            <?php echo"<button onClick=\"location.href='/wiki/index.php#MAIN';\"><pr>Personnages disponibles</pr></button><br>"?>
+            <?php echo"<button onClick=\"location.href='/wiki/index.php#ITEM';\"><pr>Les Objets disponibles</pr></button><br>"?>
+            <?php echo"<button onClick=\"location.href='/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
+        </div>
+    </div>
+</top>
+            
 
 
 
-
-
-
-
-
-
-
-
-
-
+<?php
 
 
 
