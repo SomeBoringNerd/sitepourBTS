@@ -78,17 +78,17 @@
 	border: ridge #ccc;
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
-	height: 720px;
+	height: 585px;
 	width: 512px;
 	bottom: 780px;
-	left: 60vw;
+	left: 53vw;
 }
 
 #border_user
 {
 	position: relative;
 	height: 75px;
-	left: 33vw;
+	left: 27.5vw;
 	bottom: 256px;
 	width: 256;
 	border: ridge #ccc;
@@ -111,9 +111,9 @@
 	position: relative;
 	height: 256;
 	
-	left:12vw;
+	left:10vw;
 	width: 512;
-  	bottom: 27vh;
+  	bottom: 30vh;
 	border: ridge #ccc;
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
