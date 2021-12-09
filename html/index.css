@@ -520,6 +520,10 @@ green_text{
 
 //////////////////////////////////////////*/
 
+footer{
+	background-color: rgb(22, 22, 22);
+}
+
 img { 
 	max-width: 100%; 
 }
