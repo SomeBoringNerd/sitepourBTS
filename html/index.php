@@ -27,3 +27,5 @@
 		</center>
 	</body>
 </html>
+
+<?php include("footer.php"); ?>
