@@ -135,7 +135,7 @@
                         <?php echo"<button onClick=\"location.href='/wiki/index.php#ZONE';\"><pr>Les Endroits</pr></button><br>"?>
                     </div>
                 </div>
-            </top><!--
+            </top>
             
             <pb id="black">_________</pb>
             <top>
