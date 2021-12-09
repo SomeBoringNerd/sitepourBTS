@@ -107,3 +107,4 @@ les médias utilisés sont sous license Creative Common, ou dans le domaine publ
 
 	</body>
 </html>
+<?php include("footer.php"); ?>

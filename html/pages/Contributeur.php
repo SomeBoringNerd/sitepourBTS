@@ -15,9 +15,7 @@
             
 			<p>Les personnes ici ont eu une influence majeure sur le développement du jeu</p><br>
 
-            <p>John Doe : Donation de pas mal de modeles 3D</p>
-			<p>Jane Doe : je ne sais plus ce qu'elle a fait mais elle a servie à quelque chose</p>
-			
 		</center>
 	</body>
 </html>
+<?php include("footer.php"); ?>

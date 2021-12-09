@@ -101,3 +101,4 @@
         ?>
         </center>
 </html>
+<?php include("footer.php"); ?>
