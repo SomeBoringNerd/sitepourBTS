@@ -228,6 +228,10 @@
   	border-width: 6px;
 }
 
+#right{
+	text-align: right;
+}
+
 #black{
 	color: rgba(128, 128, 128, 0)
 }
