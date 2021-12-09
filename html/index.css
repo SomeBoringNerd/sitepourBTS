@@ -533,6 +533,10 @@ green_text{
 
 footer{
 	background-color: rgb(22, 22, 22);
+	padding-top: 5vh;
+	padding-left: 2vw;
+	padding-bottom: 5vh;
+	padding-right: 2vw;
 }
 
 img { 
@@ -542,11 +546,6 @@ html {
 	/* fond en noir*/
 	background-color:rgb(0, 0, 0);
 	font-size:100%;
-}
-
-footer{
-	background-color: #525252;
-	z-index: 5;
 }
 
 p {
