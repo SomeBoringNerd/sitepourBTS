@@ -11,5 +11,6 @@
     <footer_text>in case of legal problem, please contact the owner of the website, 
         SomeBoringNerd, also known as Corentyn at this adress : 
         <a href="mailto:pro.corentynsauvage@gmail.com">pro.corentynsauvage@gmail.com</a><br>
-        abuse of the mail in any way, shape or form will result in me blocking you.</footer_text>
+        If you represent a legal entity, please use a real email (like @gov.fr or @cnil.fr) and not a personal one.<br>
+    </footer_text>
 </footer>
