@@ -3,7 +3,6 @@
 ?>
 
 <footer>
-    <br>
         <p> Copyright :</p>
             <footer_text>Through The Dark by SomeBoringNerd</footer_text><br>
             <footer_text>Copyright by YourAverageIndieGameCompany© 2021</footer_text><br>
@@ -24,5 +23,4 @@
             <footer_text id="right"><a href="https://discord.gg/ZUA7pptwpe">Discord</a></footer_text><br>
         <br>
     <pb>Looking for a dev ? feel free to contact me on my professional email</pb>
-    <br>
 </footer>
