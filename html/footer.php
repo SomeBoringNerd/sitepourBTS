@@ -1,7 +1,7 @@
 <?php
     // mettre du code ici je suppose ?
 ?>
-
+<br><br><br><br>
 <footer>
         <p> Copyright :</p>
             <footer_text>Through The Dark by SomeBoringNerd</footer_text><br>
