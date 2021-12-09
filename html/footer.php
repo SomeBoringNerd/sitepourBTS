@@ -6,18 +6,18 @@
     <footer>
         <table>
             <tr>
-                <td><pb>Through The Dark by SomeBoringNerd</pb><pb id="black">_________</pb></td>
-                <td><pb id="black">_________</pb><pb>Copyright by YourAverageIndieGameCompany© 2021</pb></td>
+                <td><footer_text>Through The Dark by SomeBoringNerd</footer_text><footer_text id="black">_________</footer_text></td>
+                <td><footer_text id="black">_________</footer_text><footer_text>Copyright by YourAverageIndieGameCompany© 2021<br></footer_text></td>
             </tr>
             <tr>
-                <td><pb><a href="pages/mention.php">Mentions légales</a></pb></td>
+                <td><footer_text><a href="pages/mention.php">Mentions légales</a></footer_text></td>
             </tr>
         </table>
     
-    
-        <pb>in case of legal problem, please contact the owner of the website, 
+        <br>
+        <footer_text>in case of legal problem, please contact the owner of the website, 
             SomeBoringNerd, also known as Corentyn at this adress : 
             <a href="mailto:pro.corentynsauvage@gmail.com">pro.corentynsauvage@gmail.com</a><br>
-            abuse of the mail in any way, shape or form will result in me blocking you.</pb>
+            abuse of the mail in any way, shape or form will result in me blocking you.</footer_text>
     </footer>
 </html>

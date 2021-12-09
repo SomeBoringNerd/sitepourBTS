@@ -509,6 +509,12 @@ pb {
 	font-size:24px;
 }
 
+footer_text {
+	font-family: VCR_OSD_Mono;
+	color:rgb(0, 217, 255);
+	font-size:20px;
+}
+
 green_text{
 	color: rgb(255, 0, 191);
 }
