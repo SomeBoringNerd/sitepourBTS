@@ -356,7 +356,7 @@
 	#forum_text_container{
 		border: ridge #ccc;
 		font-family: VCR_OSD_Mono;
-		  border-width: 6px;
+		border-width: 6px;
 		color: white;
 		width: 95vw;
 		resize: none;
@@ -401,14 +401,14 @@
 	}
 	#POST_HISTORY
 	{
-			position: relative;
-			border: ridge #ccc;
-			border-width: 6px;
-			background-color: rgba(128, 128, 128, 0.25);
-			height: 720px;
-			width: 360px;
-			bottom: -60;
-			left: 2;
+		position: relative;
+		border: ridge #ccc;
+		border-width: 6px;
+		background-color: rgba(128, 128, 128, 0.25);
+		height: 720px;
+		width: 360px;
+		bottom: -60;
+		left: 2;
 	}
 	
 	#bio{

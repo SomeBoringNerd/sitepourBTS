@@ -32,7 +32,7 @@
 
             <p>______________________________________________________________________________</p><br>
             <lesserTitle id="RULE">Lisez les règles avant de contribuer</lesserTitle>
-            <p>Les briser de façon répétée menera a une interdiction de contribuer</p>
+            <p>Les enfreindre de façon<br>répétée menera a une<br>interdiction de contribuer</p>
 			<p>______________________________________________________________________________</p><br>
 			
 			

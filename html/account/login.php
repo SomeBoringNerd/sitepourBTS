@@ -18,21 +18,6 @@ $username_err = $password_err = $login_err = "";
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    function random_str(
-        int $length = 64,
-        string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    ): string {
-        if ($length < 1) {
-            throw new \RangeException("Length must be a positive integer");
-        }
-        $pieces = [];
-        $max = mb_strlen($keyspace, '8bit') - 1;
-        for ($i = 0; $i < $length; ++$i) {
-            $pieces []= $keyspace[random_int(0, $max)];
-        }
-        return implode('', $pieces);
-    }
- 
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
         $username_err = "Entrez un nom d'utilisateur.";
@@ -80,80 +65,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // 1 : admin, 2 : moderator, 3 : wiki editor                        
                             $_SESSION["user_status"] = $user_status;
 
-                            // ce code sert a fetch un token de connexion qui
-                            // pourrait exister dans la base de donnée.
-                            // habituellement, conserver une donnée quelconque 
-                            // dans les cookies est une mauvaise idée
-                            // car il est possible de le falsifier (aka "dont trust the client").
-                            // mais un identifiant unique de longueur 128 devrait être safe.
-
-                            // @TODO : permettre de login quelqu'un avec son token.
-                            //         une façon valide de faire ça serai de fetch
-                            //         le token depuis $_COOKIE puis de regarder
-                            //         quel row de la base de donnée contient ces 
-                            //         données, puis d'associer les valeurs requises
-                            //         dans le $_SESSION.
-                            //         cependant, il serai plus utile et simple de 
-                            //         mettre ça dans entete.php                                        
                             
-                            // premier cas : token dans le compte, token dans les cookies (on remplace si c'est pas le même)
-                            if(isset($token) && isset($_COOKIE['token']))
-                            {
-                                if($token != $_COOKIE['token'])
-                                {
-                                    $_COOKIE['token'] = $token;
-                                    echo "<script>console.log('cas 1');</script>";
-                                }
-                            }
-                            // si y'a un token ni dans le compte, ni dans les cookies, on le génère
-                            else if(!isset($token) && !isset($_COOKIE['token']))
-                            {
-                                echo "<script>console.log('cas 2');</script>";
-                                $rand_token = openssl_random_pseudo_bytes(128);
-                                
-                                $token = bin2hex($rand_token);
-
-                                $gen_token = $token;
-                                $sql = "UPDATE users SET TOKEN=$gen_token WHERE id=$id";
-
-                                if ($link->query($sql) === TRUE) 
-                                {
-                                    echo "<script>console.log(\"Token généré : $gen_token\");</script>";
-                                    setcookie("token", $row['token'], time() + (86400 * 14), "/", "troughthedark.ddns.net:50001/" ,false, true);
-                                }
-                                else
-                                {
-                                    echo "<script>console.log(\"Une erreur s'est produite : $link->error || token : $gen_token\");</script>";
-                                }
-                            }
-                            // si un token existe dans le compte, mais pas dans les cookies
-                            else if(isset($token) && !isset($_COOKIE['token']))
-                            {
-                                echo "<script>console.log('cas 3');</script>";
-                                $sql = "SELECT * FROM users WHERE id=$id";
-
-                                $result = $link->query($sql);
-
-                                if ($result->num_rows > 0) 
-                                {// logiquement, le résultat devrait retourner une seule valeur 
-                                // donc utiliser une boucle est valide même si c'est une mauvaise idée
-                                    while($row = $result->fetch_assoc()) 
-                                    {                      // timestamp actuelle + 14 jours pour expirer le cookie
-                                        $final_token = $row['TOKEN'];
-
-                                        $cookie_param = array(
-                                            'samesite' => 'Strict' // None || Lax  || Strict
-                                        );
-
-                                        setcookie("token", $final_token , time() + (86400 * 14), "/", ".troughthedark.ddns.net" ,false, true, $cookie_param);
-                                        echo "<script>console.log('test :". $row['token']."');</script>";
-                                        echo "<script>console.log('test + $final_token');</script>";
-                                    }
-                                }
-                            }
                             echo "<script>console.log('fini');</script>";
-                            $test = $_COOKIE["token"];
-                            echo "<script>console.log('$test');</script>";
                             // Redirect user to welcome page
                             header("location: ../index.php");
                         } else
