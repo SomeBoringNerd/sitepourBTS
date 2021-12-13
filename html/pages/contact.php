@@ -64,8 +64,8 @@
 			
 		</center>
 			<!-- @TODO : fixer cette connasse d'image une bonne fois pour toute-->
-			<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" 
-			title="tuez moi j'ai perdu 3h de ma vie a placer ce truc au bon endroit">
+			<!--<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" 
+			title="tuez moi j'ai perdu 3h de ma vie a placer ce truc au bon endroit">-->
 			
 			<center>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -76,7 +76,7 @@
 					</div>
 					<div>
 						<label for="msg"><p style="font-size: 40;">Message :</p></label>
-						<textarea id="msg" name="user_message" rows="7" cols="50" class="msg" value="user_message" required></textarea>
+						<textarea id="msg" name="user_message" rows="7" cols="20" class="msg" value="user_message" required></textarea>
 					</div><br>
 					<div class="button">
 						<p>Envoyer le message</p>
