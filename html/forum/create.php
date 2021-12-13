@@ -51,11 +51,11 @@
                 <div>
                     <label for="title"><p style="font-size: 32;">Titre :</p></label>
                     <textarea class="msg" name="title" rows="1" cols="25" value="title" required></textarea>
-                </div>
+                </div><!--
                 <div>
                     <label for="image_url"><p style="font-size: 32;">url d'image (facultatif) :</p></label>
                     <textarea class="msg" name="image_url" rows="1" cols="25" value="image_url" ></textarea>
-                </div>
+                </div>-->
                 <div>
                     <label for="message"><p style="font-size: 32;">Message :</p></label>
                     <textarea class="msg" name="message" rows="7" cols="50" value="message" required></textarea>

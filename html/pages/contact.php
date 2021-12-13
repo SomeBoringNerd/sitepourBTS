@@ -60,15 +60,8 @@
 			<megaTitle>Page de contact</megaTitle><br><br>
 			<lesserTitle>vous pouvez venir me contacter ici</lesserTitle>
 			
-			<p>______________________________________________________________________________</p>
-			
-		</center>
-			<!-- @TODO : fixer cette connasse d'image une bonne fois pour toute-->
-			<!--<img src="../rescources/img/kill_me.png" width="750" height="300" id="end_my_sufferings" 
-			title="tuez moi j'ai perdu 3h de ma vie a placer ce truc au bon endroit">-->
-			
-			<center>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<p>__________________</p>
+			<br>
 			<div id="contact_border">
                 <form action="contact.php" method="post">
 					<div>

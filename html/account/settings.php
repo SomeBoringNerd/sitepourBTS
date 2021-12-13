@@ -76,6 +76,28 @@
                     echo "<script>alert(\"votre nom d'utilisateur doit faire entre 4 et 16 charactères\");</script>";
                     $CAN_ACCOUNT_BE_CREATED = false;
                 }
+                else{
+            
+                    $username_trimmed = trim($_POST["username"]);
+            
+                    // Prepare a select statement
+                    $sql = "SELECT id FROM users WHERE username = $username_trimmed";
+            
+                    if ($link->query($sql) === TRUE)
+                    {
+                        $result = $link->query($sql);
+            
+                        if ($result->num_rows === 0)
+                        {
+                            $username = trim($_POST["username"]);
+                        }
+                        else
+                        {
+                            echo "<script>alert(\"Ce nom d'utilisateur est déjà pris\");</script>";
+                            $CAN_ACCOUNT_BE_CREATED = false;
+                        }
+                    }
+                }
                 
                 if($CAN_ACCOUNT_BE_CREATED === true){
                     //@TODO : permettre de changer le mot de passe
@@ -89,7 +111,7 @@
                     if ($link->query($sql) === TRUE){
                         $_SESSION['username'] = $USERNAME;
 
-                        header("location: settings.php");
+                        header("location: account.php");
                     }else{
                         echo $link->error;
                     }

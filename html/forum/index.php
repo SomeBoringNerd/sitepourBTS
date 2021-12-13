@@ -15,7 +15,7 @@
 			<megaTitle>Forum.php</megaTitle><br><br>
 			<lesserTitle>En cours de construction</lesserTitle>
 			<a href="create.php"><p>créer un poste</p></a>
-			<p>______________________________________________________________________________</p><br>
+			<p>__________________</p><br>
 			<p>Postes publiés :</p>
 			<?php
 				require("../admin/config.php");
