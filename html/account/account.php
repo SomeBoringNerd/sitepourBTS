@@ -36,6 +36,10 @@
 
                 clearstatcache();
 
+                if($USER_ID_TO_LOAD === $_GET["id"]){
+                    echo "<button onClick=\"location.href='settings.php';\"><pr>Paramètres</pr></button><br>";
+                }
+
                 echo "
                 <br><br><br><br>
                 <html>
