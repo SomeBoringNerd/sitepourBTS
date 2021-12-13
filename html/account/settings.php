@@ -63,6 +63,9 @@
                 $USERNAME = $_POST['USERNAME'];
                 $NEW_BIO = $_POST['USER_BIO'];
 
+                $NEW_BIO = str_replace("'", "\'", $NEW_BIO);
+                $NEW_BIO = str_replace("-", "\-", $NEW_BIO);
+
                 $CAN_ACCOUNT_BE_CREATED = true;
  
                 // Validate username
@@ -89,18 +92,20 @@
             
                         if ($result->num_rows === 0)
                         {
+                            $username = trim($_POST["username"]);
+                        }
+                        else
+                        {
                             while($row = $result->fetch_assoc()) {
                                 $ID = $row["id"];
 
                                 if($ID === $USER_ID){
                                     $username = trim($_POST["username"]);
-                                }else
-                                {
+                                }else{
                                     echo "<script>alert(\"Ce nom d'utilisateur est déjà pris\");</script>";
                                     $CAN_ACCOUNT_BE_CREATED = false;
                                 }
                             }
-                            
                         }
                     }
                 }
