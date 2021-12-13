@@ -46,7 +46,7 @@
                             </div><br>
                             <div>
                                 <label for=\"msg\"><p style=\"font-size: 40;\">Bio :</p></label>
-                                <textarea id=\"msg\" name=\"USER_BIO\" rows=\"7\" cols=\"50\" class=\"msg\" value=\"user_message\" required>$USER_BIO</textarea>
+                                <textarea id=\"msg\" name=\"USER_BIO\" rows=\"7\" cols=\"20\" class=\"msg\" value=\"user_message\" required>$USER_BIO</textarea>
                             </div><br>
                             <div class=\"button\">
                             <p>Envoyer le message</p>
