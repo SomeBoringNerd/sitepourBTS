@@ -362,6 +362,13 @@
 {
 	/*93.1vw;*/
 
+	#settings_button{
+		position: absolute;
+		left: 27vw;
+		bottom: -1vh;
+		display: none;
+	}
+
 	#forum_text_container{
 		border: ridge #ccc;
 		font-family: VCR_OSD_Mono;
