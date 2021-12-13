@@ -17,6 +17,12 @@
         $post_message = $_POST["message"];
         $post_image = $_POST["image_url"];
 
+        $post_message = str_replace("'", "\'", $post_message);
+        $post_message = str_replace("-", "\-", $post_message);
+
+        $post_title = str_replace("'", "\'", $post_title);
+        $post_title = str_replace("-", "\-", $post_title);
+
         if(isset($post_image))
         {
             $post_image = "https://i.stack.imgur.com/ajwm5.png";
