@@ -63,8 +63,8 @@
                 $USERNAME = $_POST['USERNAME'];
                 $NEW_BIO = $_POST['USER_BIO'];
 
-                $NEW_BIO = str_replace("'", "\'", $NEW_BIO);
-                $NEW_BIO = str_replace("-", "\-", $NEW_BIO);
+//                $NEW_BIO = str_replace("'", "\'", $NEW_BIO);
+  //              $NEW_BIO = str_replace("-", "\-", $NEW_BIO);
 
                 $CAN_ACCOUNT_BE_CREATED = true;
  
