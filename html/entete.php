@@ -71,7 +71,7 @@
 
                     $USER_ID = $_SESSION["id"];
                     echo"<button onClick=\"location.href='/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
-                    echo "<button onClick=\"location.href='settings.php';\"><pr>Paramètres</pr></button><br>";
+                    echo "<button onClick=\"location.href='/account/settings.php';\"><pr>Paramètres</pr></button><br>";
                     if($user_status === 1){
                         echo"<button onClick=\"location.href='/admin/messages.php'\"><pr>acceder aux messages</pr></button><br>";
                         echo"<button onClick=\"location.href='/admin/users.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
@@ -158,7 +158,7 @@
                                 echo"<button onClick=\"location.href='/forum/index.php';\"><pr>Forum (beta)</pr></button><br>";
                                 $USER_ID = $_SESSION["id"];
                                 echo"<button onClick=\"location.href='/account/account.php?id=$USER_ID'\"><pr>mon compte</pr></button><br>";
-                                echo "<button onClick=\"location.href='settings.php';\"><pr>Paramètres</pr></button><br>";
+                                echo "<button onClick=\"location.href='/account/settings.php';\"><pr>Paramètres</pr></button><br>";
                                 if($user_status === 1){
                                     echo"<button onClick=\"location.href='/admin/messages.php'\"><pr>acceder aux messages</pr></button><br>";
                                     echo"<button onClick=\"location.href='/admin/users.php'\"><pr>Gérer les utilisateurs</pr></button><br>";
