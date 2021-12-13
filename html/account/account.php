@@ -36,9 +36,7 @@
 
                 clearstatcache();
 
-                if($USER_ID_TO_LOAD === $_GET["id"]){
-                    echo "<button onClick=\"location.href='settings.php';\"><pr>Paramètres</pr></button><br>";
-                }
+                
 
                 echo "
                 <br><br><br><br>
@@ -56,7 +54,11 @@
                             <img src=\"../rescources/ProfilePic/$USER_ID.png\" height=\"256\" width=\"256\">
                         </div>
                         <p id=\"border_user\">pseudo :<br><br> $USER_NAME</p>
-                        <p id=\"border_user\" id=\"slightly_smaller_p\">vu(e) en ligne : $LAST_ONLINE</p>
+                        ";
+                        if($USER_ID_TO_LOAD === $_GET["id"]){
+                            echo "<button onClick=\"location.href='settings.php';\"><pr>Paramètres</pr></button><br>";
+                        }
+                        echo "<p id=\"border_user\" id=\"slightly_smaller_p\">vu(e) en ligne : $LAST_ONLINE</p>
                         <div id=\"bio\">
                             <textarea readonly id=\"bio_text\">$USER_BIO</textarea>
                         </div>
