@@ -67,13 +67,19 @@
                 $NEW_BIO = str_replace("-", "\-", $NEW_BIO);
 
                 $CAN_ACCOUNT_BE_CREATED = true;
+
+                if(strlen(trim($NEW_BIO)) > 512)
+                {
+                    echo "<script>alert(\"Votre bio ne peut contenir plus de 512 caractères.\");</script>";
+                    $CAN_ACCOUNT_BE_CREATED = false;
+                }
  
                 // Validate username
                 if(empty(trim($_POST["USERNAME"]))){
-                    $username_err = "Please enter a username.";
+                    echo "<script>alert(\"Veuillez entrer un nom d'utilisateur.\");</script>";
                     $CAN_ACCOUNT_BE_CREATED = false;
                 } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["USERNAME"]))){
-                    echo "<script>alert(\"Username can only contain letters, numbers, and underscores.\");</script>";
+                    echo "<script>alert(\"Le nom d'utilisateur peut seulement contenir des chiffres, des lettres et des underscores.\");</script>";
                     $CAN_ACCOUNT_BE_CREATED = false;
                 } elseif(strlen(trim($_POST["USERNAME"])) > 16 OR strlen(trim($_POST["USERNAME"])) < 4){
                     echo "<script>alert(\"votre nom d'utilisateur doit faire entre 4 et 16 charactères\");</script>";
