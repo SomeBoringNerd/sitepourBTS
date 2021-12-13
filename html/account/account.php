@@ -56,7 +56,7 @@
                         <p id=\"border_user\">pseudo :<br><br> $USER_NAME</p>
                         ";
                         if($USER_ID_TO_LOAD === $_GET["id"]){
-                            echo "<button onClick=\"location.href='settings.php';\"><pr>Paramètres</pr></button><br>";
+                            echo "<button id=\"settings_button\" onClick=\"location.href='settings.php';\"><pr>Paramètres</pr></button><br>";
                         }
                         echo "<p id=\"border_user\" id=\"slightly_smaller_p\">vu(e) en ligne : $LAST_ONLINE</p>
                         <div id=\"bio\">

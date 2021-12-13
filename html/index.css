@@ -118,7 +118,11 @@
 	border-width: 6px;
 	background-color: rgba(128, 128, 128, 0.25);
 }
-
+#settings_button{
+	position: absolute;
+	left: 27vw;
+	bottom: -1vh;
+}
 #topDuSite
 {
 	position: fixed;
