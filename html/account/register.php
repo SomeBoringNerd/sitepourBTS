@@ -83,10 +83,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $rand_token = openssl_random_pseudo_bytes(128);
                                 
         $token = bin2hex($rand_token);
-
+        $DEFAULT_PFP = "http://throughthedark.ddns.net:50001/rescources/ProfilePic/MISSING.png";
         $gen_token = $token;
 
-        $sql = "INSERT INTO users (username, user_password, USER_STATUS, TOKEN) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS', '$token')";
+        $sql = "INSERT INTO users (username, user_password, USER_STATUS, TOKEN, PFP_URL) VALUES ('$username_trimmed', '$param_password', '$USER_STATUS', '$token', '$DEFAULT_PFP')";
         
         if($CAN_ACCOUNT_BE_CREATED === true)
         {
