@@ -146,7 +146,7 @@
 
                     }
 
-                    $sql = "UPDATE users SET username='$USERNAME', USER_BIO='$NEW_BIO', /*PP_NAME='$filename'*/ WHERE id=$USER_ID_TO_LOAD";
+                    $sql = "UPDATE users SET username='$USERNAME', USER_BIO='$NEW_BIO' /*, PP_NAME='$filename'*/ WHERE id=$USER_ID_TO_LOAD";
 
                     if ($link->query($sql) === TRUE){
                         $_SESSION['username'] = $USERNAME;
