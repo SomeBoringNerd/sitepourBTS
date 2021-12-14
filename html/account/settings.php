@@ -43,11 +43,7 @@
                                 <p>connecté en temps que $USERNAME </p>
                             </div>
                             <br>
-                            <div id=\"border_pic\" name=\"Nom d'utilisateur\">
-                                <p style=\"font-size: 40;\">Photo de profil :</p>
-                                <img src=\"../rescources/ProfilePic/$USER_ID.png\" height=\"256\" width=\"256\" id=\"img_settings\">
-                                <input type=\"file\" name=\"choosefile\" value="" />
-                            </div>
+                            
                             <div>
                                 <label for=\"msg\"><p style=\"font-size: 40;\">Pseudo :</p></label>
                                 <textarea id=\"msg\" name=\"USERNAME\" rows=\"1\" cols=\"16\" class=\"msg\" value=\"user_message\" required>$USERNAME</textarea>
