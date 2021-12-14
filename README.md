@@ -113,6 +113,7 @@ inserez votre identifiant + mot de passe dans /html/admin/config.php aux endroit
 
 il suffit maintenant d'importer la base de donnée présente dans /template/website_data_base.sql
 cette base de donnée contient les tables (vidées) nécéssaires au bon fonctionnement du site.
-accedez a cette page pour ça :
-(remplassez localhost par l'ip / nom de domaine de votre serveur
-http://localhost/phpmyadmin/server_import.php
+
+creez une nouvelle base de donnée (website_data_base dans mon cas, mais le choix est votre)
+
+et allez dans l'onglet "importer" de cette base. téléchargez la et importez la et voilà
