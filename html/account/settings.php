@@ -3,6 +3,12 @@
     require("../admin/config.php");
 
     $USER_ID_TO_LOAD = $_SESSION["id"];
+    include("../entete.php");
+
+    echo" <head>
+    <title>Settings</title>
+    <link rel=\"stylesheet\" href=\"../index.css?rnd=132\">
+</head>";
 
     if(isset($USER_ID_TO_LOAD)){
 
@@ -19,14 +25,10 @@
                 $USER_ID = $row["id"];
                 $USER_BIO = $row["USER_BIO"];
 
-                include("../entete.php");
+                
                 echo "
                 <br><br><br><br>
                 <html>
-                    <head>
-                        <title>Settings</title>
-                        <link rel=\"stylesheet\" href=\"../index.css?rnd=132\">
-                    </head>
                     <body>
                         <center>
                             <megaTitle>Paramètres</megaTitle>
