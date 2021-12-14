@@ -1,10 +1,4 @@
 <?php
-
-	function mysql_utf8_sanitizer(string $str)
-	{
-		return preg_replace('/[\x{10000}-\x{10FFFF}]/u', "\xEF\xBF\xBD", $str);
-	}
-
 	session_start();
 
 	// check si une session existe
@@ -28,7 +22,10 @@
         $user_status = $_SESSION["user_status"];
 		$false = false;
 		
-		$GOOD_MESSAGE = mysql_utf8_sanitizer($MESSAGE);
+		// fixe une erreur pouvant créer une injection MYSQL
+		// beaucoup plus simple que prévu
+		$MESSAGE = str_replace("'", "\'", $MESSAGE);
+		$MESSAGE = str_replace("-", "\-", $MESSAGE);
 
 		// requete MySQL pour ajouter une entrée dans la base de donnée de contact
         $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT, MESSAGE_AUTHOR_ID) VALUES ('$USERNAME', '$MESSAGE', '$param_id')";

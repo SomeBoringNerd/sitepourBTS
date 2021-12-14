@@ -31,14 +31,17 @@
                         <center>
                             <megaTitle>Paramètres</megaTitle>
                         </center>
-                        <br>
-                        <div id=\"border_pic\" name=\"Nom d'utilisateur\">
-                            <img src=\"../rescources/ProfilePic/$USER_ID.png\" height=\"256\" width=\"256\" id=\"img_settings\">
-                        </div>
+                        
                         <center>
-                        <form action=\"settings.php\" method=\"post\">
+                        <form action="" enctype=\"multipart/form-data\" method=\"post\">
                             <div>
                                 <p>connecté en temps que $USERNAME </p>
+                            </div>
+                            <br>
+                            <div id=\"border_pic\" name=\"Nom d'utilisateur\">
+                                <p style=\"font-size: 40;\">Photo de profil :</p>
+                                <img src=\"../rescources/ProfilePic/$USER_ID.png\" height=\"256\" width=\"256\" id=\"img_settings\">
+                                <input type=\"file\" name=\"choosefile\" value="" />
                             </div>
                             <div>
                                 <label for=\"msg\"><p style=\"font-size: 40;\">Pseudo :</p></label>
@@ -67,6 +70,22 @@
                 $NEW_BIO = str_replace("-", "\-", $NEW_BIO);
 
                 $CAN_ACCOUNT_BE_CREATED = true;
+
+                $filename = $_FILES["choosefile"]["$USER_ID_TO_LOAD"];
+
+                $tempname = $_FILES["choosefile"]["tmp_name"];  
+
+                $folder = "//rescources//ProfilePic//".$filename;   
+
+                if (move_uploaded_file($tempname, $folder)) {
+
+                    $msg = "Image uploaded successfully";
+        
+                }else{
+        
+                    $msg = "Failed to upload image";
+        
+                }
 
                 if(strlen(trim($NEW_BIO)) > 512)
                 {
@@ -122,16 +141,16 @@
 
                     }
 
-
-                    $sql = "UPDATE users SET username='$USERNAME', USER_BIO='$NEW_BIO' WHERE id=$USER_ID_TO_LOAD";
+                    $sql = "UPDATE users SET username='$USERNAME', USER_BIO='$NEW_BIO', PP_NAME='$filename' WHERE id=$USER_ID_TO_LOAD";
 
                     if ($link->query($sql) === TRUE){
                         $_SESSION['username'] = $USERNAME;
-
-                        header("location: account.php");
+   
                     }else{
                         echo $link->error;
                     }
+
+                    header("location: account.php");
                 }
             }   
         }

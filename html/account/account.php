@@ -27,16 +27,8 @@
                 $USER_BIO = $row["USER_BIO"];
                 $LAST_ONLINE = $row["LAST_ONLINE"];
                 include("../entete.php");
-                
+                // @todo : fixer ça 
                 $filename = "/rescources/ProfilePic/$USER_ID.png";
-
-                if (!realpath($filename)) {
-                    $filename = "/rescources/ProfilePic/MISSING.png";
-                }
-
-                clearstatcache();
-
-                
 
                 echo "
                 <br><br><br><br>

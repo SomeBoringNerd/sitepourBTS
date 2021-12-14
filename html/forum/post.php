@@ -1,20 +1,26 @@
 <?php
     session_start();
-
+    
+    
     if($_SERVER["REQUEST_METHOD"] == "POST" or isset($_POST["delete"]))
-    {
-        require("../admin/config.php");
-        $id_post = $_POST["POST_ID"];
+    {           // encore un fix de merde, celui ci empeche une méthode post random
+                // de pouvoir supprimer un poste sans vérification
+                // note : ne PAS utiliser POST pour vérifier l'authenticité
+                // d'un utilisateur
+        if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
+            require("../admin/config.php");
+            $id_post = $_POST["POST_ID"];
 
-        $sql = "DELETE FROM forum_post WHERE POST_ID = $id_post";
+            $sql = "DELETE FROM forum_post WHERE POST_ID = $id_post";
 
-        //$result = ;
-        if($link->query($sql) === true)
-        {
-            header("location: index.php");
-            exit;
-        }else{
-            echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+            //$result = ;
+            if($link->query($sql) === true)
+            {
+                header("location: index.php");
+                exit;
+            }else{
+                echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+            }
         }
     }
 ?>

@@ -87,9 +87,12 @@ Le propriétaire du site autorise les liens hypertextes vers l’une des pages d
 <br>
 <br>
 <br>
-Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée, accompagnée d’une preuve d’identité.<br>
+Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée a l'adresse mail donnée plus haut.<br>
 <br>
 Le site ne recueille pas d’informations personnelles, et n’est pas assujetti à déclaration à la CNIL. <br>
+<br><br><br>
+<lesserTitle>Code Source</lesserTitle>
+le code source de ce site est disponible sur github, <a href="https://github.com/SomeBoringNerd/sitepourbts">https://github.com/SomeBoringNerd/sitepourbts</a>
 
 <br><br>
 <lesserTitle>Crédits</lesserTitle>
@@ -100,7 +103,6 @@ les crédits dû sont donnés sur chaque page.
 les médias utilisés sont sous license Creative Common, ou dans le domaine publique.
 <br><br>
 <lessertitle>Notes</lessertitle>
-<p>malgré le thème du jeu, une grande partie du contenu est fortement inspiré par l'univers SCP</p>
 <br>
 </p>
 			
