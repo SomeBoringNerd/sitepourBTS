@@ -35,7 +35,7 @@
                         </center>
                         
                         <center>
-                        <form action="" enctype=\"multipart/form-data\" method=\"post\">
+                        <form action=\"settings.php\" enctype=\"multipart/form-data\" method=\"post\">
                             <div>
                                 <p>connecté en temps que $USERNAME </p>
                             </div>
