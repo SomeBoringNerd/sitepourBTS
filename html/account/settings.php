@@ -1,8 +1,11 @@
 <?php
+    echo "test ";
     session_start();
+    echo "test 1";
     require("../admin/config.php");
-
+    echo "test 2";
     $USER_ID_TO_LOAD = $_SESSION["id"];
+    echo "test 3";
     include("../entete.php");
 
     echo" <head>
