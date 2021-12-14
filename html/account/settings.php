@@ -43,7 +43,7 @@
                                 <p>connecté en temps que $USERNAME </p>
                             </div>
                             <br>
-                            
+                            <input type=\"file\" name=\"choosefile\" value="" />
                             <div>
                                 <label for=\"msg\"><p style=\"font-size: 40;\">Pseudo :</p></label>
                                 <textarea id=\"msg\" name=\"USERNAME\" rows=\"1\" cols=\"16\" class=\"msg\" value=\"user_message\" required>$USERNAME</textarea>
