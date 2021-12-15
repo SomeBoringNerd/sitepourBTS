@@ -142,9 +142,7 @@
                 
                 if($CAN_ACCOUNT_BE_CREATED === true){
                     //@TODO : permettre de changer le mot de passe
-                    if(isset($_POST['PASSWORD'])){
-
-                    }
+                    if(isset($_POST['PASSWORD'])){}
 
                     $sql = "UPDATE users SET username='$USERNAME', USER_BIO='$NEW_BIO' /*, PP_NAME='$filename'*/ WHERE id=$USER_ID_TO_LOAD";
 
