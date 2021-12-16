@@ -79,7 +79,7 @@
                             </center>
                         </td>
                             <td>";
-                            if($_SESSION["id"] !== $ID)
+                            if($_SESSION["id"] != $ID)
                             {
                                 echo"<form action='' method='POST'>
                                         <input type=\"hidden\" name=\"USER_ID\" value=\"$ID\">

@@ -82,7 +82,8 @@ CREATE TABLE `users` (
   `LAST_ONLINE` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `USER_STATUS` int NOT NULL COMMENT '1 : admin, 2 : modo; 3 : wiki editor',
   `USER_BIO` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `TOKEN` text NOT NULL
+  `TOKEN` text NOT NULL,
+  `PFP_URL` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
