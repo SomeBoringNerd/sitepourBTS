@@ -70,7 +70,9 @@
             {
                 $USERNAME = $_POST['USERNAME'];
                 $NEW_BIO = $_POST['USER_BIO'];
-
+                
+                // dirty fix done dirt cheap.
+                // Dojyaaa~~n et ça marche !
                 $NEW_BIO = str_replace("'", "\'", $NEW_BIO);
                 $NEW_BIO = str_replace("-", "\-", $NEW_BIO);
 

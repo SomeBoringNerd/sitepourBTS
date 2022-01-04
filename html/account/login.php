@@ -55,10 +55,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $user_status, $token);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
-                            // Password is correct, so start a new session
+                            
+                            // mot de passe valide, let's go
                             session_start();
 
-                            // Store data in session variables
+                            // on stocke les données dans la session 
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;    
@@ -71,13 +72,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: ../index.php");
                         } else
                         {
-                            // Password is not valid, display a generic error message
+                            // Erreur générique
                             $login_err = "<p>mot de passe incorrect</p>";
                         }
                     }
                 } else
                 {
-                    // Username doesn't exist, display a generic error message
+                    // Erreur générique
                     $login_err = "<p>nom d'utilisateur incorrect</p>";
                 }
             } else

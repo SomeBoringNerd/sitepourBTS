@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
         echo "<script>alert(\"Username can only contain letters, numbers, and underscores.\");</script>";
         $CAN_ACCOUNT_BE_CREATED = false;
-    } elseif(strlen(trim($_POST["password"])) > 16 OR strlen(trim($_POST["password"])) < 4){
+    } elseif(strlen(trim($_POST["username"])) > 16 OR strlen(trim($_POST["username"])) < 4){
         echo "<script>alert(\"votre nom d'utilisateur doit faire entre 4 et 16 charactères\");</script>";
         $CAN_ACCOUNT_BE_CREATED = false;
     }
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         {
             $result = $link->query($sql);
 
-            if ($result->num_rows === 0)
+            if ($result->num_rows == 0)
             {
                 $username = trim($_POST["username"]);
             }
@@ -54,22 +54,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     {
         echo "<script>alert(\"Votre mot de passe doit faire au moins 8 charactères\");</script>";
         $CAN_ACCOUNT_BE_CREATED = false;
-    }else
-    {
-        $password = trim($_POST["password"]);
-    }
-    
-    // Validate confirm password
-    if(empty(trim($_POST["confirm_password"]))){
-        echo "<script>alert(\"Please confirm password\");</script>";
+    }elseif(empty(trim($_POST["confirm_password"]))){
+        echo "<script>alert(\"Veuillez confirmer votre mot de passe\");</script>";
         $CAN_ACCOUNT_BE_CREATED = false;
     }else
     {
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($password != $confirm_password))
         {
-            echo "<script>alert(\"Password did not match\");</script>";
+            echo "<script>alert(\"Les mots de passe ne correspondent pas\");</script>";
             $CAN_ACCOUNT_BE_CREATED = false;
+        }
+        else
+        {
+            $password = trim($_POST["password"]);
         }
     }
     
