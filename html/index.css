@@ -352,14 +352,38 @@
 
 /* //////////////////////////////////////////
 
-			media bullshit
+			responsive a la con
 
 ////////////////////////////////////////// */
 
-/* phone display */
+/* 16:9 */
+@media screen and (min-width: 1140px) 
+{
+	
+	#topDuSite{
+		display: block;
+	}
+	#topDuSite_Mobile{
+		display: none;
+	}
+
+	megaTitle{
+		outline: solid;
+		font-family: Captureit;
+		color:rgb(0, 217, 255);
+		font-size:110px;
+	}
+}
+
+/* téléphone */
 @media screen and (max-width: 1140px)
 {
-	/*93.1vw;*/
+	#topDuSite{
+		display: none;
+	}
+	#topDuSite_Mobile{
+		display: block;
+	}
 
 	#settings_button{
 		position: absolute;
@@ -408,12 +432,7 @@
 		height: 256;
 		background-color: rgba(128, 128, 128, 0.25);
 	}
-	#topDuSite{
-		display: none;
-	}
-	#topDuSite_Mobile{
-		display: block;
-	}
+	
 	#POST_HISTORY
 	{
 		position: relative;
@@ -447,24 +466,7 @@
 	}
 }
 
-/* regular display */
-@media screen and (min-width: 1140px) 
-{
-	
-	#topDuSite{
-		display: block;
-	}
-	#topDuSite_Mobile{
-		display: none;
-	}
 
-	megaTitle{
-		outline: solid;
-		font-family: Captureit;
-		color:rgb(0, 217, 255);
-		font-size:110px;
-	}
-}
 
 .video-container {
 	position: relative;

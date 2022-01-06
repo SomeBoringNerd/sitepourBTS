@@ -20,7 +20,6 @@
         $param_date = "" + date_timestamp_get(date_create());
         $param_id = $_SESSION["id"];
         $user_status = $_SESSION["user_status"];
-		$false = false;
 		
 		// fixe une erreur pouvant créer une injection MYSQL
 		// beaucoup plus simple que prévu
@@ -28,7 +27,8 @@
 		$MESSAGE = str_replace("-", "\-", $MESSAGE);
 
 		// requete MySQL pour ajouter une entrée dans la base de donnée de contact
-        $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT, MESSAGE_AUTHOR_ID) VALUES ('$USERNAME', '$MESSAGE', '$param_id')";
+        $sql = "INSERT INTO contact_messages (MESSAGE_AUTHOR, MESSAGE_CONTENT, MESSAGE_AUTHOR_ID) 
+		        VALUES ('$USERNAME', '$MESSAGE', '$param_id')";
 
 		// si ça marche
         if ($link->query($sql) === TRUE) {
