@@ -16,7 +16,10 @@
                 Through The Darkness est un jeu développé par moi, Corentyn (aka SomeBoringNerd sur internet).
                 Il s'agit d'un jeu d'enquête dans une ville aillant vue un certain nombre de disparition.<br>
                 <br>
-				voici la vidéo la plus récente a ce sujet :
+				le jeu peut être téléchargé ici : <br><br>
+				<iframe src="https://itch.io/embed/1365364" height="167" width="552" frameborder="0"><a href="https://someboringnerd.itch.io/through-the-dark">Through The Dark by SomeBoringNerd</a></iframe>
+				<br><br>
+				voici la vidéo de mise a jour la plus récente :
 				<br><br><br>
 				<div class="video-container">
 					<center>
