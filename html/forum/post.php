@@ -75,7 +75,7 @@
                         echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"TYPE\" value=\"delete\">";
                         echo "<button type=\"submit\" name=\"delete\"><pr>supprimer</pr></button>";
-                        echo "<button type=\"submit\" name=\"edit\"><pr>modifier</pr></button>";
+                        
                         echo "</form>";
                     }
                     if($row["POST_AUTHOR_ID"] == $_SESSION["id"]){
@@ -87,7 +87,9 @@
                         {
                             echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
                             echo "<button type=\"submit\" name=\"sauvegarder\"><pr>modifier</pr></button>";
-                        }                        
+                        }else{
+                            echo "<button type=\"submit\" name=\"edit\"><pr>modifier</pr></button>";
+                        }
                         echo "</form>";
                     }
                     echo "</div>";
