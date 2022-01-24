@@ -35,7 +35,7 @@
                 if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
                     require("../admin/config.php");
                     $post_id = $_POST["POST_ID"];
-                    $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE id=$post_id";
+                    $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE POST_ID=$post_id";
     
                     if($link->query($sql) === true)
                     {
