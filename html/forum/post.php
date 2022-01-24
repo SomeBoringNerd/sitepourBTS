@@ -58,7 +58,7 @@
                         echo "<form action=\"post.php\" method=\"post\">";
                         echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
-                        echo "<button id=\"forum_delete_button\" type=\"submit\" name=\"delete\"><pr>supprimer</pr></button>";
+                        echo "<button type=\"submit\" name=\"delete\"><pr>supprimer</pr></button>";
                         echo "</form>";
                     }
                 }
