@@ -23,6 +23,21 @@
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
                 }
             }
+        }else if($_POST["save"])
+        {
+            if($row["POST_AUTHOR_ID"] == $_SESSION["id"])){
+                require("../admin/config.php");
+                $post_id = $_POST["POST_ID"];
+                $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE id=$post_id";
+
+                if($link->query($sql) === true)
+                {
+                    header("location: post.php?id=$post_id");
+                    exit;
+                }else{
+                    echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+                }
+            }
         }
     }
 ?>
@@ -63,18 +78,18 @@
                         {
                             echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
                             echo "<button type=\"submit\" name=\"sauvegarder\"><pr>modifier</pr></button>";
-                        }else
-                        {
-                            echo "<button type=\"submit\" name=\"edit\"><pr>modifier</pr></button>";
-                        }
-                        
+                        }                        
                         echo "</form>";
                     }
                     echo "</div>";
 
                     if(isset($_POST["edit"]))
-                    {
-                        echo "<textarea id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
+                    {   
+                        echo "<form action=\"post.php?id=$post_id\" method=\"post\">";
+                        echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
+                        echo "<textarea id=\"forum_text_container\" name=\"NEW_POST\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
+                        echo "<button type=\"submit\" name=\"save\"><pr>sauvegarder</pr></button>";
+                        echo "</form>";
                     }else
                     {
                         echo "<textarea readonly id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
