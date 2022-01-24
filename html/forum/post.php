@@ -23,9 +23,6 @@
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
                 }
             }
-        } else if(isset($_POST["edit"]))
-        {
-
         }
     }
 ?>
@@ -62,14 +59,28 @@
                         echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"TYPE\" value=\"edit\">";
-                        echo "<button type=\"submit\" name=\"edit\"><pr>modifier</pr></button>";
+                        if(isset($_POST["edit"]))
+                        {
+                            echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
+                            echo "<button type=\"submit\" name=\"sauvegarder\"><pr>modifier</pr></button>";
+                        }else
+                        {
+                            echo "<button type=\"submit\" name=\"edit\"><pr>modifier</pr></button>";
+                        }
+                        
                         echo "</form>";
                     }
                     echo "</div>";
-                        // oui, utiliser <p> active une vulnérabilité. 
-                        // oui, je pourrais chercher un moyen de contourner le problème
-                        // et oui, ça rend mieux au final.
-                    echo "<textarea readonly id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
+
+                    if(isset($_POST["edit"]))
+                    {
+                        echo "<textarea id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
+                    }else
+                    {
+                        echo "<textarea readonly id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
+                    }
+                    
+                    
                     }
                 
             }   
