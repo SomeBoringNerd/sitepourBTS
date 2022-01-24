@@ -25,7 +25,7 @@
             }
         }else if(isset($_POST["save"]))
         {
-            if($row["POST_AUTHOR_ID"] == $_SESSION["id"])){
+            if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
                 require("../admin/config.php");
                 $post_id = $_POST["POST_ID"];
                 $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE id=$post_id";
