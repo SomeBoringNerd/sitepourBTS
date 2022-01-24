@@ -44,16 +44,6 @@
                     echo "<textarea readonly id=\"forum_title_container\">" . $row["POST_TITLE"] . "</textarea>";
                     echo "<p>__________</p>";
                     echo "<p style=\"width: 75vw\"> créé par " . $row["POST_AUTHOR"] . " le " . $row["POST_CREATION_DATE"] . "</p>";
-                    echo "</div>";
-                        // oui, utiliser <p> active une vulnérabilité. 
-                        // oui, je pourrais chercher un moyen de contourner le problème
-                        // et oui, ça rend mieux au final.
-                    echo "<textarea readonly id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
-                    /*echo $row["POST_AUTHOR_ID"];
-                    echo "<br>";
-                    echo $_SESSION["id"];       troubleshooting du mendiant
-                    echo "<br>";
-                    echo $_SESSION["id"] == $row["POST_AUTHOR_ID"]; utiliser === empêche le check de se faire*/
                     if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
                         echo "<form action=\"post.php\" method=\"post\">";
                         echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
@@ -61,7 +51,19 @@
                         echo "<button type=\"submit\" name=\"delete\"><pr>supprimer</pr></button>";
                         echo "</form>";
                     }
-                }
+                    if($row["POST_AUTHOR_ID"] == $_SESSION["id"]){
+                        echo "<form action=\"post.php\" method=\"post\">";
+                        echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
+                        echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
+                        echo "<button type=\"submit\" name=\"delete\"><pr>modifier</pr></button>";
+                        echo "</form>";
+                    }
+                    echo "</div>";
+                        // oui, utiliser <p> active une vulnérabilité. 
+                        // oui, je pourrais chercher un moyen de contourner le problème
+                        // et oui, ça rend mieux au final.
+                    echo "<textarea readonly id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
+                    }
                 
             }   
         ?>
