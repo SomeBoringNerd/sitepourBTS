@@ -12,7 +12,7 @@
             <br>
             <footer_text>in case of legal problem, or if you want to hire please contact the owner of the website, 
                 SomeBoringNerd, also known as Corentyn at this adress : 
-                <a href="mailto:pro.corentynsauvage@gmail.com">pro.corentynsauvage@gmail.com</a><br>
+                <a href="mailto:someboringnerd@gmail.com">someboringnerd@gmail.com</a><br>
                 Please use a professional email if you need to contact me for legal reason or for hiring me
             </footer_text>
     <br>
