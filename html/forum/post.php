@@ -110,11 +110,9 @@
                         <div>
                             <label for=\"message\"><p style=\"font-size: 24;\">votre réponse :</p></label>
                             <textarea class=\"msg\" name=\"message\" rows=\"2\" cols=\"25\" value=\"message\" required></textarea>
-                        </div><br>
+                        </div>
                         <div class=\"button\">
-                            <p>Envoyer le message</p>
-                            <button type=\"submit\" name=\"post_message\" value=\"post_message\"><pr>Créer le post</pr></button>
-                                
+                            <button type=\"submit\" name=\"post_message\" value=\"post_message\"><pr>répondre</pr></button>
                         </div>
                     </form></center>";
                 }
