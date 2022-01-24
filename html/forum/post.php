@@ -7,7 +7,7 @@
                 // de pouvoir supprimer un poste sans vérification
                 // note : ne PAS utiliser POST pour vérifier l'authenticité
                 // d'un utilisateur
-        if($_SESSION["TYPE"] == "delete"){
+        if($_POST["TYPE"] == "delete"){
             if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
                 require("../admin/config.php");
                 $id_post = $_POST["POST_ID"];
@@ -23,7 +23,7 @@
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
                 }
             }
-        } else if($_SESSION["TYPE" == "edit"])
+        } else if($_POST["TYPE" == "edit"])
         {
 
         }
