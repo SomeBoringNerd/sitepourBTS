@@ -50,7 +50,7 @@
                     echo "<p>__________</p>";
                     echo "<p style=\"width: 75vw\"> créé par " . $row["POST_AUTHOR"] . " le " . $row["POST_CREATION_DATE"] . "</p>";
                     if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
-                        echo "<form action=\"post.php\" method=\"post\">";
+                        echo "<form action=\"post.php?id=$post_id\" method=\"post\">";
                         echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"TYPE\" value=\"delete\">";
@@ -58,7 +58,7 @@
                         echo "</form>";
                     }
                     if($row["POST_AUTHOR_ID"] == $_SESSION["id"]){
-                        echo "<form action=\"post.php\" method=\"post\">";
+                        echo "<form action=\"post.php?id=$post_id\" method=\"post\">";
                         echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"TYPE\" value=\"edit\">";
