@@ -2,7 +2,7 @@
     session_start();
     
     
-    if($_SERVER["REQUEST_METHOD"] == "POST" or isset($_POST["delete"]))
+    if($_SERVER["REQUEST_METHOD"] == "POST")
     {           // encore un fix de merde, celui ci empeche une méthode post random
                 // de pouvoir supprimer un poste sans vérification
                 // note : ne PAS utiliser POST pour vérifier l'authenticité
@@ -62,7 +62,7 @@
                         echo "<input type=\"hidden\" name=\"POST_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"USER_ID\" value=\"$post_id\">";
                         echo "<input type=\"hidden\" name=\"TYPE\" value=\"edit\">";
-                        echo "<button type=\"submit\" name=\"delete\"><pr>modifier</pr></button>";
+                        echo "<button type=\"submit\" name=\"edit\"><pr>modifier</pr></button>";
                         echo "</form>";
                     }
                     echo "</div>";
