@@ -102,9 +102,22 @@
                     {
                         echo "<textarea readonly id=\"forum_text_container\" rows=\"14\">" . $row["POST_MESSAGE"] . "</textarea>";
                     }
-                    
-                    
-                    }
+                    echo "
+                    <form action=\"post.php\" method=\"post\">
+                        <div>
+                            <?php echo\"<p>connecté en temps que $USERNAME </p>\" ?>
+                        </div>
+                        <div>
+                            <label for=\"message\"><p style=\"font-size: 24;\">réponse :</p></label>
+                            <textarea class=\"msg\" name=\"message\" rows=\"7\" cols=\"50\" value=\"message\" required></textarea>
+                        </div><br>
+                        <div class=\"button\">
+                            <p>Envoyer le message</p>
+                            <button type=\"submit\" name=\"post_message\" value=\"post_message\"><pr>Créer le post</pr></button>
+                                
+                        </div>
+                    </form>";
+                }
                 
             }   
         ?>
