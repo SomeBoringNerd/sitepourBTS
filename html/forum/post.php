@@ -55,12 +55,14 @@
                             exit;
                         }else{
                             echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+                            echo "<script>echo(\"1\");</script>";
                         }
                     }
                 }
             }else
             {
                 echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+                echo "<script>echo(\"2\");</script>";
             }
 
 
