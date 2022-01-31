@@ -31,8 +31,7 @@
             
             $NEW_POST = $_POST["NEW_POST"];
             
-            $result = $link->query($sql);
-            echo "<script>echo(\"$sql || \n $result\");</script>";
+            echo "<script>echo(\"$sql\");</script>";
             if($link->query($sql) === true)
             {
                 $result = $link->query($sql);
