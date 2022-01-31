@@ -30,8 +30,8 @@
             $sql = "SELECT * FROM forum_post WHERE POST_ID = $post_id";
             
             $NEW_POST = $_POST["NEW_POST"];
+            echo "<script>echo(\"$sql\");</script>";
             $result = $link->query($sql);
-
             if($link->query($sql) === true)
             {
                 while($row = $result->fetch_assoc())
