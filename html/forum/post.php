@@ -33,38 +33,48 @@
             echo "<script>echo(\"2\")</script>";
             $result = $link->query($sql);
             echo "<script>echo(\"3\")</script>";
-            while($row = $result->fetch_assoc())
+
+            if($link->query($sql) === true)
             {
-                echo "<script>echo(\"4\")</script>";
-                $CAN_POST_BE_CREATED = true;
-                echo "<script>echo(\"5\")</script>";
-                if(strlen($post_message) > 512)
+                while($row = $result->fetch_assoc())
                 {
-                    echo "<script>alert(\"votre poste doit faire entre 1 et 512 caractères. Merci de garder ça court\")</script>";
-                    $CAN_POST_BE_CREATED = false;
-                }
-                echo "<script>echo(\"6\")</script>";
-                // -- dirty fix done dirt cheap -- //
-                $NEW_POST = str_replace("'", "\'", $NEW_POST);
-                $NEW_POST = str_replace("-", "\-", $NEW_POST);
-                echo "<script>echo(\"7\")</script>";
-                if($row["POST_AUTHOR_ID"] == $_SESSION["id"] && $CAN_POST_BE_CREATED){
-                    require("../admin/config.php");
-                    echo "<script>echo(\"8\")</script>";
-                    $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE POST_ID=$post_id";
-                    echo "<script>echo(\"9\")</script>";
-                    if($link->query($sql) === true)
+                    echo "<script>echo(\"4\")</script>";
+                    $CAN_POST_BE_CREATED = true;
+                    echo "<script>echo(\"5\")</script>";
+                    if(strlen($post_message) > 512)
                     {
-                        echo "<script>echo(\"10\")</script>";
-                        header("location: post.php?id=$post_id");
-                        exit;
-                    }else{
-                        echo "<script>echo(\"10\")</script>";
-                        echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+                        echo "<script>alert(\"votre poste doit faire entre 1 et 512 caractères. Merci de garder ça court\")</script>";
+                        $CAN_POST_BE_CREATED = false;
                     }
+                    echo "<script>echo(\"6\")</script>";
+                    // -- dirty fix done dirt cheap -- //
+                    $NEW_POST = str_replace("'", "\'", $NEW_POST);
+                    $NEW_POST = str_replace("-", "\-", $NEW_POST);
+                    echo "<script>echo(\"7\")</script>";
+                    if($row["POST_AUTHOR_ID"] == $_SESSION["id"] && $CAN_POST_BE_CREATED){
+                        require("../admin/config.php");
+                        echo "<script>echo(\"8\")</script>";
+                        $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE POST_ID=$post_id";
+                        echo "<script>echo(\"9\")</script>";
+                        if($link->query($sql) === true)
+                        {
+                            echo "<script>echo(\"10\")</script>";
+                            header("location: post.php?id=$post_id");
+                            exit;
+                        }else{
+                            echo "<script>echo(\"10\")</script>";
+                            echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+                        }
+                    }
+                    echo "<script>echo(\"11\")</script>";
                 }
-                echo "<script>echo(\"11\")</script>";
+            }else
+            {
+                echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
             }
+
+
+            
         }else if(isset($_POST["comment"]))
         {
             
