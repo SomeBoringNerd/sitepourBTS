@@ -30,10 +30,12 @@
             $sql = "SELECT * FROM forum_post WHERE POST_ID = $post_id";
             
             $NEW_POST = $_POST["NEW_POST"];
-            echo "<script>echo(\"$sql\");</script>";
+            
             $result = $link->query($sql);
+            echo "<script>echo(\"$sql || \n $result\");</script>";
             if($link->query($sql) === true)
             {
+                $result = $link->query($sql);
                 while($row = $result->fetch_assoc())
                 {
                     $CAN_POST_BE_CREATED = true;
