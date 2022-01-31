@@ -27,7 +27,7 @@
         {
             require("../admin/config.php");
             $sql = "SELECT * FROM forum_post WHERE POST_ID = $post_id";
-            echo "<script>echo(\"1\")</script>";
+            echo "<script>echo(\"$sql\")</script>";
             $post_id = $_POST["POST_ID"];
             $NEW_POST = $_POST["NEW_POST"];
             echo "<script>echo(\"2\")</script>";
