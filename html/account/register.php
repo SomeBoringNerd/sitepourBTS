@@ -62,6 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($password != $confirm_password))
         {
+            echo "<script>echo(\"$password != $confirm_password\");</script>";
             echo "<script>alert(\"Les mots de passe ne correspondent pas\");</script>";
             $CAN_ACCOUNT_BE_CREATED = false;
         }

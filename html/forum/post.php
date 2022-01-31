@@ -26,16 +26,26 @@
         }else if(isset($_POST["save"]))
         {
             require("../admin/config.php");
-            $post_id = $_GET["id"];
             $sql = "SELECT * FROM forum_post WHERE POST_ID = $post_id";
 
+            $post_id = $_POST["POST_ID"];
+            $NEW_POST = $_POST["NEW_POST"];
             $result = $link->query($sql);
             while($row = $result->fetch_assoc())
             {
-                if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
+                $CAN_POST_BE_CREATED = true;
+
+                if(strlen($post_message) > 512)
+                {
+                    echo "<script>alert(\"votre poste doit faire entre 1 et 512 caractères. Merci de garder ça court\")</script>";
+                    $CAN_POST_BE_CREATED = false;
+                }
+                // -- dirty fix done dirt cheap -- //
+                $NEW_POST = str_replace("'", "\'", $NEW_POST);
+                $NEW_POST = str_replace("-", "\-", $NEW_POST);
+
+                if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"] && $CAN_POST_BE_CREATED){
                     require("../admin/config.php");
-                    $post_id = $_POST["POST_ID"];
-                    $NEW_POST = $_POST["NEW_POST"];
                     $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE POST_ID=$post_id";
     
                     if($link->query($sql) === true)
@@ -47,6 +57,9 @@
                     }
                 }
             }
+        }else if(isset($_POST["comment"]))
+        {
+            
         }
     }
 ?>
@@ -112,7 +125,7 @@
                             <textarea class=\"msg\" name=\"message\" rows=\"2\" cols=\"25\" value=\"message\" required></textarea>
                         </div>
                         <div class=\"button\">
-                            <button type=\"submit\" name=\"post_message\" value=\"post_message\"><pr>répondre</pr></button>
+                            <button type=\"submit\" name=\"post_message\" value=\"post_comment\"><pr>répondre</pr></button>
                         </div>
                     </form></center>";
                 }
