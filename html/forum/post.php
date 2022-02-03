@@ -8,7 +8,10 @@
                 // note : ne PAS utiliser POST pour vérifier l'authenticité
                 // d'un utilisateur
         if(isset($_POST["delete"])){
-            if($_SESSION["user_status"] === 1 || (int)($_POST["POST_AUTHOR_ID"]) === (int)($_SESSION["id"])){
+
+            $POSTER_ID = (int)($_POST["POST_AUTHOR_ID"]);
+            $SESSION_ID = (int)($_SESSION["id"]);
+            if($_SESSION["user_status"] === 1 || $POSTER_ID === $SESSION_ID){
                 require("../admin/config.php");
                 $id_post = $_POST["POST_ID"];
 
