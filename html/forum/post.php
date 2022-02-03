@@ -9,7 +9,7 @@
                 // d'un utilisateur
         if(isset($_POST["delete"])){
 
-            $POSTER_ID = (int)($_POST["POST_AUTHOR_ID"]);
+            $POSTER_ID = (int)($_POST["USER_ID"]);
             $SESSION_ID = (int)($_SESSION["id"]);
             echo $POSTER_ID;
             echo $SESSION_ID;
