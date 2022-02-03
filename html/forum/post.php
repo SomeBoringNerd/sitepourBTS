@@ -11,11 +11,24 @@
 
             $POSTER_ID = (int)($_POST["POST_AUTHOR_ID"]);
             $SESSION_ID = (int)($_SESSION["id"]);
-            if($_SESSION["user_status"] === 1 || $POSTER_ID === $SESSION_ID){
-                echo "<script>echo(\"test\");</script>";
+            echo $POSTER_ID;
+            echo $SESSION_ID;
+            $is_Working = false;
+            if($POSTER_ID == $SESSION_ID){
+                echo "<script>echo(\"vérification réussite\");</script>";
+                
+            }else if ($_SESSION["user_status"] === 1)
+            {
+                $is_Working = true;
+                echo "<script>echo(\"verification échouée, mais le compte est admin\");</script>";
+            }else{
+                echo "<script>echo(\"verification échouée\");</script>";
+            }
+
+            if($is_Working){
                 require("../admin/config.php");
                 $id_post = $_POST["POST_ID"];
-
+                $is_Working = true;
                 $sql = "DELETE FROM forum_post WHERE POST_ID = $id_post";
 
                 //$result = ;
@@ -26,8 +39,6 @@
                 }else{
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
                 }
-            }else{
-                echo "<script>echo(\"verification échouée\");</script>";
             }
         }else if(isset($_POST["save"]))
         {
