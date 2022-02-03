@@ -21,7 +21,7 @@
                 //$result = ;
                 if($link->query($sql) === true)
                 {
-                    header("location: index.php");
+                    //header("location: index.php");
                     exit;
                 }else{
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
