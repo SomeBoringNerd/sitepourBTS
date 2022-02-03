@@ -53,7 +53,7 @@
                         
                         if($link->query($sql2) === true)
                         {
-                            //header("location : post.php?$post_id")
+                            header("location : post.php?$post_id")
                             exit;
                         }else{
                             echo "<script>alert(\"une erreur est survenue : " . mysqli_error($link) . "\");</script>";
