@@ -8,7 +8,7 @@
                 // note : ne PAS utiliser POST pour vérifier l'authenticité
                 // d'un utilisateur
         if(isset($_POST["delete"])){
-            if($_SESSION["user_status"] === 1 OR $row["POST_AUTHOR_ID"] == $_SESSION["id"]){
+            if($_SESSION["user_status"] === 1 OR $_POST["POST_AUTHOR_ID"] == $_SESSION["id"]){
                 require("../admin/config.php");
                 $id_post = $_POST["POST_ID"];
 
@@ -23,8 +23,9 @@
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
                 }
             }
-        }else if(isset($_POST["save"]))
+        }else if(isset($_POST["save"]) && $_POST["POST_AUTHOR_ID"] == $_SESSION["id"])
         {
+            echo "<script>echo(\"test\");</script>";
             require("../admin/config.php");
             $post_id = $_POST["POST_ID"];
             $sql = "SELECT * FROM forum_post WHERE POST_ID = $post_id";
@@ -55,14 +56,14 @@
                             header("location: post.php?id=$post_id");
                             exit;
                         }else{
-                            echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+                            echo "<script>alert(\"une erreur est survenue : " . mysqli_error($link) . "\");</script>";
                             echo "<script>echo(\"1\");</script>";
                         }
                     }
                 }
             }else
             {
-                echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
+                echo "<script>alert(\"une erreur est survenue : " . mysqli_error($link) . "\");</script>";
                 echo "<script>echo(\"2\");</script>";
             }
 
