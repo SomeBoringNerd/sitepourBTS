@@ -12,6 +12,7 @@
             $POSTER_ID = (int)($_POST["POST_AUTHOR_ID"]);
             $SESSION_ID = (int)($_SESSION["id"]);
             if($_SESSION["user_status"] === 1 || $POSTER_ID === $SESSION_ID){
+                echo "<script>echo(\"test\");</script>";
                 require("../admin/config.php");
                 $id_post = $_POST["POST_ID"];
 
@@ -25,6 +26,8 @@
                 }else{
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
                 }
+            }else{
+                echo "<script>echo(\"verification échouée\");</script>";
             }
         }else if(isset($_POST["save"]))
         {
