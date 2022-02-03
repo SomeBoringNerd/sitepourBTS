@@ -53,7 +53,7 @@
                         
                         if($link->query($sql2) === true)
                         {
-                            header("location : post.php?$post_id")
+                            //header("location : post.php?$post_id")
                             exit;
                         }else{
                             echo "<script>alert(\"une erreur est survenue : " . mysqli_error($link) . "\");</script>";
@@ -80,7 +80,7 @@
 <br><br><br><br>
     <head>
         <title>Postes du forum</title>
-        <link rel="stylesheet" href="../index.css?rnd=132">
+        <link rel="stylesheet" href="../index.css">
     </head>
     <body>
         <?php
