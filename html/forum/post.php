@@ -23,7 +23,7 @@
                     echo "<script>alert(\"une erreur est survenue : $link->error\");</script>";
                 }
             }
-        }else if(isset($_POST["save"]) && $_POST["POST_AUTHOR_ID"] == $_SESSION["id"])
+        }else if(isset($_POST["save"]))
         {
             echo "<script>echo(\"test\");</script>";
             require("../admin/config.php");
