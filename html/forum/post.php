@@ -27,16 +27,16 @@
         {
             echo "<script>echo(\"test\");</script>";
             require("../admin/config.php");
-            $post_id = $_POST["POST_ID"];
-            $sql = "SELECT * FROM forum_post WHERE POST_ID = $post_id";
-            
+            $post_id = $_POST["POST_ID"];            
             $NEW_POST = $_POST["NEW_POST"];
             
-            echo "<script>echo(\"$sql\");</script>";
-            if($link->query($sql) === true)
+            $sql = "SELECT * FROM forum_post WHERE POST_ID = $post_id";
+
+            $result = $link->query($sql);
+
+            if ($result->num_rows > 0) 
             {
-                $result = $link->query($sql);
-                while($row = $result->fetch_assoc())
+                while($row = $result->fetch_assoc()) 
                 {
                     $CAN_POST_BE_CREATED = true;
                     if(strlen($post_message) > 512)
@@ -49,9 +49,9 @@
                     $NEW_POST = str_replace("-", "\-", $NEW_POST);
                     if($row["POST_AUTHOR_ID"] == $_SESSION["id"] && $CAN_POST_BE_CREATED){
                         require("../admin/config.php");
-                        $sql = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE POST_ID=$post_id";
+                        $sql2 = "UPDATE forum_post SET POST_MESSAGE='$NEW_POST' WHERE POST_ID=$post_id";
                         
-                        if($link->query($sql) === true)
+                        if($link->query($sql2) === true)
                         {
                             echo "<script>alert(\"code executé avec succès\");</script>";
                             exit;
