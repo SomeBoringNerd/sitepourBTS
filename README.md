@@ -1,3 +1,6 @@
+# update 06/05/22 : le project est définitivement archivé, aucun support ne sera offert pour celui-ci. Il restera cependant en ligne car le code pourrait servir a d'autres personne dans le futur
+
+
 # SitePourCours
 
 ce repos est utilisé pour sauvegarder un cours d'enseignement pratique
